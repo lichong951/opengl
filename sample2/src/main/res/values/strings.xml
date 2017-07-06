@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Sample2</string>
     <string name="title_activity_sample2_2">Sample2_2</string>
+    <string name="title_activity_sample2_3">Sample2_3Activity</string>
 </resources>

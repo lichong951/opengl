@@ -6,6 +6,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.sample2.MainActivity">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
 
     <Button
         android:layout_width="match_parent"
@@ -13,5 +18,12 @@
         android:text="Sample2_2:简易音乐播放器"
         android:onClick="sample2_2"
         />
+<Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sample2_3:Preferences 记录上次访问时间记录"
+        android:onClick="sample2_3"
+        />
+</LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

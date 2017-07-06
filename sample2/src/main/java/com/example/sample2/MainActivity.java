@@ -20,4 +20,8 @@ public class MainActivity extends AppCompatActivity {
     public void sample2_2(View view){
         Sample2_2Activity.actionActivity(this);
     }
+    public void sample2_3(View view){
+        Sample2_3Activity.actionActivity(this);
+    }
+
 }
