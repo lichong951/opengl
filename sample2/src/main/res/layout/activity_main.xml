@@ -24,6 +24,13 @@
         android:text="Sample2_3:Preferences 记录上次访问时间记录"
         android:onClick="sample2_3"
         />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sample2_4:SQL数据库简单案例"
+        android:onClick="sample2_4"
+        />
+
 </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

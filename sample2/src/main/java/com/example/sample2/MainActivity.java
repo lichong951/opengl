@@ -17,11 +17,16 @@ public class MainActivity extends AppCompatActivity {
         PermissionsUtils.verifyStoragePermissions(this);
     }
 
-    public void sample2_2(View view){
+    public void sample2_2(View view) {
         Sample2_2Activity.actionActivity(this);
     }
-    public void sample2_3(View view){
+
+    public void sample2_3(View view) {
         Sample2_3Activity.actionActivity(this);
+    }
+
+    public void sample2_4(View view) {
+        Sample2_4Activity.actionActivity(this);
     }
 
 }

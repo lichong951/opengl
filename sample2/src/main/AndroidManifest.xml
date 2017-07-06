@@ -29,6 +29,18 @@
             android:label="@string/title_activity_sample2_3"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
+        <activity
+            android:name=".Sample2_4Activity"
+            android:label="@string/title_activity_sample2_4"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+
+        <provider
+            android:name=".MyContentProvider"
+            android:authorities="com.example.sample2.provider.student"
+            android:enabled="true"
+            android:exported="true">
+        </provider>
     </application>
 
 </manifest>
