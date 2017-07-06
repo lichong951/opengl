@@ -1,19 +1,19 @@
-The target system is: Android - 24 - mips64
+The target system is: Android - 21 - mips64
 The host system is: Darwin - 16.6.0 - x86_64
 Determining if the C compiler works passed with the following output:
 Change Dir: /Users/lichong/AndroidStudioProjects/OpenGL_Test/app/.externalNativeBuild/cmake/debug/mips64/CMakeFiles/CMakeTmp
 
-Run Build Command:"/Users/lichong/Library/Android/sdk/cmake/3.6.3155560/bin/ninja" "cmTC_bedd2"
-[1/2] Building C object CMakeFiles/cmTC_bedd2.dir/testCCompiler.c.o
-[2/2] Linking C executable cmTC_bedd2
+Run Build Command:"/Users/lichong/Library/Android/sdk/cmake/3.6.3155560/bin/ninja" "cmTC_16aa1"
+[1/2] Building C object CMakeFiles/cmTC_16aa1.dir/testCCompiler.c.o
+[2/2] Linking C executable cmTC_16aa1
 
 
 Detecting C compiler ABI info compiled with the following output:
 Change Dir: /Users/lichong/AndroidStudioProjects/OpenGL_Test/app/.externalNativeBuild/cmake/debug/mips64/CMakeFiles/CMakeTmp
 
-Run Build Command:"/Users/lichong/Library/Android/sdk/cmake/3.6.3155560/bin/ninja" "cmTC_c9ad9"
-[1/2] Building C object CMakeFiles/cmTC_c9ad9.dir/CMakeCCompilerABI.c.o
-[2/2] Linking C executable cmTC_c9ad9
+Run Build Command:"/Users/lichong/Library/Android/sdk/cmake/3.6.3155560/bin/ninja" "cmTC_921e3"
+[1/2] Building C object CMakeFiles/cmTC_921e3.dir/CMakeCCompilerABI.c.o
+[2/2] Linking C executable cmTC_921e3
 Android clang version 5.0.300080  (based on LLVM 5.0.300080)
 Target: mips64el-none-linux-android
 Thread model: posix
@@ -25,16 +25,16 @@ Candidate multilib: 32/mips-r1;@march=mips32
 Candidate multilib: 32/mips-r2;@march=mips32r2
 Candidate multilib: 32/mips-r6;@march=mips32r6
 Selected multilib: .;@march=mips64r6
- "/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/darwin-x86_64/lib/gcc/mips64el-linux-android/4.9.x/../../../../mips64el-linux-android/bin/ld" --sysroot=/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-24/arch-mips64 -pie --sysroot=/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-24/arch-mips64 --eh-frame-hdr -m elf64ltsmip -dynamic-linker /system/bin/linker64 -o cmTC_c9ad9 /Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-24/arch-mips64/usr/lib/../lib64/crtbegin_dynamic.o -L/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/5.0.300080/lib/linux/mips64el -L/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/darwin-x86_64/lib/gcc/mips64el-linux-android/4.9.x -L/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/darwin-x86_64/lib/gcc/mips64el-linux-android/4.9.x/../../../../mips64el-linux-android/lib/../lib64 -L/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-24/arch-mips64/usr/lib/../lib64 -L/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/darwin-x86_64/lib/gcc/mips64el-linux-android/4.9.x/../../../../mips64el-linux-android/lib -L/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-24/arch-mips64/usr/lib --exclude-libs libgcc.a --build-id --warn-shared-textrel --fatal-warnings --no-undefined -z noexecstack -z relro -z now --gc-sections -z nocopyreloc CMakeFiles/cmTC_c9ad9.dir/CMakeCCompilerABI.c.o -lgcc -ldl -lc -lgcc -ldl /Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-24/arch-mips64/usr/lib/../lib64/crtend_android.o
+ "/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/darwin-x86_64/lib/gcc/mips64el-linux-android/4.9.x/../../../../mips64el-linux-android/bin/ld" --sysroot=/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-21/arch-mips64 -pie --sysroot=/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-21/arch-mips64 --eh-frame-hdr -m elf64ltsmip -dynamic-linker /system/bin/linker64 -o cmTC_921e3 /Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-21/arch-mips64/usr/lib/../lib64/crtbegin_dynamic.o -L/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/5.0.300080/lib/linux/mips64el -L/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/darwin-x86_64/lib/gcc/mips64el-linux-android/4.9.x -L/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/darwin-x86_64/lib/gcc/mips64el-linux-android/4.9.x/../../../../mips64el-linux-android/lib/../lib64 -L/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-21/arch-mips64/usr/lib/../lib64 -L/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/darwin-x86_64/lib/gcc/mips64el-linux-android/4.9.x/../../../../mips64el-linux-android/lib -L/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-21/arch-mips64/usr/lib --exclude-libs libgcc.a --build-id --warn-shared-textrel --fatal-warnings --no-undefined -z noexecstack -z relro -z now --gc-sections -z nocopyreloc CMakeFiles/cmTC_921e3.dir/CMakeCCompilerABI.c.o -lgcc -ldl -lc -lgcc -ldl /Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-21/arch-mips64/usr/lib/../lib64/crtend_android.o
 
 
 Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(mips64el-linux-android-ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /Users/lichong/AndroidStudioProjects/OpenGL_Test/app/.externalNativeBuild/cmake/debug/mips64/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/Users/lichong/Library/Android/sdk/cmake/3.6.3155560/bin/ninja" "cmTC_c9ad9"]
-  ignore line: [[1/2] Building C object CMakeFiles/cmTC_c9ad9.dir/CMakeCCompilerABI.c.o]
-  ignore line: [[2/2] Linking C executable cmTC_c9ad9]
+  ignore line: [Run Build Command:"/Users/lichong/Library/Android/sdk/cmake/3.6.3155560/bin/ninja" "cmTC_921e3"]
+  ignore line: [[1/2] Building C object CMakeFiles/cmTC_921e3.dir/CMakeCCompilerABI.c.o]
+  ignore line: [[2/2] Linking C executable cmTC_921e3]
   ignore line: [Android clang version 5.0.300080  (based on LLVM 5.0.300080)]
   ignore line: [Target: mips64el-none-linux-android]
   ignore line: [Thread model: posix]
@@ -51,25 +51,25 @@ Parsed C implicit link information from above output:
   ignore line: [@march=mips32r6]
   ignore line: [Selected multilib: .]
   ignore line: [@march=mips64r6]
-  link line: [ "/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/darwin-x86_64/lib/gcc/mips64el-linux-android/4.9.x/../../../../mips64el-linux-android/bin/ld" --sysroot=/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-24/arch-mips64 -pie --sysroot=/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-24/arch-mips64 --eh-frame-hdr -m elf64ltsmip -dynamic-linker /system/bin/linker64 -o cmTC_c9ad9 /Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-24/arch-mips64/usr/lib/../lib64/crtbegin_dynamic.o -L/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/5.0.300080/lib/linux/mips64el -L/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/darwin-x86_64/lib/gcc/mips64el-linux-android/4.9.x -L/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/darwin-x86_64/lib/gcc/mips64el-linux-android/4.9.x/../../../../mips64el-linux-android/lib/../lib64 -L/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-24/arch-mips64/usr/lib/../lib64 -L/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/darwin-x86_64/lib/gcc/mips64el-linux-android/4.9.x/../../../../mips64el-linux-android/lib -L/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-24/arch-mips64/usr/lib --exclude-libs libgcc.a --build-id --warn-shared-textrel --fatal-warnings --no-undefined -z noexecstack -z relro -z now --gc-sections -z nocopyreloc CMakeFiles/cmTC_c9ad9.dir/CMakeCCompilerABI.c.o -lgcc -ldl -lc -lgcc -ldl /Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-24/arch-mips64/usr/lib/../lib64/crtend_android.o]
+  link line: [ "/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/darwin-x86_64/lib/gcc/mips64el-linux-android/4.9.x/../../../../mips64el-linux-android/bin/ld" --sysroot=/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-21/arch-mips64 -pie --sysroot=/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-21/arch-mips64 --eh-frame-hdr -m elf64ltsmip -dynamic-linker /system/bin/linker64 -o cmTC_921e3 /Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-21/arch-mips64/usr/lib/../lib64/crtbegin_dynamic.o -L/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/5.0.300080/lib/linux/mips64el -L/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/darwin-x86_64/lib/gcc/mips64el-linux-android/4.9.x -L/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/darwin-x86_64/lib/gcc/mips64el-linux-android/4.9.x/../../../../mips64el-linux-android/lib/../lib64 -L/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-21/arch-mips64/usr/lib/../lib64 -L/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/darwin-x86_64/lib/gcc/mips64el-linux-android/4.9.x/../../../../mips64el-linux-android/lib -L/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-21/arch-mips64/usr/lib --exclude-libs libgcc.a --build-id --warn-shared-textrel --fatal-warnings --no-undefined -z noexecstack -z relro -z now --gc-sections -z nocopyreloc CMakeFiles/cmTC_921e3.dir/CMakeCCompilerABI.c.o -lgcc -ldl -lc -lgcc -ldl /Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-21/arch-mips64/usr/lib/../lib64/crtend_android.o]
     arg [/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/darwin-x86_64/lib/gcc/mips64el-linux-android/4.9.x/../../../../mips64el-linux-android/bin/ld] ==> ignore
-    arg [--sysroot=/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-24/arch-mips64] ==> ignore
+    arg [--sysroot=/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-21/arch-mips64] ==> ignore
     arg [-pie] ==> ignore
-    arg [--sysroot=/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-24/arch-mips64] ==> ignore
+    arg [--sysroot=/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-21/arch-mips64] ==> ignore
     arg [--eh-frame-hdr] ==> ignore
     arg [-m] ==> ignore
     arg [elf64ltsmip] ==> ignore
     arg [-dynamic-linker] ==> ignore
     arg [/system/bin/linker64] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_c9ad9] ==> ignore
-    arg [/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-24/arch-mips64/usr/lib/../lib64/crtbegin_dynamic.o] ==> ignore
+    arg [cmTC_921e3] ==> ignore
+    arg [/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-21/arch-mips64/usr/lib/../lib64/crtbegin_dynamic.o] ==> ignore
     arg [-L/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/5.0.300080/lib/linux/mips64el] ==> dir [/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/5.0.300080/lib/linux/mips64el]
     arg [-L/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/darwin-x86_64/lib/gcc/mips64el-linux-android/4.9.x] ==> dir [/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/darwin-x86_64/lib/gcc/mips64el-linux-android/4.9.x]
     arg [-L/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/darwin-x86_64/lib/gcc/mips64el-linux-android/4.9.x/../../../../mips64el-linux-android/lib/../lib64] ==> dir [/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/darwin-x86_64/lib/gcc/mips64el-linux-android/4.9.x/../../../../mips64el-linux-android/lib/../lib64]
-    arg [-L/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-24/arch-mips64/usr/lib/../lib64] ==> dir [/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-24/arch-mips64/usr/lib/../lib64]
+    arg [-L/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-21/arch-mips64/usr/lib/../lib64] ==> dir [/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-21/arch-mips64/usr/lib/../lib64]
     arg [-L/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/darwin-x86_64/lib/gcc/mips64el-linux-android/4.9.x/../../../../mips64el-linux-android/lib] ==> dir [/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/darwin-x86_64/lib/gcc/mips64el-linux-android/4.9.x/../../../../mips64el-linux-android/lib]
-    arg [-L/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-24/arch-mips64/usr/lib] ==> dir [/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-24/arch-mips64/usr/lib]
+    arg [-L/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-21/arch-mips64/usr/lib] ==> dir [/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-21/arch-mips64/usr/lib]
     arg [--exclude-libs] ==> ignore
     arg [libgcc.a] ==> ignore
     arg [--build-id] ==> ignore
@@ -81,23 +81,23 @@ Parsed C implicit link information from above output:
     arg [-znow] ==> ignore
     arg [--gc-sections] ==> ignore
     arg [-znocopyreloc] ==> ignore
-    arg [CMakeFiles/cmTC_c9ad9.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [CMakeFiles/cmTC_921e3.dir/CMakeCCompilerABI.c.o] ==> ignore
     arg [-lgcc] ==> lib [gcc]
     arg [-ldl] ==> lib [dl]
     arg [-lc] ==> lib [c]
     arg [-lgcc] ==> lib [gcc]
     arg [-ldl] ==> lib [dl]
-    arg [/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-24/arch-mips64/usr/lib/../lib64/crtend_android.o] ==> ignore
+    arg [/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-21/arch-mips64/usr/lib/../lib64/crtend_android.o] ==> ignore
   remove lib [gcc]
   remove lib [gcc]
   collapse library dir [/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/5.0.300080/lib/linux/mips64el] ==> [/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/5.0.300080/lib/linux/mips64el]
   collapse library dir [/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/darwin-x86_64/lib/gcc/mips64el-linux-android/4.9.x] ==> [/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/darwin-x86_64/lib/gcc/mips64el-linux-android/4.9.x]
   collapse library dir [/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/darwin-x86_64/lib/gcc/mips64el-linux-android/4.9.x/../../../../mips64el-linux-android/lib/../lib64] ==> [/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/darwin-x86_64/mips64el-linux-android/lib64]
-  collapse library dir [/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-24/arch-mips64/usr/lib/../lib64] ==> [/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-24/arch-mips64/usr/lib64]
+  collapse library dir [/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-21/arch-mips64/usr/lib/../lib64] ==> [/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-21/arch-mips64/usr/lib64]
   collapse library dir [/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/darwin-x86_64/lib/gcc/mips64el-linux-android/4.9.x/../../../../mips64el-linux-android/lib] ==> [/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/darwin-x86_64/mips64el-linux-android/lib]
-  collapse library dir [/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-24/arch-mips64/usr/lib] ==> [/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-24/arch-mips64/usr/lib]
+  collapse library dir [/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-21/arch-mips64/usr/lib] ==> [/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-21/arch-mips64/usr/lib]
   implicit libs: [dl;c;dl]
-  implicit dirs: [/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/5.0.300080/lib/linux/mips64el;/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/darwin-x86_64/lib/gcc/mips64el-linux-android/4.9.x;/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/darwin-x86_64/mips64el-linux-android/lib64;/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-24/arch-mips64/usr/lib64;/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/darwin-x86_64/mips64el-linux-android/lib;/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-24/arch-mips64/usr/lib]
+  implicit dirs: [/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/5.0.300080/lib/linux/mips64el;/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/darwin-x86_64/lib/gcc/mips64el-linux-android/4.9.x;/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/darwin-x86_64/mips64el-linux-android/lib64;/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-21/arch-mips64/usr/lib64;/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/darwin-x86_64/mips64el-linux-android/lib;/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-21/arch-mips64/usr/lib]
   implicit fwks: []
 
 
@@ -106,9 +106,9 @@ Parsed C implicit link information from above output:
 Detecting C [-std=c11] compiler features compiled with the following output:
 Change Dir: /Users/lichong/AndroidStudioProjects/OpenGL_Test/app/.externalNativeBuild/cmake/debug/mips64/CMakeFiles/CMakeTmp
 
-Run Build Command:"/Users/lichong/Library/Android/sdk/cmake/3.6.3155560/bin/ninja" "cmTC_48a4e"
-[1/2] Building C object CMakeFiles/cmTC_48a4e.dir/feature_tests.c.o
-[2/2] Linking C executable cmTC_48a4e
+Run Build Command:"/Users/lichong/Library/Android/sdk/cmake/3.6.3155560/bin/ninja" "cmTC_e0b98"
+[1/2] Building C object CMakeFiles/cmTC_e0b98.dir/feature_tests.c.o
+[2/2] Linking C executable cmTC_e0b98
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -120,9 +120,9 @@ Run Build Command:"/Users/lichong/Library/Android/sdk/cmake/3.6.3155560/bin/ninj
 Detecting C [-std=c99] compiler features compiled with the following output:
 Change Dir: /Users/lichong/AndroidStudioProjects/OpenGL_Test/app/.externalNativeBuild/cmake/debug/mips64/CMakeFiles/CMakeTmp
 
-Run Build Command:"/Users/lichong/Library/Android/sdk/cmake/3.6.3155560/bin/ninja" "cmTC_ecc40"
-[1/2] Building C object CMakeFiles/cmTC_ecc40.dir/feature_tests.c.o
-[2/2] Linking C executable cmTC_ecc40
+Run Build Command:"/Users/lichong/Library/Android/sdk/cmake/3.6.3155560/bin/ninja" "cmTC_20959"
+[1/2] Building C object CMakeFiles/cmTC_20959.dir/feature_tests.c.o
+[2/2] Linking C executable cmTC_20959
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -134,9 +134,9 @@ Run Build Command:"/Users/lichong/Library/Android/sdk/cmake/3.6.3155560/bin/ninj
 Detecting C [-std=c90] compiler features compiled with the following output:
 Change Dir: /Users/lichong/AndroidStudioProjects/OpenGL_Test/app/.externalNativeBuild/cmake/debug/mips64/CMakeFiles/CMakeTmp
 
-Run Build Command:"/Users/lichong/Library/Android/sdk/cmake/3.6.3155560/bin/ninja" "cmTC_ee37d"
-[1/2] Building C object CMakeFiles/cmTC_ee37d.dir/feature_tests.c.o
-[2/2] Linking C executable cmTC_ee37d
+Run Build Command:"/Users/lichong/Library/Android/sdk/cmake/3.6.3155560/bin/ninja" "cmTC_5e864"
+[1/2] Building C object CMakeFiles/cmTC_5e864.dir/feature_tests.c.o
+[2/2] Linking C executable cmTC_5e864
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -146,17 +146,17 @@ Run Build Command:"/Users/lichong/Library/Android/sdk/cmake/3.6.3155560/bin/ninj
 Determining if the CXX compiler works passed with the following output:
 Change Dir: /Users/lichong/AndroidStudioProjects/OpenGL_Test/app/.externalNativeBuild/cmake/debug/mips64/CMakeFiles/CMakeTmp
 
-Run Build Command:"/Users/lichong/Library/Android/sdk/cmake/3.6.3155560/bin/ninja" "cmTC_f7976"
-[1/2] Building CXX object CMakeFiles/cmTC_f7976.dir/testCXXCompiler.cxx.o
-[2/2] Linking CXX executable cmTC_f7976
+Run Build Command:"/Users/lichong/Library/Android/sdk/cmake/3.6.3155560/bin/ninja" "cmTC_6aa40"
+[1/2] Building CXX object CMakeFiles/cmTC_6aa40.dir/testCXXCompiler.cxx.o
+[2/2] Linking CXX executable cmTC_6aa40
 
 
 Detecting CXX compiler ABI info compiled with the following output:
 Change Dir: /Users/lichong/AndroidStudioProjects/OpenGL_Test/app/.externalNativeBuild/cmake/debug/mips64/CMakeFiles/CMakeTmp
 
-Run Build Command:"/Users/lichong/Library/Android/sdk/cmake/3.6.3155560/bin/ninja" "cmTC_5e6d8"
-[1/2] Building CXX object CMakeFiles/cmTC_5e6d8.dir/CMakeCXXCompilerABI.cpp.o
-[2/2] Linking CXX executable cmTC_5e6d8
+Run Build Command:"/Users/lichong/Library/Android/sdk/cmake/3.6.3155560/bin/ninja" "cmTC_2aced"
+[1/2] Building CXX object CMakeFiles/cmTC_2aced.dir/CMakeCXXCompilerABI.cpp.o
+[2/2] Linking CXX executable cmTC_2aced
 Android clang version 5.0.300080  (based on LLVM 5.0.300080)
 Target: mips64el-none-linux-android
 Thread model: posix
@@ -168,16 +168,16 @@ Candidate multilib: 32/mips-r1;@march=mips32
 Candidate multilib: 32/mips-r2;@march=mips32r2
 Candidate multilib: 32/mips-r6;@march=mips32r6
 Selected multilib: .;@march=mips64r6
- "/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/darwin-x86_64/lib/gcc/mips64el-linux-android/4.9.x/../../../../mips64el-linux-android/bin/ld" --sysroot=/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-24/arch-mips64 -pie --sysroot=/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-24/arch-mips64 --eh-frame-hdr -m elf64ltsmip -dynamic-linker /system/bin/linker64 -o cmTC_5e6d8 /Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-24/arch-mips64/usr/lib/../lib64/crtbegin_dynamic.o -L/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/5.0.300080/lib/linux/mips64el -L/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/darwin-x86_64/lib/gcc/mips64el-linux-android/4.9.x -L/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/darwin-x86_64/lib/gcc/mips64el-linux-android/4.9.x/../../../../mips64el-linux-android/lib/../lib64 -L/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-24/arch-mips64/usr/lib/../lib64 -L/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/darwin-x86_64/lib/gcc/mips64el-linux-android/4.9.x/../../../../mips64el-linux-android/lib -L/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-24/arch-mips64/usr/lib --exclude-libs libgcc.a --build-id --warn-shared-textrel --fatal-warnings --no-undefined -z noexecstack -z relro -z now --gc-sections -z nocopyreloc CMakeFiles/cmTC_5e6d8.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc -lgcc -ldl -lc -lgcc -lgcc -ldl /Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-24/arch-mips64/usr/lib/../lib64/crtend_android.o
+ "/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/darwin-x86_64/lib/gcc/mips64el-linux-android/4.9.x/../../../../mips64el-linux-android/bin/ld" --sysroot=/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-21/arch-mips64 -pie --sysroot=/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-21/arch-mips64 --eh-frame-hdr -m elf64ltsmip -dynamic-linker /system/bin/linker64 -o cmTC_2aced /Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-21/arch-mips64/usr/lib/../lib64/crtbegin_dynamic.o -L/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/5.0.300080/lib/linux/mips64el -L/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/darwin-x86_64/lib/gcc/mips64el-linux-android/4.9.x -L/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/darwin-x86_64/lib/gcc/mips64el-linux-android/4.9.x/../../../../mips64el-linux-android/lib/../lib64 -L/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-21/arch-mips64/usr/lib/../lib64 -L/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/darwin-x86_64/lib/gcc/mips64el-linux-android/4.9.x/../../../../mips64el-linux-android/lib -L/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-21/arch-mips64/usr/lib --exclude-libs libgcc.a --build-id --warn-shared-textrel --fatal-warnings --no-undefined -z noexecstack -z relro -z now --gc-sections -z nocopyreloc CMakeFiles/cmTC_2aced.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc -lgcc -ldl -lc -lgcc -lgcc -ldl /Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-21/arch-mips64/usr/lib/../lib64/crtend_android.o
 
 
 Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(mips64el-linux-android-ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /Users/lichong/AndroidStudioProjects/OpenGL_Test/app/.externalNativeBuild/cmake/debug/mips64/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/Users/lichong/Library/Android/sdk/cmake/3.6.3155560/bin/ninja" "cmTC_5e6d8"]
-  ignore line: [[1/2] Building CXX object CMakeFiles/cmTC_5e6d8.dir/CMakeCXXCompilerABI.cpp.o]
-  ignore line: [[2/2] Linking CXX executable cmTC_5e6d8]
+  ignore line: [Run Build Command:"/Users/lichong/Library/Android/sdk/cmake/3.6.3155560/bin/ninja" "cmTC_2aced"]
+  ignore line: [[1/2] Building CXX object CMakeFiles/cmTC_2aced.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [[2/2] Linking CXX executable cmTC_2aced]
   ignore line: [Android clang version 5.0.300080  (based on LLVM 5.0.300080)]
   ignore line: [Target: mips64el-none-linux-android]
   ignore line: [Thread model: posix]
@@ -194,25 +194,25 @@ Parsed CXX implicit link information from above output:
   ignore line: [@march=mips32r6]
   ignore line: [Selected multilib: .]
   ignore line: [@march=mips64r6]
-  link line: [ "/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/darwin-x86_64/lib/gcc/mips64el-linux-android/4.9.x/../../../../mips64el-linux-android/bin/ld" --sysroot=/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-24/arch-mips64 -pie --sysroot=/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-24/arch-mips64 --eh-frame-hdr -m elf64ltsmip -dynamic-linker /system/bin/linker64 -o cmTC_5e6d8 /Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-24/arch-mips64/usr/lib/../lib64/crtbegin_dynamic.o -L/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/5.0.300080/lib/linux/mips64el -L/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/darwin-x86_64/lib/gcc/mips64el-linux-android/4.9.x -L/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/darwin-x86_64/lib/gcc/mips64el-linux-android/4.9.x/../../../../mips64el-linux-android/lib/../lib64 -L/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-24/arch-mips64/usr/lib/../lib64 -L/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/darwin-x86_64/lib/gcc/mips64el-linux-android/4.9.x/../../../../mips64el-linux-android/lib -L/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-24/arch-mips64/usr/lib --exclude-libs libgcc.a --build-id --warn-shared-textrel --fatal-warnings --no-undefined -z noexecstack -z relro -z now --gc-sections -z nocopyreloc CMakeFiles/cmTC_5e6d8.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc -lgcc -ldl -lc -lgcc -lgcc -ldl /Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-24/arch-mips64/usr/lib/../lib64/crtend_android.o]
+  link line: [ "/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/darwin-x86_64/lib/gcc/mips64el-linux-android/4.9.x/../../../../mips64el-linux-android/bin/ld" --sysroot=/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-21/arch-mips64 -pie --sysroot=/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-21/arch-mips64 --eh-frame-hdr -m elf64ltsmip -dynamic-linker /system/bin/linker64 -o cmTC_2aced /Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-21/arch-mips64/usr/lib/../lib64/crtbegin_dynamic.o -L/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/5.0.300080/lib/linux/mips64el -L/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/darwin-x86_64/lib/gcc/mips64el-linux-android/4.9.x -L/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/darwin-x86_64/lib/gcc/mips64el-linux-android/4.9.x/../../../../mips64el-linux-android/lib/../lib64 -L/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-21/arch-mips64/usr/lib/../lib64 -L/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/darwin-x86_64/lib/gcc/mips64el-linux-android/4.9.x/../../../../mips64el-linux-android/lib -L/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-21/arch-mips64/usr/lib --exclude-libs libgcc.a --build-id --warn-shared-textrel --fatal-warnings --no-undefined -z noexecstack -z relro -z now --gc-sections -z nocopyreloc CMakeFiles/cmTC_2aced.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc -lgcc -ldl -lc -lgcc -lgcc -ldl /Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-21/arch-mips64/usr/lib/../lib64/crtend_android.o]
     arg [/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/darwin-x86_64/lib/gcc/mips64el-linux-android/4.9.x/../../../../mips64el-linux-android/bin/ld] ==> ignore
-    arg [--sysroot=/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-24/arch-mips64] ==> ignore
+    arg [--sysroot=/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-21/arch-mips64] ==> ignore
     arg [-pie] ==> ignore
-    arg [--sysroot=/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-24/arch-mips64] ==> ignore
+    arg [--sysroot=/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-21/arch-mips64] ==> ignore
     arg [--eh-frame-hdr] ==> ignore
     arg [-m] ==> ignore
     arg [elf64ltsmip] ==> ignore
     arg [-dynamic-linker] ==> ignore
     arg [/system/bin/linker64] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_5e6d8] ==> ignore
-    arg [/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-24/arch-mips64/usr/lib/../lib64/crtbegin_dynamic.o] ==> ignore
+    arg [cmTC_2aced] ==> ignore
+    arg [/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-21/arch-mips64/usr/lib/../lib64/crtbegin_dynamic.o] ==> ignore
     arg [-L/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/5.0.300080/lib/linux/mips64el] ==> dir [/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/5.0.300080/lib/linux/mips64el]
     arg [-L/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/darwin-x86_64/lib/gcc/mips64el-linux-android/4.9.x] ==> dir [/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/darwin-x86_64/lib/gcc/mips64el-linux-android/4.9.x]
     arg [-L/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/darwin-x86_64/lib/gcc/mips64el-linux-android/4.9.x/../../../../mips64el-linux-android/lib/../lib64] ==> dir [/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/darwin-x86_64/lib/gcc/mips64el-linux-android/4.9.x/../../../../mips64el-linux-android/lib/../lib64]
-    arg [-L/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-24/arch-mips64/usr/lib/../lib64] ==> dir [/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-24/arch-mips64/usr/lib/../lib64]
+    arg [-L/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-21/arch-mips64/usr/lib/../lib64] ==> dir [/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-21/arch-mips64/usr/lib/../lib64]
     arg [-L/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/darwin-x86_64/lib/gcc/mips64el-linux-android/4.9.x/../../../../mips64el-linux-android/lib] ==> dir [/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/darwin-x86_64/lib/gcc/mips64el-linux-android/4.9.x/../../../../mips64el-linux-android/lib]
-    arg [-L/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-24/arch-mips64/usr/lib] ==> dir [/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-24/arch-mips64/usr/lib]
+    arg [-L/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-21/arch-mips64/usr/lib] ==> dir [/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-21/arch-mips64/usr/lib]
     arg [--exclude-libs] ==> ignore
     arg [libgcc.a] ==> ignore
     arg [--build-id] ==> ignore
@@ -224,7 +224,7 @@ Parsed CXX implicit link information from above output:
     arg [-znow] ==> ignore
     arg [--gc-sections] ==> ignore
     arg [-znocopyreloc] ==> ignore
-    arg [CMakeFiles/cmTC_5e6d8.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [CMakeFiles/cmTC_2aced.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
     arg [-lstdc++] ==> lib [stdc++]
     arg [-lm] ==> lib [m]
     arg [-lgcc] ==> lib [gcc]
@@ -234,7 +234,7 @@ Parsed CXX implicit link information from above output:
     arg [-lgcc] ==> lib [gcc]
     arg [-lgcc] ==> lib [gcc]
     arg [-ldl] ==> lib [dl]
-    arg [/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-24/arch-mips64/usr/lib/../lib64/crtend_android.o] ==> ignore
+    arg [/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-21/arch-mips64/usr/lib/../lib64/crtend_android.o] ==> ignore
   remove lib [gcc]
   remove lib [gcc]
   remove lib [gcc]
@@ -242,11 +242,11 @@ Parsed CXX implicit link information from above output:
   collapse library dir [/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/5.0.300080/lib/linux/mips64el] ==> [/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/5.0.300080/lib/linux/mips64el]
   collapse library dir [/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/darwin-x86_64/lib/gcc/mips64el-linux-android/4.9.x] ==> [/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/darwin-x86_64/lib/gcc/mips64el-linux-android/4.9.x]
   collapse library dir [/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/darwin-x86_64/lib/gcc/mips64el-linux-android/4.9.x/../../../../mips64el-linux-android/lib/../lib64] ==> [/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/darwin-x86_64/mips64el-linux-android/lib64]
-  collapse library dir [/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-24/arch-mips64/usr/lib/../lib64] ==> [/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-24/arch-mips64/usr/lib64]
+  collapse library dir [/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-21/arch-mips64/usr/lib/../lib64] ==> [/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-21/arch-mips64/usr/lib64]
   collapse library dir [/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/darwin-x86_64/lib/gcc/mips64el-linux-android/4.9.x/../../../../mips64el-linux-android/lib] ==> [/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/darwin-x86_64/mips64el-linux-android/lib]
-  collapse library dir [/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-24/arch-mips64/usr/lib] ==> [/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-24/arch-mips64/usr/lib]
+  collapse library dir [/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-21/arch-mips64/usr/lib] ==> [/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-21/arch-mips64/usr/lib]
   implicit libs: [stdc++;m;dl;c;dl]
-  implicit dirs: [/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/5.0.300080/lib/linux/mips64el;/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/darwin-x86_64/lib/gcc/mips64el-linux-android/4.9.x;/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/darwin-x86_64/mips64el-linux-android/lib64;/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-24/arch-mips64/usr/lib64;/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/darwin-x86_64/mips64el-linux-android/lib;/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-24/arch-mips64/usr/lib]
+  implicit dirs: [/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/lib64/clang/5.0.300080/lib/linux/mips64el;/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/darwin-x86_64/lib/gcc/mips64el-linux-android/4.9.x;/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/darwin-x86_64/mips64el-linux-android/lib64;/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-21/arch-mips64/usr/lib64;/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/darwin-x86_64/mips64el-linux-android/lib;/Users/lichong/Library/Android/sdk/ndk-bundle/platforms/android-21/arch-mips64/usr/lib]
   implicit fwks: []
 
 
@@ -255,9 +255,9 @@ Parsed CXX implicit link information from above output:
 Detecting CXX [-std=c++14] compiler features compiled with the following output:
 Change Dir: /Users/lichong/AndroidStudioProjects/OpenGL_Test/app/.externalNativeBuild/cmake/debug/mips64/CMakeFiles/CMakeTmp
 
-Run Build Command:"/Users/lichong/Library/Android/sdk/cmake/3.6.3155560/bin/ninja" "cmTC_f70db"
-[1/2] Building CXX object CMakeFiles/cmTC_f70db.dir/feature_tests.cxx.o
-[2/2] Linking CXX executable cmTC_f70db
+Run Build Command:"/Users/lichong/Library/Android/sdk/cmake/3.6.3155560/bin/ninja" "cmTC_edc43"
+[1/2] Building CXX object CMakeFiles/cmTC_edc43.dir/feature_tests.cxx.o
+[2/2] Linking CXX executable cmTC_edc43
 
 
     Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
@@ -322,9 +322,9 @@ Run Build Command:"/Users/lichong/Library/Android/sdk/cmake/3.6.3155560/bin/ninj
 Detecting CXX [-std=c++11] compiler features compiled with the following output:
 Change Dir: /Users/lichong/AndroidStudioProjects/OpenGL_Test/app/.externalNativeBuild/cmake/debug/mips64/CMakeFiles/CMakeTmp
 
-Run Build Command:"/Users/lichong/Library/Android/sdk/cmake/3.6.3155560/bin/ninja" "cmTC_476f9"
-[1/2] Building CXX object CMakeFiles/cmTC_476f9.dir/feature_tests.cxx.o
-[2/2] Linking CXX executable cmTC_476f9
+Run Build Command:"/Users/lichong/Library/Android/sdk/cmake/3.6.3155560/bin/ninja" "cmTC_2010c"
+[1/2] Building CXX object CMakeFiles/cmTC_2010c.dir/feature_tests.cxx.o
+[2/2] Linking CXX executable cmTC_2010c
 
 
     Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
@@ -389,9 +389,9 @@ Run Build Command:"/Users/lichong/Library/Android/sdk/cmake/3.6.3155560/bin/ninj
 Detecting CXX [-std=c++98] compiler features compiled with the following output:
 Change Dir: /Users/lichong/AndroidStudioProjects/OpenGL_Test/app/.externalNativeBuild/cmake/debug/mips64/CMakeFiles/CMakeTmp
 
-Run Build Command:"/Users/lichong/Library/Android/sdk/cmake/3.6.3155560/bin/ninja" "cmTC_03772"
-[1/2] Building CXX object CMakeFiles/cmTC_03772.dir/feature_tests.cxx.o
-[2/2] Linking CXX executable cmTC_03772
+Run Build Command:"/Users/lichong/Library/Android/sdk/cmake/3.6.3155560/bin/ninja" "cmTC_9ba37"
+[1/2] Building CXX object CMakeFiles/cmTC_9ba37.dir/feature_tests.cxx.o
+[2/2] Linking CXX executable cmTC_9ba37
 
 
     Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers

@@ -5,9 +5,9 @@ set(CMAKE_HOST_SYSTEM_PROCESSOR "x86_64")
 
 include("/Users/lichong/Library/Android/sdk/ndk-bundle/build/cmake/android.toolchain.cmake")
 
-set(CMAKE_SYSTEM "Android-24")
+set(CMAKE_SYSTEM "Android-14")
 set(CMAKE_SYSTEM_NAME "Android")
-set(CMAKE_SYSTEM_VERSION "24")
+set(CMAKE_SYSTEM_VERSION "14")
 set(CMAKE_SYSTEM_PROCESSOR "armv5te")
 
 set(CMAKE_CROSSCOMPILING "TRUE")
