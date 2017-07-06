@@ -45,6 +45,7 @@ public class Sample2_2Activity extends AppCompatActivity {
 
         mp = new MediaPlayer(); // 创建MediaPlayer实例对象
         try {
+            //把工程OpenGL——Test／mediaFiles／gsls.map3拷贝到android设备/sdcard目录下
             mp.setDataSource("/sdcard/gsls.mp3"); // 为MediaPlayer设置要播放文件资源
             mp.prepare(); // MediaPlayer进行缓冲准备
         } catch (Exception e) {
