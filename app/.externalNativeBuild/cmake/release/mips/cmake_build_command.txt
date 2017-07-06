@@ -1,0 +1,15 @@
+Executable : /Users/lichong/Library/Android/sdk/cmake/3.6.3155560/bin/cmake
+arguments : 
+-H/Users/lichong/AndroidStudioProjects/OpenGL_Test/app
+-B/Users/lichong/AndroidStudioProjects/OpenGL_Test/app/.externalNativeBuild/cmake/release/mips
+-GAndroid Gradle - Ninja
+-DANDROID_ABI=mips
+-DANDROID_NDK=/Users/lichong/Library/Android/sdk/ndk-bundle
+-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=/Users/lichong/AndroidStudioProjects/OpenGL_Test/app/build/intermediates/cmake/release/obj/mips
+-DCMAKE_BUILD_TYPE=Release
+-DCMAKE_MAKE_PROGRAM=/Users/lichong/Library/Android/sdk/cmake/3.6.3155560/bin/ninja
+-DCMAKE_TOOLCHAIN_FILE=/Users/lichong/Library/Android/sdk/ndk-bundle/build/cmake/android.toolchain.cmake
+-DANDROID_PLATFORM=android-24
+-DCMAKE_CXX_FLAGS=-frtti -fexceptions
+jvmArgs : 
+
