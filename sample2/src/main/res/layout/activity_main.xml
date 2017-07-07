@@ -47,17 +47,25 @@
             android:onClick="sample2_6"
             android:text="Sample2_6:访问手机中的文件夹"
             />
+
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="sample2_7"
             android:text="Sample2_7:读取assets文件夹下的内容"
             />
-<Button
+
+        <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="sample2_8"
             android:text="Sample2_8:2D动画炮弹爆炸"
+            />
+<Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="sample2_9_Client"
+            android:text="Sample2_9:socket客户端"
             />
 
     </LinearLayout>

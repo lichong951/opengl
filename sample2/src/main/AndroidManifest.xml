@@ -57,6 +57,11 @@
             android:label="@string/title_activity_sample2_8"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
+        <activity
+            android:name=".Sample2_9ClientActivity"
+            android:label="@string/title_activity_sample2_9_client"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
     </application>
 
 </manifest>
