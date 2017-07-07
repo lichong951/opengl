@@ -36,6 +36,12 @@
         android:text="Sample2_5:访问SD卡中的文件"
         android:onClick="sample2_5"
         />
+<Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sample2_6:访问手机中的文件夹"
+        android:onClick="sample2_6"
+        />
 
 </LinearLayout>
 

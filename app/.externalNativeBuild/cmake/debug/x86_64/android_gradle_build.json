@@ -1,9 +1,9 @@
 
 {
-	"buildFiles" : [ "/Users/smart/AndroidStudioProjects/OpenGL/app/CMakeLists.txt" ],
+	"buildFiles" : [ "/Users/lichong/AndroidStudioProjects/OpenGL_Test/app/CMakeLists.txt" ],
 	"cleanCommands" : 
 	[
-		"/Users/smart/Downloads/androidsdk/cmake/3.6.3155560/bin/cmake --build /Users/smart/AndroidStudioProjects/OpenGL/app/.externalNativeBuild/cmake/debug/x86_64 --target clean"
+		"/Users/lichong/Library/Android/sdk/cmake/3.6.3155560/bin/cmake --build /Users/lichong/AndroidStudioProjects/OpenGL_Test/app/.externalNativeBuild/cmake/debug/x86_64 --target clean"
 	],
 	"cppFileExtensions" : [ "cpp" ],
 	"libraries" : 
@@ -12,27 +12,27 @@
 		{
 			"abi" : "x86_64",
 			"artifactName" : "native-lib",
-			"buildCommand" : "/Users/smart/Downloads/androidsdk/cmake/3.6.3155560/bin/cmake --build /Users/smart/AndroidStudioProjects/OpenGL/app/.externalNativeBuild/cmake/debug/x86_64 --target native-lib",
+			"buildCommand" : "/Users/lichong/Library/Android/sdk/cmake/3.6.3155560/bin/cmake --build /Users/lichong/AndroidStudioProjects/OpenGL_Test/app/.externalNativeBuild/cmake/debug/x86_64 --target native-lib",
 			"buildType" : "debug",
 			"files" : 
 			[
 				
 				{
-					"flags" : "  --target=x86_64-none-linux-android --gcc-toolchain=/Users/smart/Downloads/androidsdk/ndk-bundle/toolchains/x86_64-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/smart/Downloads/androidsdk/ndk-bundle/platforms/android-21/arch-x86_64  -Dnative_lib_EXPORTS -isystem /Users/smart/Downloads/androidsdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem /Users/smart/Downloads/androidsdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/libs/x86_64/include -isystem /Users/smart/Downloads/androidsdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include/backward  -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security  -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security  -frtti -fexceptions -O0 -fno-limit-debug-info -O0 -fno-limit-debug-info  -fPIC    -c ",
-					"src" : "/Users/smart/AndroidStudioProjects/OpenGL/app/src/main/cpp/native-lib.cpp",
-					"workingDirectory" : "/Users/smart/AndroidStudioProjects/OpenGL/app/.externalNativeBuild/cmake/debug/x86_64"
+					"flags" : "  --target=x86_64-none-linux-android --gcc-toolchain=/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/x86_64-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/lichong/Library/Android/sdk/ndk-bundle/sysroot  -Dnative_lib_EXPORTS -isystem /Users/lichong/Library/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem /Users/lichong/Library/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/libs/x86_64/include -isystem /Users/lichong/Library/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include/backward  -isystem /Users/lichong/Library/Android/sdk/ndk-bundle/sysroot/usr/include/x86_64-linux-android -D__ANDROID_API__=21 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security  -frtti -fexceptions -O0 -fno-limit-debug-info  -fPIC    -c ",
+					"src" : "/Users/lichong/AndroidStudioProjects/OpenGL_Test/app/src/main/cpp/native-lib.cpp",
+					"workingDirectory" : "/Users/lichong/AndroidStudioProjects/OpenGL_Test/app/.externalNativeBuild/cmake/debug/x86_64"
 				}
 			],
-			"output" : "/Users/smart/AndroidStudioProjects/OpenGL/app/build/intermediates/cmake/debug/obj/x86_64/libnative-lib.so",
-			"toolchain" : "2664040848035451457"
+			"output" : "/Users/lichong/AndroidStudioProjects/OpenGL_Test/app/build/intermediates/cmake/debug/obj/x86_64/libnative-lib.so",
+			"toolchain" : "15449373719648412712"
 		}
 	},
 	"toolchains" : 
 	{
-		"2664040848035451457" : 
+		"15449373719648412712" : 
 		{
-			"cCompilerExecutable" : "/Users/smart/Downloads/androidsdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang",
-			"cppCompilerExecutable" : "/Users/smart/Downloads/androidsdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++"
+			"cCompilerExecutable" : "/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang",
+			"cppCompilerExecutable" : "/Users/lichong/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++"
 		}
 	}
 }
