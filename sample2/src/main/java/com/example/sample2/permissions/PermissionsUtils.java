@@ -12,7 +12,10 @@ public class PermissionsUtils {
     private static final int REQUEST_EXTERNAL_STORAGE = 1;
     private static String[] PERMISSIONS_STORAGE = {
             "android.permission.READ_EXTERNAL_STORAGE",
-            "android.permission.WRITE_EXTERNAL_STORAGE" };
+            "android.permission.WRITE_EXTERNAL_STORAGE"
+            ,"android.permission.BLUETOOTH_ADMIN"
+            ,"android.permission.BLUETOOTH"
+    };
     public static void verifyStoragePermissions(Activity activity) {
 
         try {

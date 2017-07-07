@@ -4,6 +4,8 @@
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
 
     <application
         android:allowBackup="true"
@@ -60,6 +62,23 @@
         <activity
             android:name=".Sample2_9ClientActivity"
             android:label="@string/title_activity_sample2_9_client"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name=".Sample2_10Activity"
+            android:label="@string/title_activity_sample2_10"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+
+        <service
+            android:name=".MyService"
+            android:enabled="true"
+            android:exported="true">
+        </service>
+
+        <activity
+            android:name=".MyDeviceListActivity"
+            android:label="@string/title_activity_my_device_list"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
     </application>

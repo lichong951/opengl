@@ -61,11 +61,18 @@
             android:onClick="sample2_8"
             android:text="Sample2_8:2D动画炮弹爆炸"
             />
-<Button
+
+        <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="sample2_9_Client"
             android:text="Sample2_9:socket客户端"
+            />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="sample2_10"
+            android:text="Sample2_10:蓝牙通信"
             />
 
     </LinearLayout>
