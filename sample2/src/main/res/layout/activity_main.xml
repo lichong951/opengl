@@ -6,43 +6,54 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.sample2.MainActivity">
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    >
 
-    <Button
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Sample2_2:简易音乐播放器"
-        android:onClick="sample2_2"
-        />
-<Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Sample2_3:Preferences 记录上次访问时间记录"
-        android:onClick="sample2_3"
-        />
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Sample2_4:SQL数据库简单案例"
-        android:onClick="sample2_4"
-        />
-<Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Sample2_5:访问SD卡中的文件"
-        android:onClick="sample2_5"
-        />
-<Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Sample2_6:访问手机中的文件夹"
-        android:onClick="sample2_6"
-        />
+        android:orientation="vertical"
+        >
 
-</LinearLayout>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="sample2_2"
+            android:text="Sample2_2:简易音乐播放器"
+            />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="sample2_3"
+            android:text="Sample2_3:Preferences 记录上次访问时间记录"
+            />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="sample2_4"
+            android:text="Sample2_4:SQL数据库简单案例"
+            />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="sample2_5"
+            android:text="Sample2_5:访问SD卡中的文件"
+            />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="sample2_6"
+            android:text="Sample2_6:访问手机中的文件夹"
+            />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="sample2_7"
+            android:text="Sample2_7:读取assets文件夹下的内容"
+            />
+
+    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
