@@ -46,6 +46,13 @@ public class SixPointedStar {
         initShader(mv);
 
     }
+    public SixPointedStar(MySurfaceView2 mv, float r, float R, float z) {
+        //调用初始化顶点数据的initVertexData方法
+        initVertexData(R,r,z);
+        //调用初始化着色器的intShader方法
+        initShader(mv);
+
+    }
     //自定义初始化顶点数据的initVertexData方法
     public void initVertexData(float R,float r,float z){
         List<Float> flist=new ArrayList<Float>();
@@ -132,6 +139,21 @@ public class SixPointedStar {
         //获取程序中总变换矩阵引用id
         muMVPMatrixHandle = GLES20.glGetUniformLocation(mProgram, "uMVPMatrix");
     }
+     public void initShader(MySurfaceView2 mv){
+        //加载顶点着色器的脚本内容
+        mVertexShader= ShaderUtil.loadFromAssetsFile("vertex.sh", mv.getResources());
+        //加载片元着色器的脚本内容
+        mFragmentShader=ShaderUtil.loadFromAssetsFile("frag.sh", mv.getResources());
+        //基于顶点着色器与片元着色器创建程序
+        mProgram = ShaderUtil.createProgram(mVertexShader, mFragmentShader);
+        //获取程序中顶点位置属性引用id
+        maPositionHandle= GLES20.glGetAttribLocation(mProgram,"aPosition");
+        //获取程序中顶点颜色属性引用id
+        maColorHandle=GLES20.glGetAttribLocation(mProgram,"aColor");
+        //获取程序中总变换矩阵引用id
+        muMVPMatrixHandle = GLES20.glGetUniformLocation(mProgram, "uMVPMatrix");
+    }
+
     public void drawSelf(){
         //制定使用某套shader程序
         GLES20.glUseProgram(mProgram);

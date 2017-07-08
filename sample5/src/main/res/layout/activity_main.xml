@@ -17,6 +17,12 @@
             android:text="Sample5_1:正交投影六角星"
             android:onClick="sample5_1"
             />
+<Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sample5_2:透视投影六角星"
+            android:onClick="sample5_2"
+            />
 
     </LinearLayout>
 
