@@ -23,6 +23,10 @@
         <activity
             android:name=".Sample5_2_Activity"
             android:label="@string/title_activity_sample5_2_"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Sample5_3_Activity"
+            android:label="@string/title_activity_sample5_3_"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
