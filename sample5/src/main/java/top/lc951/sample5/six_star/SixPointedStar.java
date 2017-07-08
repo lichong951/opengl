@@ -1,9 +1,7 @@
-package com.example.sample3.six_star;
+package top.lc951.sample5.six_star;
 
 import android.opengl.GLES20;
 import android.opengl.Matrix;
-
-import com.example.sample3.utils.ShaderUtil;
 
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
@@ -11,7 +9,8 @@ import java.nio.FloatBuffer;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.example.sample3.utils.ShaderUtil.createProgram;
+import top.lc951.sample5.utils.ShaderUtil;
+
 
 /**
  * @author lichong_951@163.com
@@ -125,7 +124,7 @@ public class SixPointedStar {
         //加载片元着色器的脚本内容
         mFragmentShader=ShaderUtil.loadFromAssetsFile("frag.sh", mv.getResources());
         //基于顶点着色器与片元着色器创建程序
-        mProgram = createProgram(mVertexShader, mFragmentShader);
+        mProgram = ShaderUtil.createProgram(mVertexShader, mFragmentShader);
         //获取程序中顶点位置属性引用id
         maPositionHandle= GLES20.glGetAttribLocation(mProgram,"aPosition");
         //获取程序中顶点颜色属性引用id

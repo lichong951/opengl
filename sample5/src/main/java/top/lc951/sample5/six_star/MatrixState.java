@@ -1,4 +1,4 @@
-package com.example.sample3.six_star;
+package top.lc951.sample5.six_star;
 
 import android.opengl.Matrix;
 

@@ -1,4 +1,4 @@
-package com.example.sample3.six_star;
+package top.lc951.sample5.six_star;
 
 import android.content.Context;
 import android.opengl.GLES20;
@@ -50,7 +50,7 @@ public class MySurfaceView extends GLSurfaceView {
         mPreviousX = x;//记录触控笔位置
         return true;
     }
-    private class SceneRenderer implements GLSurfaceView.Renderer{
+    private class SceneRenderer implements Renderer{
         SixPointedStar[] ha=new SixPointedStar[6];//六角星数组
         public void onDrawFrame(GL10 gl){
             //清除深度缓冲与颜色缓冲
