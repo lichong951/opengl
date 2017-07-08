@@ -18,6 +18,12 @@
             android:text="Sample3_1:三角形"
             android:onClick="sample3_1"
             />
+<Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sample3_2:正交投影六角星"
+            android:onClick="sample3_2"
+            />
 
     </LinearLayout>
 

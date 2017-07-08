@@ -1,4 +1,4 @@
-# Install script for directory: /Users/lichong/AndroidStudioProjects/OpenGL_Test/app
+# Install script for directory: /Users/smart/AndroidStudioProjects/OpenGL/app
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/lichong/AndroidStudioProjects/OpenGL_Test/app/.externalNativeBuild/cmake/debug/arm64-v8a/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/smart/AndroidStudioProjects/OpenGL/app/.externalNativeBuild/cmake/debug/arm64-v8a/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

@@ -3,6 +3,8 @@ package com.example.sample3.triangle;
 import android.opengl.GLES20;
 import android.opengl.Matrix;
 
+import com.example.sample3.utils.ShaderUtil;
+
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.FloatBuffer;
@@ -73,7 +75,7 @@ public class Triangle {
     public void initShader(MyTDView mv)
     {
         //加载顶点着色器的脚本内容
-        mVertexShader=ShaderUtil.loadFromAssetsFile("vertex.sh", mv.getResources());
+        mVertexShader= ShaderUtil.loadFromAssetsFile("vertex.sh", mv.getResources());
         //加载片元着色器的脚本内容
         mFragmentShader=ShaderUtil.loadFromAssetsFile("frag.sh", mv.getResources());
         //基于顶点着色器与片元着色器创建程序

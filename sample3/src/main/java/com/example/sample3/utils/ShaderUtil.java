@@ -1,14 +1,11 @@
-package com.example.sample3.triangle;
+package com.example.sample3.utils;
 
 import android.content.res.Resources;
 import android.opengl.GLES20;
 import android.util.Log;
 
-import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
-
-import static android.icu.lang.UCharacter.GraphemeClusterBreak.L;
 
 /**
  * Created by lichong on 2017/7/7.
