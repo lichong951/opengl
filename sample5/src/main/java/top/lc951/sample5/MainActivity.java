@@ -31,12 +31,19 @@ public class MainActivity extends AppCompatActivity {
         Sample5_4_Activity.actionActivity(this);
 
     }
+
     public void sample5_5(View view) {
         Sample5_5_Activity.actionActivity(this);
 
     }
+
     public void sample5_6(View view) {
         Sample5_6_Activity.actionActivity(this);
+
+    }
+
+    public void sample5_7(View view) {
+        Sample5_7_Activity.actionActivity(this);
 
     }
 

@@ -54,6 +54,12 @@
             android:onClick="sample5_6"
             android:text="Sample5_6:点与线段绘制方式"
             />
+<Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="sample5_7"
+            android:text="Sample5_7:三角形条带"
+            />
 
     </LinearLayout>
 
