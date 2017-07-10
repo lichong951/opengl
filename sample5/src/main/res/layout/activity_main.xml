@@ -45,7 +45,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="sample5_5"
-            android:text="Sample5_4:缩放-正方体2"
+            android:text="Sample5_5:缩放-正方体2"
+            />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="sample5_6"
+            android:text="Sample5_6:点与线段绘制方式"
             />
 
     </LinearLayout>
