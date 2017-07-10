@@ -82,6 +82,12 @@
             android:onClick="sample5_10"
             android:text="Sample5_10:视角设置"
             />
+       <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="sample5_11"
+            android:text="Sample5_11:卷绕和背面裁剪"
+            />
 
     </LinearLayout>
 

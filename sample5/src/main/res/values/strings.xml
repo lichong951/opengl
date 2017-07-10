@@ -10,4 +10,5 @@
     <string name="title_activity_sample5_8_">非连续三角形构成物体</string>
     <string name="title_activity_sample5_9_">Sample5_9_Activity</string>
     <string name="title_activity_sample5_10_">视角设置</string>
+    <string name="title_activity_sample5_11_">卷绕和背面裁剪</string>
 </resources>
