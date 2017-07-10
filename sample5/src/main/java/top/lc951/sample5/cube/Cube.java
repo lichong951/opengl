@@ -41,6 +41,12 @@ public class Cube {
         //初始化shader
         initShader(mv);
     }
+ public Cube(top.lc951.sample5.cube2.MySurfaceView mv){
+//初始化顶点坐标与着色数据
+        initVertexData();
+        //初始化shader
+        initShader(mv);
+    }
 
     //初始化顶点坐标与着色数据的方法
     public void initVertexData(){
@@ -248,6 +254,22 @@ public class Cube {
     }
     //初始化shader
     public void initShader(top.lc951.sample5.cube1.MySurfaceView mv)
+    {
+        //加载顶点着色器的脚本内容
+        mVertexShader= ShaderUtil.loadFromAssetsFile("vertex.sh", mv.getResources());
+        //加载片元着色器的脚本内容
+        mFragmentShader=ShaderUtil.loadFromAssetsFile("frag.sh", mv.getResources());
+        //基于顶点着色器与片元着色器创建程序
+        mProgram = ShaderUtil.createProgram(mVertexShader, mFragmentShader);
+        //获取程序中顶点位置属性引用id
+        maPositionHandle = GLES20.glGetAttribLocation(mProgram, "aPosition");
+        //获取程序中顶点颜色属性引用id
+        maColorHandle= GLES20.glGetAttribLocation(mProgram, "aColor");
+        //获取程序中总变换矩阵引用id
+        muMVPMatrixHandle = GLES20.glGetUniformLocation(mProgram, "uMVPMatrix");
+    }
+ //初始化shader
+    public void initShader(top.lc951.sample5.cube2.MySurfaceView mv)
     {
         //加载顶点着色器的脚本内容
         mVertexShader= ShaderUtil.loadFromAssetsFile("vertex.sh", mv.getResources());

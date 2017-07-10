@@ -33,11 +33,19 @@
             android:onClick="sample5_3"
             android:text="Sample5_3:平移-正方体"
             />
+
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="sample5_4"
             android:text="Sample5_4:旋转-正方体1"
+            />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="sample5_5"
+            android:text="Sample5_4:缩放-正方体2"
             />
 
     </LinearLayout>
