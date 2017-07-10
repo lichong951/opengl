@@ -5,11 +5,10 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.Window;
 import android.view.WindowManager;
 
-import top.lc951.sample5.six_star.MySurfaceView;
+import top.lc951.sample5.six_star1.MySurfaceView;
 
 public class Sample5_1_Activity extends AppCompatActivity {
     private MySurfaceView mGLSurfaceView;

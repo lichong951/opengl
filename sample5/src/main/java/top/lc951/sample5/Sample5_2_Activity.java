@@ -8,11 +8,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Window;
 import android.view.WindowManager;
 
-import top.lc951.sample5.six_star.MySurfaceView2;
+import top.lc951.sample5.six_star2.MySurfaceView;
 
 public class Sample5_2_Activity extends AppCompatActivity {
 
-    private MySurfaceView2 mGLSurfaceView;
+    private MySurfaceView mGLSurfaceView;
 
     public static void actionActivity(Context context){
             context.startActivity(new Intent(context, Sample5_2_Activity.class));
@@ -29,7 +29,7 @@ public class Sample5_2_Activity extends AppCompatActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         //初始化GLSurfaceView
-        mGLSurfaceView = new MySurfaceView2(this);
+        mGLSurfaceView = new MySurfaceView(this);
 
         //切换到主界面
         setContentView(mGLSurfaceView);

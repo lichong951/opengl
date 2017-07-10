@@ -1,4 +1,4 @@
-package top.lc951.sample5.six_star;
+package top.lc951.sample5.six_star2;
 
 import android.content.Context;
 import android.opengl.GLES20;
@@ -7,6 +7,7 @@ import android.view.MotionEvent;
 
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
+
 
 /**
  * @author lichong_951@163.com
@@ -66,12 +67,10 @@ public class MySurfaceView extends GLSurfaceView {
             GLES20.glViewport(0, 0, width, height);
             //计算GLSurfaceView的宽高比
             float ratio= (float) width / height;
-            //设置平行投影
-            MatrixState.setProjectOrtho(-ratio,ratio,-1,1,1,10);
+            //设置透视投影
+            MatrixState.setProjectFrustum(-ratio*0.4f, ratio*0.4f, -1*0.4f, 1*0.4f, 1, 50);
             //调用此方法产生摄像机9参数位置矩阵
-            MatrixState.setCamera(0, 0, 3f,
-                    0, 0, 0f,
-                    0f, 1.0f, 0.0f);
+            MatrixState.setCamera(0,0,6,0f,0f,0f,0f,1.0f,0.0f);
         }
         @Override
         public void onSurfaceCreated(GL10 gl, EGLConfig config) {
@@ -79,7 +78,7 @@ public class MySurfaceView extends GLSurfaceView {
             GLES20.glClearColor(0.5f,0.5f,0.5f, 1.0f);
             //创建六角星数组中的各个对象
             for(int i=0;i<ha.length;i++){
-                ha[i]=new SixPointedStar(MySurfaceView.this,0.2f,0.5f,-0.3f*i);
+                ha[i] = new SixPointedStar(MySurfaceView.this, 0.4f, 1.0f,-1.0f * i);
             }
             //打开深度检测
             GLES20.glEnable(GLES20.GL_DEPTH_TEST);
