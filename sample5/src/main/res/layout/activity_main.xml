@@ -60,6 +60,12 @@
             android:onClick="sample5_7"
             android:text="Sample5_7:三角形条带"
             />
+<Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="sample5_8"
+            android:text="Sample5_8:非连续三角形构成物体"
+            />
 
     </LinearLayout>
 
