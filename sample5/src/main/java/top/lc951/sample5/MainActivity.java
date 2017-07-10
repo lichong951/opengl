@@ -11,16 +11,24 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
+
     public void sample5_1(View view) {
         Sample5_1_Activity.actionActivity(this);
 
     }
+
     public void sample5_2(View view) {
         Sample5_2_Activity.actionActivity(this);
 
     }
-public void sample5_3(View view) {
+
+    public void sample5_3(View view) {
         Sample5_3_Activity.actionActivity(this);
+
+    }
+
+    public void sample5_4(View view) {
+        Sample5_4_Activity.actionActivity(this);
 
     }
 

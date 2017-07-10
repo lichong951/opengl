@@ -47,6 +47,11 @@ public class MatrixState {
     {
         Matrix.translateM(currMatrix, 0, x, y, z);
     }
+    // 设置绕xyz轴移动
+    /** 旋转 正方体 sample 5-4*/
+    public static void rotate(float angle, float x, float y, float z) {
+        Matrix.rotateM(currMatrix, 0, angle, x, y, z);
+    }
     //设置摄像机
     static ByteBuffer llbb= ByteBuffer.allocateDirect(3*4);
     static float[] cameraLocation=new float[3];//摄像机位置

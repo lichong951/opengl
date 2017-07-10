@@ -2,32 +2,42 @@
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" tools:context="top.lc951.sample5.MainActivity">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="top.lc951.sample5.MainActivity">
 
     <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_width="match_parent"
         >
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Sample5_1:正交投影六角星"
             android:onClick="sample5_1"
+            android:text="Sample5_1:正交投影六角星"
             />
-    <Button
+
+        <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Sample5_2:透视投影六角星"
             android:onClick="sample5_2"
+            android:text="Sample5_2:透视投影六角星"
             />
-<Button
+
+        <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Sample5_3:平移-正方体"
             android:onClick="sample5_3"
+            android:text="Sample5_3:平移-正方体"
+            />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="sample5_4"
+            android:text="Sample5_4:旋转-正方体1"
             />
 
     </LinearLayout>
