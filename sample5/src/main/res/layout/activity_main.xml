@@ -8,10 +8,11 @@
     tools:context="top.lc951.sample5.MainActivity">
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="368dp"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        >
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="8dp">
 
         <Button
             android:layout_width="match_parent"
@@ -54,23 +55,32 @@
             android:onClick="sample5_6"
             android:text="Sample5_6:点与线段绘制方式"
             />
-<Button
+
+        <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="sample5_7"
             android:text="Sample5_7:三角形条带"
             />
-<Button
+
+        <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="sample5_8"
             android:text="Sample5_8:非连续三角形构成物体"
             />
-<Button
+
+        <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="sample5_9"
             android:text="Sample5_9:索引法绘制"
+            />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="sample5_10"
+            android:text="Sample5_10:视角设置"
             />
 
     </LinearLayout>
