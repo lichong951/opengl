@@ -2,4 +2,5 @@
     <string name="app_name">Sample6</string>
     <string name="title_activity_sample6_1_">球</string>
     <string name="title_activity_sample6_2_">Sample6_2_Activity</string>
+    <string name="title_activity_sample6_3_">Sample6_3_Activity</string>
 </resources>
