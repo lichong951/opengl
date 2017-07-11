@@ -9,4 +9,5 @@
     <string name="title_activity_sample6_7_">Sample6_7_Activity</string>
     <string name="title_activity_sample6_8_">Sample6_8_Activity</string>
     <string name="title_activity_sample6_9_">片元计算光照</string>
+    <string name="title_activity_sample6_10_">顶点计算光照</string>
 </resources>

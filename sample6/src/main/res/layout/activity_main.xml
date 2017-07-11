@@ -78,6 +78,12 @@
             android:onClick="sample6_9"
             android:text="Sample6_9:片元计算光照"
             />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="sample6_10"
+            android:text="Sample6_10:顶点计算光照"
+            />
 
     </LinearLayout>
 
