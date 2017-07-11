@@ -54,6 +54,12 @@
             android:onClick="sample6_6"
             android:text="Sample6_6:定向光"
             />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="sample6_7"
+            android:text="Sample6_7:面法向量"
+            />
 
     </LinearLayout>
 
