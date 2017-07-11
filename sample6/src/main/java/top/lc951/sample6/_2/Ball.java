@@ -1,4 +1,4 @@
-package top.lc951.sample6._1;
+package top.lc951.sample6._2;
 
 import android.opengl.GLES20;
 
@@ -26,8 +26,8 @@ public class Ball {
 
     FloatBuffer mVertexBuffer;// 顶点坐标数据缓冲
     int vCount = 0;
-    public float yAngle = 0;// 绕y轴旋转的角度
-    public float xAngle = 0;// 绕x轴旋转的角度
+     float yAngle = 0;// 绕y轴旋转的角度
+     float xAngle = 0;// 绕x轴旋转的角度
     float zAngle = 0;// 绕z轴旋转的角度
     float r = 0.8f;
 
@@ -128,10 +128,10 @@ public class Ball {
     // 初始化shader
     public void initShader(MySurfaceView mv) {
         // 加载顶点着色器的脚本内容
-        mVertexShader = ShaderUtil.loadFromAssetsFile("vertex.sh",
+        mVertexShader = ShaderUtil.loadFromAssetsFile("vertex_2.sh",
                 mv.getResources());
         // 加载片元着色器的脚本内容
-        mFragmentShader = ShaderUtil.loadFromAssetsFile("frag.sh",
+        mFragmentShader = ShaderUtil.loadFromAssetsFile("frag_2.sh",
                 mv.getResources());
         // 基于顶点着色器与片元着色器创建程序
         mProgram = ShaderUtil.createProgram(mVertexShader, mFragmentShader);

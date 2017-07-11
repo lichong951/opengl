@@ -28,7 +28,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="sample6_2"
-            android:text="Sample6_2:"
+            android:text="Sample6_2:环境光"
             />
 
     </LinearLayout>
