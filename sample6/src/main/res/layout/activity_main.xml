@@ -48,6 +48,12 @@
             android:onClick="sample6_5"
             android:text="Sample6_5:镜面光、环境光、散射光三合一"
             />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="sample6_6"
+            android:text="Sample6_6:定向光"
+            />
 
     </LinearLayout>
 
