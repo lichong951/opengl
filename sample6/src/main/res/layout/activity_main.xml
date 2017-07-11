@@ -72,6 +72,12 @@
             android:onClick="sample6_8"
             android:text="Sample6_8:点法向量"
             />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="sample6_9"
+            android:text="Sample6_9:片元计算光照"
+            />
 
     </LinearLayout>
 
