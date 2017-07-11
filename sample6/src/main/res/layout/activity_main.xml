@@ -36,6 +36,12 @@
             android:onClick="sample6_3"
             android:text="Sample6_3:散射光"
             />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="sample6_4"
+            android:text="Sample6_4:镜面光"
+            />
 
     </LinearLayout>
 
