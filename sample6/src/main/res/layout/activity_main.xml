@@ -30,35 +30,47 @@
             android:onClick="sample6_2"
             android:text="Sample6_2:环境光"
             />
+
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="sample6_3"
             android:text="Sample6_3:散射光"
             />
+
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="sample6_4"
             android:text="Sample6_4:镜面光"
             />
+
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="sample6_5"
             android:text="Sample6_5:镜面光、环境光、散射光三合一"
             />
+
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="sample6_6"
             android:text="Sample6_6:定向光"
             />
+
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="sample6_7"
             android:text="Sample6_7:面法向量"
+            />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="sample6_8"
+            android:text="Sample6_8:点法向量"
             />
 
     </LinearLayout>
