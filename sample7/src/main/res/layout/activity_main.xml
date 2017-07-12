@@ -28,6 +28,12 @@
             android:text="Sample7_2:纹理拉伸"
             android:onClick="sample7_2"
             />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sample7_3:点、线性采样"
+            android:onClick="sample7_3"
+            />
 
         </LinearLayout>
 
