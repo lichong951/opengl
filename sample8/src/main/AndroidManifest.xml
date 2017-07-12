@@ -31,6 +31,11 @@
             android:label="@string/title_activity_sample8_3_"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
+        <activity
+            android:name=".Sample8_4_Activity"
+            android:label="@string/title_activity_sample8_4_"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
     </application>
 
 </manifest>
