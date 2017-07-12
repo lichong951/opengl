@@ -52,6 +52,12 @@
             android:text="Sample8_6:足球碳结构"
             android:onClick="sample8_6"
             />
+         <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sample8_7:贝塞尔曲线"
+            android:onClick="sample8_7"
+            />
 
         </LinearLayout>
 
