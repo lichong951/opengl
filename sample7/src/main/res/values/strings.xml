@@ -3,4 +3,5 @@
     <string name="title_activity_sample7_1_">纹理</string>
     <string name="title_activity_sample7_2_">纹理拉伸</string>
     <string name="title_activity_sample7_3_">点、线性采样</string>
+    <string name="title_activity_sample7_4_">多重纹理、过程纹理</string>
 </resources>

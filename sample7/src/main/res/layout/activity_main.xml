@@ -34,6 +34,12 @@
             android:text="Sample7_3:点、线性采样"
             android:onClick="sample7_3"
             />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sample7_4:多重纹理、过程纹理"
+            android:onClick="sample7_4"
+            />
 
         </LinearLayout>
 
