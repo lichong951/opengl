@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Sample8</string>
     <string name="title_activity_sample8_1_">圆柱体</string>
+    <string name="title_activity_sample8_2_">圆锥体</string>
 </resources>

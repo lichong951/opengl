@@ -1,4 +1,4 @@
-package top.lc951.sample8._1;
+package top.lc951.sample8._2;
 
 import android.opengl.GLES20;
 
@@ -6,6 +6,7 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.FloatBuffer;
 
+import top.lc951.sample8._1.MatrixState;
 import top.lc951.sample8.utils.ShaderUtil;
 
 import static top.lc951.sample8.utils.ShaderUtil.createProgram;
@@ -44,6 +45,7 @@ class CircleL {
         //调用初始化着色器的intShader方法
         initShader(mv);
     }
+
     //自定义的初始化顶点数据的方法
     public void initVertexData(
             float scale,	//大小

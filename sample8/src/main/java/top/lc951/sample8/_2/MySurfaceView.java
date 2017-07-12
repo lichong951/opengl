@@ -1,4 +1,4 @@
-package top.lc951.sample8._1;
+package top.lc951.sample8._2;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -15,6 +15,7 @@ import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
 import top.lc951.sample8.R;
+import top.lc951.sample8._1.MatrixState;
 
 /**
  * Created by lichong on 2017/7/12.
@@ -28,8 +29,8 @@ public class MySurfaceView extends GLSurfaceView {
     private SceneRenderer mRenderer;//场景渲染器
     int textureId;      //系统分配的纹理id
 
-    public  boolean drawWhatFlag = true;    //绘制线填充方式的标志位
-    boolean lightFlag = true;
+    public boolean drawWhatFlag = true;    //绘制线填充方式的标志位
+    public boolean lightFlag = true;        //光照旋转的标志位
 
     public MySurfaceView(Context context) {
         super(context);
@@ -48,11 +49,11 @@ public class MySurfaceView extends GLSurfaceView {
             case MotionEvent.ACTION_MOVE:
                 float dy = y - mPreviousY;//计算触控笔Y位移
                 float dx = x - mPreviousX;//计算触控笔X位移
-                mRenderer.cylinder.yAngle += dx * TOUCH_SCALE_FACTOR;//设置绕y轴旋转角度
-                mRenderer.cylinder.zAngle += dy * TOUCH_SCALE_FACTOR;//设置绕z轴旋转角度
+                mRenderer.cone.yAngle += dx * TOUCH_SCALE_FACTOR;//设置绕y轴旋转角度
+                mRenderer.cone.zAngle += dy * TOUCH_SCALE_FACTOR;//设置绕z轴旋转角度
 
-                mRenderer.cylinderl.yAngle += dx * TOUCH_SCALE_FACTOR;//设置绕y轴旋转角度
-                mRenderer.cylinderl.zAngle += dy * TOUCH_SCALE_FACTOR;//设置绕z轴旋转角度
+                mRenderer.conel.yAngle += dx * TOUCH_SCALE_FACTOR;//设置绕y轴旋转角度
+                mRenderer.conel.zAngle += dy * TOUCH_SCALE_FACTOR;//设置绕z轴旋转角度
         }
         mPreviousY = y;//记录触控笔位置
         mPreviousX = x;//记录触控笔位置
@@ -60,8 +61,8 @@ public class MySurfaceView extends GLSurfaceView {
     }
 
     private class SceneRenderer implements GLSurfaceView.Renderer {
-        Cylinder cylinder;
-        CylinderL cylinderl;
+        Cone cone;
+        ConeL conel;
 
         public void onDrawFrame(GL10 gl) {
             //清除深度缓冲与颜色缓冲
@@ -71,9 +72,9 @@ public class MySurfaceView extends GLSurfaceView {
             MatrixState.pushMatrix();
             MatrixState.translate(0, 0, -10);
             if (drawWhatFlag) {
-                cylinder.drawSelf();
+                cone.drawSelf();
             } else {
-                cylinderl.drawSelf();
+                conel.drawSelf();
             }
             MatrixState.popMatrix();
 
@@ -125,13 +126,13 @@ public class MySurfaceView extends GLSurfaceView {
             MatrixState.setInitStack();
             //加载纹理
             textureId = initTexture(R.drawable.android_robot0);
-            //创建圆柱对象
-            cylinder = new Cylinder(MySurfaceView.this, 1, 1.2f, 3.9f, 36, textureId, textureId,
-                    textureId);
-            //创建圆柱骨架对象
-            cylinderl = new CylinderL(MySurfaceView.this, 1, 1.2f, 3.9f, 36);
+            //创建圆锥对象
+            cone = new Cone(MySurfaceView.this, 1, 1.6f, 3.9f, 36, textureId, textureId);
+            //创建圆锥骨架对象
+            conel = new ConeL(MySurfaceView.this, 1, 1.6f, 3.9f, 36);
 
         }
+
     }
 
     public int initTexture(int drawableId)//textureId
@@ -144,28 +145,26 @@ public class MySurfaceView extends GLSurfaceView {
                         textures,   //纹理id的数组
                         0           //偏移量
                 );
-        int textureId=textures[0];
+        int textureId = textures[0];
         GLES20.glBindTexture(GLES20.GL_TEXTURE_2D, textureId);
-        GLES20.glTexParameterf(GLES20.GL_TEXTURE_2D, GLES20.GL_TEXTURE_MIN_FILTER,GLES20.GL_NEAREST);
-        GLES20.glTexParameterf(GLES20.GL_TEXTURE_2D,GLES20.GL_TEXTURE_MAG_FILTER,GLES20.GL_LINEAR);
-        GLES20.glTexParameterf(GLES20.GL_TEXTURE_2D, GLES20.GL_TEXTURE_WRAP_S,GLES20.GL_CLAMP_TO_EDGE);
-        GLES20.glTexParameterf(GLES20.GL_TEXTURE_2D, GLES20.GL_TEXTURE_WRAP_T,GLES20.GL_CLAMP_TO_EDGE);
+        GLES20.glTexParameterf(GLES20.GL_TEXTURE_2D, GLES20.GL_TEXTURE_MIN_FILTER,
+                GLES20.GL_NEAREST);
+        GLES20.glTexParameterf(GLES20.GL_TEXTURE_2D, GLES20.GL_TEXTURE_MAG_FILTER,
+                GLES20.GL_LINEAR);
+        GLES20.glTexParameterf(GLES20.GL_TEXTURE_2D, GLES20.GL_TEXTURE_WRAP_S,
+                GLES20.GL_CLAMP_TO_EDGE);
+        GLES20.glTexParameterf(GLES20.GL_TEXTURE_2D, GLES20.GL_TEXTURE_WRAP_T,
+                GLES20.GL_CLAMP_TO_EDGE);
 
         //通过输入流加载图片===============begin===================
         InputStream is = this.getResources().openRawResource(drawableId);
         Bitmap bitmapTmp;
-        try
-        {
+        try {
             bitmapTmp = BitmapFactory.decodeStream(is);
-        }
-        finally
-        {
-            try
-            {
+        } finally {
+            try {
                 is.close();
-            }
-            catch(IOException e)
-            {
+            } catch (IOException e) {
                 e.printStackTrace();
             }
         }
@@ -175,11 +174,11 @@ public class MySurfaceView extends GLSurfaceView {
         GLUtils.texImage2D
                 (
                         GLES20.GL_TEXTURE_2D,   //纹理类型，在OpenGL ES中必须为GL10.GL_TEXTURE_2D
-                        0, 					  //纹理的层次，0表示基本图像层，可以理解为直接贴图
-                        bitmapTmp, 			  //纹理图像
-                        0					  //纹理边框尺寸
+                        0,                      //纹理的层次，0表示基本图像层，可以理解为直接贴图
+                        bitmapTmp,              //纹理图像
+                        0                      //纹理边框尺寸
                 );
-        bitmapTmp.recycle(); 		  //纹理加载成功后释放图片
+        bitmapTmp.recycle();          //纹理加载成功后释放图片
 
         return textureId;
     }
