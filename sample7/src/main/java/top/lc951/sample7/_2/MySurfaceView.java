@@ -15,7 +15,6 @@ import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
 import top.lc951.sample7.R;
-import top.lc951.sample7._1.MatrixState;
 
 /**
  * Created by lichong on 2017/7/12.
