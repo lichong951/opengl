@@ -46,6 +46,12 @@
             android:text="Sample8_5:几何球"
             android:onClick="sample8_5"
             />
+         <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sample8_6:足球碳结构"
+            android:onClick="sample8_6"
+            />
 
         </LinearLayout>
 
