@@ -28,6 +28,12 @@
             android:text="Sample8_2:圆锥体"
             android:onClick="sample8_2"
             />
+          <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sample8_3:圆环体"
+            android:onClick="sample8_3"
+            />
 
         </LinearLayout>
 
