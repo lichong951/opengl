@@ -28,6 +28,18 @@
             android:text="Sample9_2:茶壶-面的法向量"
             android:onClick="sample9_2"
             />
+         <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sample9_3:茶壶-平均法向量"
+            android:onClick="sample9_3"
+            />
+         <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sample9_4:茶壶-纹理"
+            android:onClick="sample9_4"
+            />
 
         </LinearLayout>
 

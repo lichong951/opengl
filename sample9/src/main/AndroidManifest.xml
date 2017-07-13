@@ -26,6 +26,16 @@
             android:label="@string/title_activity_sample9_2_"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
+        <activity
+            android:name=".Sample9_3_Activity"
+            android:label="@string/title_activity_sample9_3_"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name=".Sample9_4_Activity"
+            android:label="@string/title_activity_sample9_4_"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
     </application>
 
 </manifest>
