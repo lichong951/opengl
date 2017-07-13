@@ -8,13 +8,12 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-import top.lc951.sample9._1.MySurfaceView;
 
 /**
  * Created by lichong on 2017/7/13.
  */
 
-public class LoadUtil {
+ class LoadUtil {
     //从obj文件中加载仅携带顶点信息的物体
     public static LoadedObjectVertexOnly loadFromFile(String fname, Resources r, MySurfaceView mv)
     {
