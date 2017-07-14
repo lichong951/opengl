@@ -8,7 +8,7 @@
     tools:context="top.lc951.sample10.MainActivity">
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Hello World!"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -23,6 +23,13 @@
             android:text="Sample10_1:混合"
             android:onClick="sample10_1"
             />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sample10_1a:混合组合"
+            android:onClick="sample10_1a"
+            />
+
         </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
