@@ -29,6 +29,12 @@
             android:text="Sample10_1a:混合组合"
             android:onClick="sample10_1a"
             />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sample10_2:云"
+            android:onClick="sample10_2"
+            />
 
         </LinearLayout>
 

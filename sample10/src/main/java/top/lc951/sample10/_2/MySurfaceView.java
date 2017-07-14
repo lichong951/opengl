@@ -16,19 +16,31 @@ import javax.microedition.khronos.opengles.GL10;
 
 import top.lc951.sample10.R;
 
+import static top.lc951.sample10._2.Constant.ratio;
+import static top.lc951.sample10._2.Constant.threadFlag;
+
 /**
  * Created by lichong on 2017/7/14.
  */
 
 public class MySurfaceView extends GLSurfaceView {
+    private final float TOUCH_SCALE_FACTOR = 180.0f/320;//角度缩放比例
     private SceneRenderer mRenderer;//场景渲染器
 
-    //矩形的位置
-    static float rectX;
-    static float rectY;
-    static int rectState = KeyThread.Stop;
-    static final float moveSpan = 0.1f;
-    private KeyThread keyThread;
+    private float mPreviousX;//上次的触控位置X坐标
+    private float mPreviousY;//上次的触控位置Y坐标
+
+    int textureIdEarth;//系统分配的地球纹理id
+    int textureIdEarthNight;//系统分配的地球夜晚纹理id
+    int textureIdMoon;//系统分配的月球纹理id
+    int textureIdCloud;//系统分配的云层纹理id
+
+    float yAngle=0;//太阳灯光绕y轴旋转的角度
+    float xAngle=0;//摄像机绕X轴旋转的角度
+
+    float eAngle=0;//地球自转角度
+    float cAngle=0;//天球自转的角度
+
     public MySurfaceView(Context context) {
         super(context);
         this.setEGLContextClientVersion(2); //设置使用OPENGL ES2.0
@@ -39,93 +51,83 @@ public class MySurfaceView extends GLSurfaceView {
 
     //触摸事件回调方法
     @Override
-    public boolean onTouchEvent(MotionEvent e)
-    {
-        float y = e.getY();
+    public boolean onTouchEvent(MotionEvent e) {
         float x = e.getX();
+        float y = e.getY();
         switch (e.getAction()) {
-            case MotionEvent.ACTION_DOWN:
-                if(x<Constant.SCREEN_WIDTH/3.0f) {//按下屏幕左面1/3向左移
-                    rectState = KeyThread.left;
+            case MotionEvent.ACTION_MOVE:
+                //触控横向位移太阳绕y轴旋转
+                float dx = x - mPreviousX;//计算触控笔X位移
+                yAngle += dx * TOUCH_SCALE_FACTOR;//设置太阳绕y轴旋转的角度
+                float sunx=(float)(Math.cos(Math.toRadians(yAngle))*100);
+                float sunz=-(float)(Math.sin(Math.toRadians(yAngle))*100);
+                MatrixState.setLightLocationSun(sunx,5,sunz);
+
+                //触控纵向位移摄像机绕x轴旋转 -90〜+90
+                float dy = y - mPreviousY;//计算触控笔Y位移
+                xAngle += dy * TOUCH_SCALE_FACTOR;//设置太阳绕y轴旋转的角度
+                if(xAngle>90)
+                {
+                    xAngle=90;
                 }
-                else if(x>Constant.SCREEN_WIDTH*2/3.0f){//按下屏幕右面2/3向右移
-                    rectState = KeyThread.right;
+                else if(xAngle<-90)
+                {
+                    xAngle=-90;
                 }
-                else {
-                    if(y<Constant.SCREEN_HEIGHT/2.0f) {   //按下屏幕上方向上移
-                        rectState = KeyThread.up;
-                    }
-                    else {//按下屏幕下方向下移
-                        rectState = KeyThread.down;
-                    }
-                }
-                break;
-            case MotionEvent.ACTION_UP://抬起时停止移动
-                rectState = KeyThread.Stop;
-                break;
+                float cy=(float) (7.2*Math.sin(Math.toRadians(xAngle)));
+                float cz=(float) (7.2*Math.cos(Math.toRadians(xAngle)));
+                float upy=(float) Math.cos(Math.toRadians(xAngle));
+                float upz=-(float) Math.sin(Math.toRadians(xAngle));
+                MatrixState.setCamera(0, cy, cz, 0, 0, 0, 0, upy, upz);
         }
+        mPreviousX = x;//记录触控笔位置
+        mPreviousY = y;
         return true;
     }
     private class SceneRenderer implements GLSurfaceView.Renderer
     {
-        int rectTexId;//纹理id
-        //从指定的obj文件中加载对象
-        LoadedObjectVertexNormalFace pm;
-        LoadedObjectVertexNormalFace cft;
-        LoadedObjectVertexNormalAverage qt;
-        LoadedObjectVertexNormalAverage yh;
-        LoadedObjectVertexNormalAverage ch;
-        TextureRect rect;
+        Earth earth;//地球
+        Moon moon;//月球
+        Celestial cSmall;//小星星天球
+        Celestial cBig;//大星星天球
+        Cloud cloud;//月球
+
         public void onDrawFrame(GL10 gl)
         {
             //清除深度缓冲与颜色缓冲
             GLES20.glClear( GLES20.GL_DEPTH_BUFFER_BIT | GLES20.GL_COLOR_BUFFER_BIT);
 
+            //保护现场
             MatrixState.pushMatrix();
-            MatrixState.pushMatrix();
-            MatrixState.rotate(25, 1, 0, 0);
-            //若加载的物体部位空则绘制物体
-            pm.drawSelf();//平面
-
-            //缩放物体
-            MatrixState.pushMatrix();
-            MatrixState.scale(1.5f, 1.5f, 1.5f);
-            //绘制物体
-            //绘制长方体
-            MatrixState.pushMatrix();
-            MatrixState.translate(-10f, 0f, 0);
-            cft.drawSelf();
-            MatrixState.popMatrix();
-            //绘制球体
-            MatrixState.pushMatrix();
-            MatrixState.translate(10f, 0f, 0);
-            qt.drawSelf();
-            MatrixState.popMatrix();
-            //绘制圆环
-            MatrixState.pushMatrix();
-            MatrixState.translate(0, 0, -10f);
-            yh.drawSelf();
-            MatrixState.popMatrix();
-            //绘制茶壶
-            MatrixState.pushMatrix();
-            MatrixState.translate(0, 0, 10f);
-            ch.drawSelf();
-            MatrixState.popMatrix();
-            MatrixState.popMatrix();
-            MatrixState.popMatrix();
+            //地球自转
+            MatrixState.rotate(eAngle, 0, 1, 0);
+            //绘制纹理圆球
+            earth.drawSelf(textureIdEarth,textureIdEarthNight);
 
             //开启混合
             GLES20.glEnable(GLES20.GL_BLEND);
-            //设置混合因子c
+            //设置混合因子
             GLES20.glBlendFunc(GLES20.GL_SRC_ALPHA, GLES20.GL_ONE_MINUS_SRC_ALPHA);
-            //绘制纹理矩形
-            MatrixState.pushMatrix();
-            MatrixState.translate(rectX, rectY, 25f);
-            rect.drawSelf(rectTexId);
-            MatrixState.popMatrix();
+            cloud.drawSelf(textureIdCloud);//绘制云层
             //关闭混合
             GLES20.glDisable(GLES20.GL_BLEND);
 
+
+            //推坐标系到月球位置
+            MatrixState.transtate(2f, 0, 0);
+            //月球自转
+            MatrixState.rotate(eAngle, 0, 1, 0);
+            //绘制月球
+            moon.drawSelf(textureIdMoon);
+            //恢复现场
+            MatrixState.popMatrix();
+
+            //保护现场
+            MatrixState.pushMatrix();
+            MatrixState.rotate(cAngle, 0, 1, 0);
+            cSmall.drawSelf();
+            cBig.drawSelf();
+            //恢复现场
             MatrixState.popMatrix();
         }
 
@@ -133,49 +135,61 @@ public class MySurfaceView extends GLSurfaceView {
             //设置视窗大小及位置
             GLES20.glViewport(0, 0, width, height);
             //计算GLSurfaceView的宽高比
-            float ratio = (float) width / height;
+            ratio= (float) width / height;
             //调用此方法计算产生透视投影矩阵
-            MatrixState.setProjectFrustum(-ratio, ratio, -1, 1, 2, 100);
-            //设置camera位置
-            MatrixState.setCamera
-                    (
-                            0,   //人眼位置的X
-                            0, 	//人眼位置的Y
-                            50,   //人眼位置的Z
-                            0, 	//人眼球看的点X
-                            0,   //人眼球看的点Y
-                            0,   //人眼球看的点Z
-                            0, 	//up位置
-                            1,
-                            0
-                    );
-            //初始化光源位置
-            MatrixState.setLightLocation(100, 100, 100);
-            keyThread = new KeyThread(MySurfaceView.this);
-            keyThread.start();
+            MatrixState.setProjectFrustum(-ratio, ratio, -1, 1, 4f, 100);
+            //调用此方法产生摄像机9参数位置矩阵
+            MatrixState.setCamera(0,0,7.2f,0f,0f,0f,0f,1.0f,0.0f);
+            //打开背面剪裁
+            GLES20.glEnable(GLES20.GL_CULL_FACE);
+            //初始化纹理
+            textureIdEarth=initTexture(R.drawable.earth);
+            textureIdEarthNight=initTexture(R.drawable.earthn);
+            textureIdMoon=initTexture(R.drawable.moon);
+            textureIdCloud=initTexture(R.drawable.cloud);
+            //设置太阳灯光的初始位置
+            MatrixState.setLightLocationSun(100,5,0);
+
+            //启动一个线程定时旋转地球、月球
+            new Thread()
+            {
+                public void run()
+                {
+                    while(threadFlag)
+                    {
+                        //地球自转角度
+                        eAngle=(eAngle+2)%360;
+                        //天球自转角度
+                        cAngle=(cAngle+0.2f)%360;
+                        try {
+                            Thread.sleep(100);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+            }.start();
         }
+
         @Override
         public void onSurfaceCreated(GL10 gl, EGLConfig config) {
             //设置屏幕背景色RGBA
-            GLES20.glClearColor(0.3f,0.3f,0.3f,1.0f);
+            GLES20.glClearColor(0.0f,0.0f,0.0f, 1.0f);
+            //创建地球对象
+            earth=new Earth(MySurfaceView.this,2.0f);
+            cloud=new Cloud(MySurfaceView.this,2.02f);
+            //创建月球对象
+            moon=new Moon(MySurfaceView.this,1.0f);
+            //创建小星星天球对象
+            cSmall=new Celestial(1,0,1000,MySurfaceView.this);
+            //创建大星星天球对象
+            cBig=new Celestial(2,0,500,MySurfaceView.this);
             //打开深度检测
             GLES20.glEnable(GLES20.GL_DEPTH_TEST);
-            //打开背面剪裁
-            GLES20.glEnable(GLES20.GL_CULL_FACE);
             //初始化变换矩阵
             MatrixState.setInitStack();
-            //纹理id
-            rectTexId=initTexture(R.raw.lgq);
-            //加载要绘制的物体
-            ch=LoadUtil.loadFromFileVertexOnlyAverage("ch.obj", MySurfaceView.this.getResources(),MySurfaceView.this);
-            pm=LoadUtil.loadFromFileVertexOnlyFace("pm.obj", MySurfaceView.this.getResources(),MySurfaceView.this);;
-            cft=LoadUtil.loadFromFileVertexOnlyFace("cft.obj", MySurfaceView.this.getResources(),MySurfaceView.this);;
-            qt=LoadUtil.loadFromFileVertexOnlyAverage("qt.obj", MySurfaceView.this.getResources(),MySurfaceView.this);;
-            yh=LoadUtil.loadFromFileVertexOnlyAverage("yh.obj", MySurfaceView.this.getResources(),MySurfaceView.this);;
-            rect = new TextureRect(MySurfaceView.this, 10, 10);
         }
     }
-
 
     public int initTexture(int drawableId)//textureId
     {
@@ -225,17 +239,5 @@ public class MySurfaceView extends GLSurfaceView {
         bitmapTmp.recycle(); 		  //纹理加载成功后释放图片
 
         return textureId;
-    }
-    @Override
-    public void onResume() {
-        super.onResume();
-        KeyThread.flag = true;
-        keyThread = new KeyThread(MySurfaceView.this);
-        keyThread.start();
-    }
-    @Override
-    public void onPause() {
-        super.onPause();
-        KeyThread.flag = false;
     }
 }

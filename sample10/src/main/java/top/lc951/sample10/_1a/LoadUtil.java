@@ -1,4 +1,4 @@
-package top.lc951.sample10._2;
+package top.lc951.sample10._1a;
 
 import android.content.res.Resources;
 import android.util.Log;
