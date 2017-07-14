@@ -5,11 +5,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="top.lc951.sample9.MainActivity">
+    tools:context="top.lc951.sample10.MainActivity">
 
     <LinearLayout
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="Hello World!"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -19,28 +20,9 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Sample9_1:3D建模-茶壶"
-            android:onClick="sample9_1"
+            android:text="Sample10_1:混合"
+            android:onClick="sample10_1"
             />
-         <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Sample9_2:茶壶-面的法向量"
-            android:onClick="sample9_2"
-            />
-         <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Sample9_3:茶壶-平均法向量"
-            android:onClick="sample9_3"
-            />
-         <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Sample9_4:茶壶-纹理"
-            android:onClick="sample9_4"
-            />
-
         </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
