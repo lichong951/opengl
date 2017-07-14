@@ -4,4 +4,5 @@
     <string name="title_activity_sample10_1a_">混合组合</string>
     <string name="title_activity_sample10_2_">云</string>
     <string name="title_activity_sample10_3_">雾</string>
+    <string name="title_activity_sample10_4_"> 雾-非线性计算</string>
 </resources>

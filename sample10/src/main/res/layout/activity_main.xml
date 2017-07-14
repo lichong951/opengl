@@ -38,8 +38,14 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Sample10_3:雾"
+            android:text="Sample10_3:雾-线性计算"
             android:onClick="sample10_3"
+            />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sample10_4:雾-非线性计算"
+            android:onClick="sample10_4"
             />
 
         </LinearLayout>
