@@ -35,6 +35,12 @@
             android:text="Sample10_2:云"
             android:onClick="sample10_2"
             />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sample10_3:雾"
+            android:onClick="sample10_3"
+            />
 
         </LinearLayout>
 
