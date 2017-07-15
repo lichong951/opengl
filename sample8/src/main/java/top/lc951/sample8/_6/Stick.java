@@ -7,7 +7,9 @@ import java.nio.ByteOrder;
 import java.nio.FloatBuffer;
 import java.util.ArrayList;
 
-import static top.lc951.sample8._6.ShaderUtil.createProgram;
+import top.lc951.sample8.utils.ShaderUtil;
+
+import static top.lc951.sample8.utils.ShaderUtil.createProgram;
 
 
 /**
@@ -224,7 +226,7 @@ class Stick {
         //将摄像机位置传入shader程序
         GLES20.glUniform3fv(maCameraHandle, 1, MatrixState.cameraFB);
         //将光源位置传入shader程序
-        GLES20.glUniform3fv(maLightLocationHandle, 1, MatrixState.lightPositionFB);
+//        GLES20.glUniform3fv(maLightLocationHandle, 1, MatrixState.lightPositionFB);
 
 
         //传送顶点位置数据

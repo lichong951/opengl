@@ -7,7 +7,9 @@ import java.nio.ByteOrder;
 import java.nio.FloatBuffer;
 import java.util.ArrayList;
 
-import static top.lc951.sample8._6.ShaderUtil.createProgram;
+import top.lc951.sample8.utils.ShaderUtil;
+
+import static top.lc951.sample8.utils.ShaderUtil.createProgram;
 
 
 /**
@@ -128,7 +130,7 @@ class Ball {
         //加载顶点着色器的脚本内容
         mVertexShader= ShaderUtil.loadFromAssetsFile("vertex_color_light_6.sh", mv.getResources());
         //加载片元着色器的脚本内容
-        mFragmentShader=ShaderUtil.loadFromAssetsFile("frag_color_light_6.sh", mv.getResources());
+        mFragmentShader= ShaderUtil.loadFromAssetsFile("frag_color_light_6.sh", mv.getResources());
         //基于顶点着色器与片元着色器创建程序
         mProgram = createProgram(mVertexShader, mFragmentShader);
         //获取程序中顶点位置属性引用id
@@ -166,7 +168,7 @@ class Ball {
         //将摄像机位置传入shader程序
         GLES20.glUniform3fv(maCameraHandle, 1, MatrixState.cameraFB);
         //将光源位置传入shader程序
-        GLES20.glUniform3fv(maLightLocationHandle, 1, MatrixState.lightPositionFB);
+//        GLES20.glUniform3fv(maLightLocationHandle, 1, MatrixState.lightPositionFB);
 
 
         //传送顶点位置数据

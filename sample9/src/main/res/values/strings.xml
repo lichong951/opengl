@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Sample9</string>
+    <string name="title_activity_sample9_1_">3D建模-茶壶</string>
+    <string name="title_activity_sample9_2_">茶壶有光照</string>
+    <string name="title_activity_sample9_3_">茶壶-评价法向量</string>
+    <string name="title_activity_sample9_4_">茶壶-纹理</string>
+</resources>
