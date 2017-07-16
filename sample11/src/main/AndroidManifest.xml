@@ -21,6 +21,11 @@
             android:label="@string/title_activity_sample11_1_"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
+        <activity
+            android:name=".Sample11_2_Activity"
+            android:label="@string/title_activity_sample11_2_"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
     </application>
 
 </manifest>
