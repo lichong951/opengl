@@ -46,6 +46,12 @@
             android:text="Sample11_5:天空盒"
             android:onClick="sample11_5"
             />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sample11_6:天空穹"
+            android:onClick="sample11_6"
+            />
 
         </LinearLayout>
 

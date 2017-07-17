@@ -13,20 +13,28 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void sample11_1(View view){
+    public void sample11_1(View view) {
         Sample11_1_Activity.actionActivity(this);
     }
-    public void sample11_2(View view){
+
+    public void sample11_2(View view) {
         Sample11_2_Activity.actionActivity(this);
     }
- public void sample11_3(View view){
+
+    public void sample11_3(View view) {
         Sample11_3_Activity.actionActivity(this);
     }
-    public void sample11_4(View view){
+
+    public void sample11_4(View view) {
         Sample11_4_Activity.actionActivity(this);
     }
-    public void sample11_5(View view){
+
+    public void sample11_5(View view) {
         Sample11_5_Activity.actionActivity(this);
+    }
+
+    public void sample11_6(View view) {
+        Sample11_6_Activity.actionActivity(this);
     }
 
 }
