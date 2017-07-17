@@ -40,6 +40,12 @@
             android:text="Sample11_4:MipMap地形"
             android:onClick="sample11_4"
             />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sample11_5:天空盒"
+            android:onClick="sample11_5"
+            />
 
         </LinearLayout>
 
