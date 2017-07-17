@@ -52,6 +52,12 @@
             android:text="Sample11_6:天空穹"
             android:onClick="sample11_6"
             />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sample11_7:镜像技术-篮球"
+            android:onClick="sample11_7"
+            />
 
         </LinearLayout>
 
