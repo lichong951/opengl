@@ -27,6 +27,12 @@
             android:text="Sample13_2:扭动的软糖"
             android:onClick="sample13_2"
             />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sample13_3:舞动的树叶"
+            android:onClick="sample13_3"
+            />
 
         </LinearLayout>
 
