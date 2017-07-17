@@ -33,6 +33,12 @@
             android:text="Sample12_3:模版测试"
             android:onClick="sample12_3"
             />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sample12_4:任意平面裁剪"
+            android:onClick="sample12_4"
+            />
 
         </LinearLayout>
 
