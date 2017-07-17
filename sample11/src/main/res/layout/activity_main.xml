@@ -28,6 +28,12 @@
             android:text="Sample11_2:灰度图地形"
             android:onClick="sample11_2"
             />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sample11_3:过程纹理地形"
+            android:onClick="sample11_3"
+            />
 
         </LinearLayout>
 
