@@ -70,6 +70,12 @@
             android:text="Sample11_9:动态文本输出"
             android:onClick="sample11_9"
             />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sample11_10:非真实感绘制"
+            android:onClick="sample11_10"
+            />
 
         </LinearLayout>
 
