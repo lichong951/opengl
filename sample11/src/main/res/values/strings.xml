@@ -3,4 +3,5 @@
     <string name="title_activity_sample11_1_">标签</string>
     <string name="title_activity_sample11_2_">地形图</string>
     <string name="title_activity_sample11_3_">Sample11 过程纹理地形</string>
+    <string name="title_activity_sample11_4_">Sample11 MipMap地形</string>
 </resources>
