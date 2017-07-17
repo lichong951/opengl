@@ -21,6 +21,12 @@
             android:text="Sample13_1:旗帜飘动"
             android:onClick="sample13_1"
             />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sample13_2:扭动的软糖"
+            android:onClick="sample13_2"
+            />
 
         </LinearLayout>
 

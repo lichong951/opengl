@@ -28,7 +28,7 @@ public class TextureRect_1 {
     final float WIDTH_SPAN=3.3f;//2.8f;//横向长度总跨度
     float currStartAngle=0;//当前帧的起始角度0~2PI
 
-    public TextureRect_1(MySurfaceView mv)
+    public TextureRect_1(MySurfaceView_1 mv)
     {
         //初始化顶点坐标与着色数据
         initVertexData();
@@ -116,7 +116,7 @@ public class TextureRect_1 {
         mTexCoorBuffer.position(0);//设置缓冲区起始位置
     }
     //初始化shader
-    public void initShader(MySurfaceView mv,int index,String vertexName)
+    public void initShader(MySurfaceView_1 mv, int index, String vertexName)
     {
         //加载顶点着色器的脚本内容
         String mVertexShader= ShaderUtil.loadFromAssetsFile(vertexName, mv.getResources());

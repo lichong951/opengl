@@ -13,10 +13,10 @@ import android.widget.LinearLayout;
 import android.widget.RadioButton;
 
 import top.lc951.sample13._1.Constant_1;
-import top.lc951.sample13._1.MySurfaceView;
+import top.lc951.sample13._1.MySurfaceView_1;
 
 public class Sample13_1_Activity extends AppCompatActivity {
-    private MySurfaceView mGLSurfaceView;
+    private MySurfaceView_1 mGLSurfaceView;
     public static void actionActivity(Context context){
         context.startActivity(new Intent(context, Sample13_1_Activity.class));
     }
@@ -34,7 +34,7 @@ public class Sample13_1_Activity extends AppCompatActivity {
         //切换到主界面
         setContentView(R.layout.activity_sample13_1_);
         //初始化GLSurfaceView
-        mGLSurfaceView = new MySurfaceView(this);
+        mGLSurfaceView = new MySurfaceView_1(this);
         mGLSurfaceView.requestFocus();//获取焦点
         mGLSurfaceView.setFocusableInTouchMode(true);//设置为可触控
         //将自定义的GLSurfaceView添加到外层LinearLayout中
