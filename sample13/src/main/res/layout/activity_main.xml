@@ -33,6 +33,12 @@
             android:text="Sample13_3:舞动的树叶"
             android:onClick="sample13_3"
             />
+       <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sample13_4:关键帧-展翅分翔的雄鹰"
+            android:onClick="sample13_4"
+            />
 
         </LinearLayout>
 
