@@ -58,6 +58,12 @@
             android:text="Sample11_7:镜像技术-篮球"
             android:onClick="sample11_7"
             />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sample11_8:镜像、混合技术-篮球"
+            android:onClick="sample11_8"
+            />
 
         </LinearLayout>
 
