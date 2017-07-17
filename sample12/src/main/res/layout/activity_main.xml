@@ -27,6 +27,12 @@
             android:text="Sample12_2:Alpha测试-椭圆窗口"
             android:onClick="sample12_2"
             />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sample12_3:模版测试"
+            android:onClick="sample12_3"
+            />
 
         </LinearLayout>
 

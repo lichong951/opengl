@@ -6,6 +6,8 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.FloatBuffer;
 
+import top.lc951.sample12.utils.ShaderUtil;
+
 
 /**
  * Created by lichong on 2017/7/17.

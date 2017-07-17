@@ -7,6 +7,8 @@ import java.nio.ByteOrder;
 import java.nio.FloatBuffer;
 
 
+import top.lc951.sample12.utils.ShaderUtil;
+
 import static top.lc951.sample12._2.MySurfaceView.UNIT_SIZE;
 
 /**
