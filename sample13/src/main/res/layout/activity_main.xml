@@ -39,6 +39,12 @@
             android:text="Sample13_4:关键帧-展翅分翔的雄鹰"
             android:onClick="sample13_4"
             />
+       <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sample13_5:二维扭曲"
+            android:onClick="sample13_5"
+            />
 
         </LinearLayout>
 

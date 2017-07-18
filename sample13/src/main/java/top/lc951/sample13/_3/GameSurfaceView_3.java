@@ -48,7 +48,7 @@ import static top.lc951.sample13._3.Constant_3.wind_speed_init;
  * @ Email lichongmac@163.com
  */
 
-public class GameSurfaceView extends GLSurfaceView {
+public class GameSurfaceView_3 extends GLSurfaceView {
     private SceneRenderer mRenderer;//场景渲染器
     static Sample13_3_Activity activty;
     float mPreviousY;
@@ -74,7 +74,7 @@ public class GameSurfaceView extends GLSurfaceView {
     static float cx=(float) (tx+Math.sin(Math.toRadians(camera_direction))*DISTANCE);//摄像机x坐标
     static float cy=CAMERA_HEIGHT;//摄像机y坐标
     static float cz=(float) (tz+Math.cos(Math.toRadians(camera_direction))*DISTANCE);//摄像机z坐标
-    public GameSurfaceView(Context context)
+    public GameSurfaceView_3(Context context)
     {
         super(context);
         activty=(Sample13_3_Activity)context;
@@ -173,7 +173,7 @@ public class GameSurfaceView extends GLSurfaceView {
             //初始化光源位置
             MatrixState.setLightLocation(sunPosition[0], sunPosition[1],sunPosition[2]);
             //加载shader
-            ShaderManager.loadCodeFromFile(GameSurfaceView.this.getResources());
+            ShaderManager.loadCodeFromFile(GameSurfaceView_3.this.getResources());
             //编译shader
             ShaderManager.compileShader();
             initAllObject();//初始化纹理组件

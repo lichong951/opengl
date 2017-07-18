@@ -42,11 +42,11 @@ public class TreeLeavesControl implements Comparable<TreeLeavesControl>{
     public int compareTo(TreeLeavesControl another)
     {
         //当前树叶距离摄像机的距离
-        float distanceX=(this.positionX+this.treeLeaves.centerX-GameSurfaceView.cx)*(this.positionX+this.treeLeaves.centerX-GameSurfaceView.cx);
-        float distanceZ=(this.positionZ+this.treeLeaves.centerZ-GameSurfaceView.cz)*(this.positionZ+this.treeLeaves.centerZ-GameSurfaceView.cz);
+        float distanceX=(this.positionX+this.treeLeaves.centerX- GameSurfaceView_3.cx)*(this.positionX+this.treeLeaves.centerX- GameSurfaceView_3.cx);
+        float distanceZ=(this.positionZ+this.treeLeaves.centerZ- GameSurfaceView_3.cz)*(this.positionZ+this.treeLeaves.centerZ- GameSurfaceView_3.cz);
         //比较点距离摄像机的距离
-        float distanceOX=(another.positionX+another.treeLeaves.centerX-GameSurfaceView.cx)*(another.positionX+another.treeLeaves.centerX-GameSurfaceView.cx);
-        float distanceOZ=(another.positionZ+another.treeLeaves.centerZ-GameSurfaceView.cz)*(another.positionZ+another.treeLeaves.centerZ-GameSurfaceView.cz);
+        float distanceOX=(another.positionX+another.treeLeaves.centerX- GameSurfaceView_3.cx)*(another.positionX+another.treeLeaves.centerX- GameSurfaceView_3.cx);
+        float distanceOZ=(another.positionZ+another.treeLeaves.centerZ- GameSurfaceView_3.cz)*(another.positionZ+another.treeLeaves.centerZ- GameSurfaceView_3.cz);
         return (distanceX+distanceZ)>(distanceOX+distanceOZ)?-1:1;
     }
     //生成最后顶点的位置

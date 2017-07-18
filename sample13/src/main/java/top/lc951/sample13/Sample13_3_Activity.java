@@ -9,10 +9,7 @@ import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.media.SoundPool;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -26,10 +23,10 @@ import android.widget.TextView;
 import java.util.HashMap;
 
 import top.lc951.sample13._3.Constant_3;
-import top.lc951.sample13._3.GameSurfaceView;
+import top.lc951.sample13._3.GameSurfaceView_3;
 
 public class Sample13_3_Activity extends AppCompatActivity {
-    private GameSurfaceView mGLSurfaceView;
+    private GameSurfaceView_3 mGLSurfaceView;
     AudioManager mgr;// 音频管理者
     SoundPool soundPool;// 声音池
     MediaPlayer bgMusic;// 游戏背景音乐播放器
@@ -43,7 +40,7 @@ public class Sample13_3_Activity extends AppCompatActivity {
         initScreen();
         initSound();//在activity中的onCreate方法中调用
         //初始化GLSurfaceView
-        mGLSurfaceView = new GameSurfaceView(this);
+        mGLSurfaceView = new GameSurfaceView_3(this);
         setContentView(mGLSurfaceView);
         mGLSurfaceView.requestFocus();//获取焦点
         mGLSurfaceView.setFocusableInTouchMode(true);//设置为可触控
