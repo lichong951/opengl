@@ -1,4 +1,4 @@
-package top.lc951.sample15._2;
+package top.lc951.sample15._3;
 
 import android.opengl.GLES20;
 
@@ -24,11 +24,11 @@ class LoadedObjectVertexNormalTexture {
     String mVertexShader;//顶点着色器
     String mFragmentShader;//片元着色器
 
-    FloatBuffer mVertexBuffer;//顶点坐标数据缓冲
+    FloatBuffer   mVertexBuffer;//顶点坐标数据缓冲
     FloatBuffer   mNormalBuffer;//顶点法向量数据缓冲
     int vCount=0;
 
-    public LoadedObjectVertexNormalTexture(MySurfaceView_2 mv, float[] vertices, float[] normals)
+    public LoadedObjectVertexNormalTexture(MySurfaceView_3 mv, float[] vertices, float[] normals)
     {
         //初始化顶点坐标与着色数据
         initVertexData(vertices,normals);
@@ -65,12 +65,12 @@ class LoadedObjectVertexNormalTexture {
     }
 
     //初始化shader
-    public void intShader(MySurfaceView_2 mv)
+    public void intShader(MySurfaceView_3 mv)
     {
         //加载顶点着色器的脚本内容
-        mVertexShader= ShaderUtil.loadFromAssetsFile("vertex_tex_cube.sh", mv.getResources());
+        mVertexShader=ShaderUtil.loadFromAssetsFile("vertex_tex_cube_3.sh", mv.getResources());
         //加载片元着色器的脚本内容
-        mFragmentShader=ShaderUtil.loadFromAssetsFile("frag_tex_cube.sh", mv.getResources());
+        mFragmentShader=ShaderUtil.loadFromAssetsFile("frag_tex_cube_3.sh", mv.getResources());
         //基于顶点着色器与片元着色器创建程序
         mProgram = ShaderUtil.createProgram(mVertexShader, mFragmentShader);
         //获取程序中顶点位置属性引用

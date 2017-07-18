@@ -1,4 +1,4 @@
-package top.lc951.sample15._2;
+package top.lc951.sample15._3;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -17,7 +17,7 @@ import javax.microedition.khronos.opengles.GL10;
 
 import top.lc951.sample15.R;
 
-import static top.lc951.sample15._2.Constant.UNIT_SIZE;
+import static top.lc951.sample15._3.Constant.UNIT_SIZE;
 
 /**
  * Created by lichong on 2017/7/18.
@@ -25,7 +25,7 @@ import static top.lc951.sample15._2.Constant.UNIT_SIZE;
  * @ Email lichongmac@163.com
  */
 
-public class MySurfaceView extends GLSurfaceView {
+public class MySurfaceView_3 extends GLSurfaceView {
     private final float TOUCH_SCALE_FACTOR = 180.0f/320;//角度缩放比例
     private SceneRenderer mRenderer;//场景渲染器
 
@@ -33,15 +33,16 @@ public class MySurfaceView extends GLSurfaceView {
     private float mPreviousX;//上次的触控位置X坐标
 
     //摄像机的位置角度
+    final float RCamera=90;//ball-90 ch-40
     float cx=0;
     float cy=2;
-    float cz=24;
+    float cz=RCamera;
     float cAngle=0;
 
     int textureIdCM;//系统分配的Cube Map纹理
     int[] textureIdA=new int[6];//天空盒六面的纹理
 
-    public MySurfaceView(Context context) {
+    public MySurfaceView_3(Context context) {
         super(context);
         this.setEGLContextClientVersion(2); //设置使用OPENGL ES2.0
         mRenderer = new SceneRenderer();	//创建场景渲染器
@@ -60,11 +61,13 @@ public class MySurfaceView extends GLSurfaceView {
                 float dy = y - mPreviousY;//计算触控笔Y位移
                 float dx = x - mPreviousX;//计算触控笔X位移
                 cAngle+=dx * TOUCH_SCALE_FACTOR;
-                cx=(float) (Math.sin(Math.toRadians(cAngle))*24f);
-                cz=(float) (Math.cos(Math.toRadians(cAngle))*24f);
+                cx=(float) (Math.sin(Math.toRadians(cAngle))*RCamera);
+                cz=(float) (Math.cos(Math.toRadians(cAngle))*RCamera);
                 cy+=dy/10.0f;
                 //调用此方法产生摄像机9参数位置矩阵
                 MatrixState.setCamera(cx,cy,cz,0f,0f,0f,0f,1.0f,0.0f);
+                //设置灯光位置
+                MatrixState.setLightLocation(cx, cy+5, cz);
         }
         mPreviousY = y;//记录触控笔位置
         mPreviousX = x;//记录触控笔位置
@@ -78,53 +81,71 @@ public class MySurfaceView extends GLSurfaceView {
         //从指定的obj文件中加载对象
         LoadedObjectVertexNormalTexture lovo;
         TextureRect texRect;//纹理矩形
+
+        long olds;
+        long currs;
+
         public void onDrawFrame(GL10 gl)
         {
+
+            currs=System.nanoTime();
+            System.out.println(1000000000.0/(currs-olds)+"FPS");
+            olds=currs;
             //清除深度缓冲与颜色缓冲
             GLES20.glClear( GLES20.GL_DEPTH_BUFFER_BIT | GLES20.GL_COLOR_BUFFER_BIT);
+
+            MatrixState.copyMVMatrix();
 
             //坐标系推远
             MatrixState.pushMatrix();
             //绕Y轴、Z轴旋转
             MatrixState.rotate(yAngle, 0, 1, 0);
             MatrixState.rotate(zAngle, 1, 0, 0);
+
             //若加载的物体不为空则绘制物体
             if(lovo!=null)
             {
                 lovo.drawSelf(textureIdCM);
             }
             MatrixState.popMatrix();
+
             //天空盒六面调整值
             final float tzz=0.4f;
-            //绘制天空盒后面
+
+            //绘制后墙
             MatrixState.pushMatrix();
             MatrixState.translate(0, 0, -UNIT_SIZE+tzz);
             texRect.drawSelf(textureIdA[0]);
             MatrixState.popMatrix();
-            //绘制天空盒前面
+
+            //绘制前墙
             MatrixState.pushMatrix();
             MatrixState.translate(0, 0, UNIT_SIZE-tzz);
             MatrixState.rotate(180, 0, 1, 0);
             texRect.drawSelf(textureIdA[5]);
             MatrixState.popMatrix();
+
             //绘制左墙
             MatrixState.pushMatrix();
             MatrixState.translate(-UNIT_SIZE+tzz, 0, 0);
             MatrixState.rotate(90, 0, 1, 0);
             texRect.drawSelf(textureIdA[1]);
             MatrixState.popMatrix();
+
             //绘制右墙
             MatrixState.pushMatrix();
             MatrixState.translate(UNIT_SIZE-tzz, 0, 0);
             MatrixState.rotate(-90, 0, 1, 0);
             texRect.drawSelf(textureIdA[2]);
             MatrixState.popMatrix();
+
             //绘制下墙
             MatrixState.pushMatrix();
             MatrixState.translate(0, -UNIT_SIZE+tzz, 0);
             MatrixState.rotate(-90, 1, 0, 0);
             texRect.drawSelf(textureIdA[3]);
             MatrixState.popMatrix();
+
             //绘制上墙
             MatrixState.pushMatrix();
             MatrixState.translate(0, UNIT_SIZE-tzz, 0);
@@ -142,28 +163,9 @@ public class MySurfaceView extends GLSurfaceView {
             MatrixState.setProjectFrustum(-ratio, ratio, -1, 1, 2, 1000);
             //调用此方法产生摄像机9参数位置矩阵
             MatrixState.setCamera(cx,cy,cz,0f,0f,0f,0f,1.0f,0.0f);
-
-            new Thread()
-            {
-                public void run()
-                {
-                    while(true)
-                    {
-                        mRenderer.yAngle += 5;//设置沿x轴旋转角度
-                        mRenderer.zAngle+= 3;//设置沿z轴旋转角度
-
-                        try {
-                            Thread.sleep(100);
-                        } catch (InterruptedException e)
-                        {
-                            e.printStackTrace();
-                        }
-                    }
-                }
-            }.start();
+            MatrixState.setLightLocation(cx, cy+5, cz);
         }
 
-        @Override
         public void onSurfaceCreated(GL10 gl, EGLConfig config)
         {
             //设置屏幕背景色RGBA
@@ -174,15 +176,17 @@ public class MySurfaceView extends GLSurfaceView {
             GLES20.glEnable(GLES20.GL_CULL_FACE);
             //初始化变换矩阵
             MatrixState.setInitStack();
+            //初始化光源位置
+            MatrixState.setLightLocation(40, 10, 20);
             //加载要绘制的物体
-            lovo=LoadUtil.loadFromFileVertexOnly("ch_2.obj", MySurfaceView.this.getResources(),MySurfaceView.this);
+            lovo=LoadUtil.loadFromFileVertexOnly("ball.obj", MySurfaceView_3.this.getResources(), MySurfaceView_3.this);
             //创建纹理矩形对对象
-            texRect=new TextureRect(MySurfaceView.this);
+            texRect=new TextureRect(MySurfaceView_3.this);
             //加载纹理
             int[] cubeMapResourceIds = new int[]
                     {
                             R.raw.skycubemap_right, R.raw.skycubemap_left, R.raw.skycubemap_up_cube,
-                            R.raw.skycubemap_down, R.raw.skycubemap_front, R.raw.skycubemap_back
+                            R.raw.skycubemap_down_cube, R.raw.skycubemap_front, R.raw.skycubemap_back
                     };
             textureIdCM=generateCubeMap(cubeMapResourceIds);
 
