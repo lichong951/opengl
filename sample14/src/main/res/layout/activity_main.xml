@@ -34,6 +34,12 @@
             android:text="Sample14_3:平滑过滤"
             android:onClick="sample14_3"
             />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sample14_4:边缘检测"
+            android:onClick="sample14_4"
+            />
 
         </LinearLayout>
 
