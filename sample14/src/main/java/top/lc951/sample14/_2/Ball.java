@@ -41,7 +41,7 @@ class Ball {
     float xAngle = 0;//绕x轴旋转的角度
     float zAngle = 0;//绕z轴旋转的角度
     float r = 0.8f;
-    public Ball(MySurfaceView_1 mv) {
+    public Ball(MySurfaceView_2 mv) {
         //初始化顶点坐标与着色数据
         initVertexData();
         //初始化shader
@@ -136,7 +136,7 @@ class Ball {
     }
 
     //初始化着色器
-    public void initShader(MySurfaceView_1 mv) {
+    public void initShader(MySurfaceView_2 mv) {
         //加载顶点着色器的脚本内容
         mVertexShader = ShaderUtil.loadFromAssetsFile("vertex_2.sh",
                 mv.getResources());

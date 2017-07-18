@@ -14,14 +14,14 @@ import javax.microedition.khronos.opengles.GL10;
  * @ Email lichongmac@163.com
  */
 
-public class MySurfaceView_1 extends GLSurfaceView {
+public class MySurfaceView_2 extends GLSurfaceView {
     private final float TOUCH_SCALE_FACTOR = 180.0f/320;//角度缩放比例
     private SceneRenderer mRenderer;//场景渲染器
     Ball ball;//球
 
     private float mPreviousY;//上次的触控位置Y坐标
     private float mPreviousX;//上次的触控位置X坐标
-    public MySurfaceView_1(Context context) {
+    public MySurfaceView_2(Context context) {
         super(context);
         this.setEGLContextClientVersion(2); //设置使用OPENGL ES2.0
         mRenderer = new SceneRenderer();	//创建场景渲染器
@@ -81,7 +81,7 @@ public class MySurfaceView_1 extends GLSurfaceView {
             //设置屏幕背景色RGBA
             GLES20.glClearColor(0f,0f,0f, 1.0f);
             //创建球对象
-            ball=new Ball(MySurfaceView_1.this);
+            ball=new Ball(MySurfaceView_2.this);
             //打开深度检测
             GLES20.glEnable(GLES20.GL_DEPTH_TEST);
             //打开背面剪裁
