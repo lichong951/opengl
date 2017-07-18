@@ -40,6 +40,12 @@
             android:text="Sample14_4:边缘检测"
             android:onClick="sample14_4"
             />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sample14_5:浮雕效果"
+            android:onClick="sample14_5"
+            />
 
         </LinearLayout>
 

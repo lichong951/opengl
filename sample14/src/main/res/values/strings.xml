@@ -4,4 +4,5 @@
     <string name="title_activity_sample14_2_">Sample14_2：沙滩着色器</string>
     <string name="title_activity_sample14_3_">Sample14_3：平滑过滤</string>
     <string name="title_activity_sample14_4_">Sample14_4：边缘检测</string>
+    <string name="title_activity_sample14_5_">Sample14_5：浮雕效果</string>
 </resources>
