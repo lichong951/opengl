@@ -41,6 +41,16 @@
             android:label="@string/title_activity_sample14_5_"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
+        <activity
+            android:name=".Sample14_6_Activity"
+            android:label="@string/title_activity_sample14_6_"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name=".Sample14_5a_Activity"
+            android:label="@string/title_activity_sample14_5a_"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
     </application>
 
 </manifest>

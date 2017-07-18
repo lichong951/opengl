@@ -43,8 +43,21 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Sample14_5:浮雕效果"
+            android:text="Sample14_5:锐化处理"
             android:onClick="sample14_5"
+            />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sample14_5a:浮雕效果"
+            android:onClick="sample14_5a"
+            />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sample14_6:图像渐变"
+            android:onClick="sample14_6"
             />
 
         </LinearLayout>
