@@ -1,4 +1,4 @@
-package top.lc951.sample15._4;
+package top.lc951.sample15._5;
 
 import android.opengl.GLES20;
 
@@ -8,7 +8,7 @@ import java.nio.FloatBuffer;
 
 import top.lc951.sample15.utils.ShaderUtil;
 
-import static top.lc951.sample15._4.Constant.UNIT_SIZE;
+import static top.lc951.sample15._5.Constant.UNIT_SIZE;
 import static top.lc951.sample15.utils.ShaderUtil.createProgram;
 
 /**
@@ -29,7 +29,7 @@ class TextureRect {
     FloatBuffer   mTexCoorBuffer;//顶点纹理坐标数据缓冲
     int vCount=0;
 
-    public TextureRect(MySurfaceView_4 mv)
+    public TextureRect(MySurfaceView_5 mv)
     {
         //初始化顶点坐标与着色数据
         initVertexData();
@@ -84,12 +84,12 @@ class TextureRect {
     }
 
     //初始化shader
-    public void intShader(MySurfaceView_4 mv)
+    public void intShader(MySurfaceView_5 mv)
     {
         //加载顶点着色器的脚本内容
-        mVertexShader= ShaderUtil.loadFromAssetsFile("vertex_tex_4.sh", mv.getResources());
+        mVertexShader= ShaderUtil.loadFromAssetsFile("vertex_tex_5.sh", mv.getResources());
         //加载片元着色器的脚本内容
-        mFragmentShader=ShaderUtil.loadFromAssetsFile("frag_tex_4.sh", mv.getResources());
+        mFragmentShader=ShaderUtil.loadFromAssetsFile("frag_tex_5.sh", mv.getResources());
         //基于顶点着色器与片元着色器创建程序
         mProgram = createProgram(mVertexShader, mFragmentShader);
         //获取程序中顶点位置属性引用

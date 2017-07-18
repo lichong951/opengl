@@ -1,4 +1,4 @@
-package top.lc951.sample15._4;
+package top.lc951.sample15._5;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -17,7 +17,7 @@ import javax.microedition.khronos.opengles.GL10;
 
 import top.lc951.sample15.R;
 
-import static top.lc951.sample15._4.Constant.UNIT_SIZE;
+import static top.lc951.sample15._5.Constant.UNIT_SIZE;
 
 /**
  * Created by lichong on 2017/7/18.
@@ -25,7 +25,7 @@ import static top.lc951.sample15._4.Constant.UNIT_SIZE;
  * @ Email lichongmac@163.com
  */
 
-public class MySurfaceView_6 extends GLSurfaceView {
+public class MySurfaceView_5 extends GLSurfaceView {
     private final float TOUCH_SCALE_FACTOR = 180.0f/320;//角度缩放比例
     private SceneRenderer mRenderer;//场景渲染器
 
@@ -42,7 +42,7 @@ public class MySurfaceView_6 extends GLSurfaceView {
     int textureIdCM;//系统分配的Cube Map纹理
     int[] textureIdA=new int[6];//天空盒六面的纹理
 
-    public MySurfaceView_6(Context context) {
+    public MySurfaceView_5(Context context) {
         super(context);
         this.setEGLContextClientVersion(2); //设置使用OPENGL ES2.0
         mRenderer = new SceneRenderer();	//创建场景渲染器
@@ -180,9 +180,9 @@ public class MySurfaceView_6 extends GLSurfaceView {
             //初始化光源位置
             MatrixState.setLightLocation(40, 10, 20);
             //加载要绘制的物体
-            lovo=LoadUtil.loadFromFileVertexOnly("ball.obj", MySurfaceView_6.this.getResources(), MySurfaceView_6.this);
+            lovo=LoadUtil.loadFromFileVertexOnly("ball.obj", MySurfaceView_5.this.getResources(), MySurfaceView_5.this);
             //创建纹理矩形对对象
-            texRect=new TextureRect(MySurfaceView_6.this);
+            texRect=new TextureRect(MySurfaceView_5.this);
             //加载纹理
             int[] cubeMapResourceIds = new int[]
                     {

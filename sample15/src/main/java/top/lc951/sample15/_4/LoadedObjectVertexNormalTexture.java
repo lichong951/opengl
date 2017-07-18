@@ -28,7 +28,7 @@ class LoadedObjectVertexNormalTexture {
     FloatBuffer   mNormalBuffer;//顶点法向量数据缓冲
     int vCount=0;
 
-    public LoadedObjectVertexNormalTexture(MySurfaceView_6 mv, float[] vertices, float[] normals)
+    public LoadedObjectVertexNormalTexture(MySurfaceView_4 mv, float[] vertices, float[] normals)
     {
         //初始化顶点坐标与着色数据
         initVertexData(vertices,normals);
@@ -65,7 +65,7 @@ class LoadedObjectVertexNormalTexture {
     }
 
     //初始化shader
-    public void intShader(MySurfaceView_6 mv)
+    public void intShader(MySurfaceView_4 mv)
     {
         //加载顶点着色器的脚本内容
         mVertexShader= ShaderUtil.loadFromAssetsFile("vertex_tex_cube_4.sh", mv.getResources());

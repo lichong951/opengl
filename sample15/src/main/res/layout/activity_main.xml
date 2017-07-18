@@ -39,6 +39,12 @@
             android:text="Sample15_4:折射色散效果"
             android:onClick="sample15_4"
             />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sample15_5:菲涅尔效果"
+            android:onClick="sample15_5"
+            />
 
         </LinearLayout>
 
