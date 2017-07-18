@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Sample15</string>
     <string name="title_activity_sample15_1_">Sample15_1:投影贴图</string>
+    <string name="title_activity_sample15_2_">Sample15_2：反射环境模拟</string>
 </resources>

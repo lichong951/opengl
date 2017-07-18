@@ -21,6 +21,13 @@
             android:text="Sample15_1:投影贴图"
             android:onClick="sample15_1"
             />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sample15_2:反射环境模拟"
+            android:onClick="sample15_2"
+            />
+
         </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
