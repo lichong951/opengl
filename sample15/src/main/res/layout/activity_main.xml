@@ -45,6 +45,12 @@
             android:text="Sample15_5:菲涅尔效果"
             android:onClick="sample15_5"
             />
+       <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sample15_6:凹凸映射算法"
+            android:onClick="sample15_6"
+            />
 
         </LinearLayout>
 

@@ -5,4 +5,5 @@
     <string name="title_activity_sample15_3_">Sample15_3：折射环境模拟</string>
     <string name="title_activity_sample15_4_">Sample15_4：折射色散效果</string>
     <string name="title_activity_sample15_5_">Sample15_5：菲涅尔效果</string>
+    <string name="title_activity_sample15_6_">Sample15_6：凹凸映射算法</string>
 </resources>
