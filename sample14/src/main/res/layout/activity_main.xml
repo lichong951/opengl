@@ -71,6 +71,12 @@
             android:text="Sample14_8:曼德布罗集-茶壶"
             android:onClick="sample14_8"
             />
+       <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sample14_9:茱莉亚集"
+            android:onClick="sample14_9"
+            />
 
         </LinearLayout>
 
