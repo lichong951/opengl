@@ -7,4 +7,5 @@
     <string name="title_activity_sample15_5_">Sample15_5：菲涅尔效果</string>
     <string name="title_activity_sample15_6_">Sample15_6：凹凸映射算法</string>
     <string name="title_activity_sample15_7_">Sample15_7：平面阴影</string>
+    <string name="title_activity_sample15_8_v1_">Sample15_8_v1:阴影映射</string>
 </resources>
