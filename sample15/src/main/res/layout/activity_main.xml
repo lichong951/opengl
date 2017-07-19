@@ -64,6 +64,12 @@
             android:text="Sample15_8_v1:阴影映射"
             android:onClick="sample15_8_v1"
             />
+       <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sample15_8_v2:阴影映射2"
+            android:onClick="sample15_8_v2"
+            />
 
         </LinearLayout>
 
