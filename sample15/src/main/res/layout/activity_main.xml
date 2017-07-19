@@ -70,6 +70,12 @@
             android:text="Sample15_8_v2:阴影映射2"
             android:onClick="sample15_8_v2"
             />
+       <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sample15_9:光线跟踪"
+            android:onClick="sample15_9"
+            />
 
         </LinearLayout>
 

@@ -19,7 +19,7 @@ import static top.lc951.sample15._8_v2.Constant.SHADOW_TEX_WIDTH;
  * @ Email lichongmac@163.com
  */
 
-public class MySurfaceView extends GLSurfaceView {
+public class MySurfaceView_8_v2 extends GLSurfaceView {
     private final float TOUCH_SCALE_FACTOR = 180.0f/320;//角度缩放比例
     private SceneRenderer mRenderer;//场景渲染器
 
@@ -45,7 +45,7 @@ public class MySurfaceView extends GLSurfaceView {
     //光源总变换矩阵
     float[] mMVPMatrixGY;
 
-    public MySurfaceView(Context context) {
+    public MySurfaceView_8_v2(Context context) {
         super(context);
         this.setEGLContextClientVersion(2); //设置使用OPENGL ES2.0
         mRenderer = new SceneRenderer();	//创建场景渲染器
@@ -304,11 +304,11 @@ public class MySurfaceView extends GLSurfaceView {
             //初始化光源位置
             MatrixState.setLightLocation(lx, ly, lz);
             //加载要绘制的物体
-            lovo_ch=LoadUtil.loadFromFileVertexOnly("ch.obj", MySurfaceView.this.getResources(),MySurfaceView.this);
-            lovo_pm=LoadUtil.loadFromFileVertexOnly("pm.obj", MySurfaceView.this.getResources(),MySurfaceView.this);
-            lovo_cft=LoadUtil.loadFromFileVertexOnly("cft.obj", MySurfaceView.this.getResources(),MySurfaceView.this);
-            lovo_qt=LoadUtil.loadFromFileVertexOnly("qt.obj", MySurfaceView.this.getResources(),MySurfaceView.this);
-            lovo_yh=LoadUtil.loadFromFileVertexOnly("yh.obj", MySurfaceView.this.getResources(),MySurfaceView.this);
+            lovo_ch=LoadUtil.loadFromFileVertexOnly("ch.obj", MySurfaceView_8_v2.this.getResources(), MySurfaceView_8_v2.this);
+            lovo_pm=LoadUtil.loadFromFileVertexOnly("pm.obj", MySurfaceView_8_v2.this.getResources(), MySurfaceView_8_v2.this);
+            lovo_cft=LoadUtil.loadFromFileVertexOnly("cft.obj", MySurfaceView_8_v2.this.getResources(), MySurfaceView_8_v2.this);
+            lovo_qt=LoadUtil.loadFromFileVertexOnly("qt.obj", MySurfaceView_8_v2.this.getResources(), MySurfaceView_8_v2.this);
+            lovo_yh=LoadUtil.loadFromFileVertexOnly("yh.obj", MySurfaceView_8_v2.this.getResources(), MySurfaceView_8_v2.this);
         }
     }
 }

@@ -8,17 +8,19 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Window;
 import android.view.WindowManager;
 
-import top.lc951.sample15._8_v2.MySurfaceView_8_v2;
+import top.lc951.sample15._9.MySurfaceView_9;
 
-public class Sample15_8_v2_Activity extends AppCompatActivity {
-    private MySurfaceView_8_v2 mGLSurfaceView;
+public class Sample15_9_Activity extends AppCompatActivity {
+    private MySurfaceView_9 mGLSurfaceView;
+
     public static void actionActivity(Context context){
-        context.startActivity(new Intent(context, Sample15_8_v2_Activity.class));
+        context.startActivity(new Intent(context, Sample15_9_Activity.class));
     }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //设置为全屏
+//设置为全屏
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN ,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -26,11 +28,12 @@ public class Sample15_8_v2_Activity extends AppCompatActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
         //初始化GLSurfaceView
-        mGLSurfaceView = new MySurfaceView_8_v2(this);
+        mGLSurfaceView = new MySurfaceView_9(this);
         setContentView(mGLSurfaceView);
         mGLSurfaceView.requestFocus();//获取焦点
         mGLSurfaceView.setFocusableInTouchMode(true);//设置为可触控
     }
+
     @Override
     protected void onResume() {
         super.onResume();

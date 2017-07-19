@@ -38,7 +38,7 @@ class LoadedObjectVertexNormal {
     FloatBuffer   mNormalBuffer;//顶点法向量数据缓冲
     int vCount=0;
 
-    public LoadedObjectVertexNormal(MySurfaceView mv,float[] vertices,float[] normals)
+    public LoadedObjectVertexNormal(MySurfaceView_8_v2 mv, float[] vertices, float[] normals)
     {
         //初始化顶点坐标与着色数据
         initVertexData(vertices,normals);
@@ -77,7 +77,7 @@ class LoadedObjectVertexNormal {
     }
 
     //初始化shader
-    public void intShader(MySurfaceView mv)
+    public void intShader(MySurfaceView_8_v2 mv)
     {
         //加载顶点着色器的脚本内容
         mVertexShader= ShaderUtil.loadFromAssetsFile("vertex_8_v2.sh", mv.getResources());
@@ -102,7 +102,7 @@ class LoadedObjectVertexNormal {
     }
 
     //初始化shader
-    public void initShaderForShadow(MySurfaceView mv)
+    public void initShaderForShadow(MySurfaceView_8_v2 mv)
     {
         //加载顶点着色器的脚本内容
         mVertexShaderForShadow=ShaderUtil.loadFromAssetsFile("vertex_shadow_8_v2.sh", mv.getResources());

@@ -37,7 +37,7 @@ class LoadUtil {
     }
 
     //从obj文件中加载携带顶点信息的物体，并自动计算每个顶点的平均法向量
-    public static LoadedObjectVertexNormal loadFromFileVertexOnly(String fname, Resources r, MySurfaceView mv)
+    public static LoadedObjectVertexNormal loadFromFileVertexOnly(String fname, Resources r, MySurfaceView_8_v2 mv)
     {
         //加载后物体的引用
         LoadedObjectVertexNormal lo=null;

@@ -30,7 +30,7 @@ class TextureRect {
     FloatBuffer   mTexCoorBuffer;//顶点纹理坐标数据缓冲
     int vCount=0;
 
-    public TextureRect(MySurfaceView mv)
+    public TextureRect(MySurfaceView_8_v2 mv)
     {
         //初始化顶点坐标与着色数据
         initVertexData();
@@ -85,7 +85,7 @@ class TextureRect {
     }
 
     //初始化shader
-    public void intShader(MySurfaceView mv)
+    public void intShader(MySurfaceView_8_v2 mv)
     {
         //加载顶点着色器的脚本内容
         mVertexShader= ShaderUtil.loadFromAssetsFile("vertex_tex.sh", mv.getResources());
