@@ -8,13 +8,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Window;
 import android.view.WindowManager;
 
-import top.lc951.sample15._6.MySurfaceView_6;
+import top.lc951.sample15._7.MySurfaceView_7;
 
-public class Sample15_6_Activity extends AppCompatActivity {
-    private MySurfaceView_6 mGLSurfaceView;
-
+public class Sample15_7_Activity extends AppCompatActivity {
+    private MySurfaceView_7 mGLSurfaceView;
     public static void actionActivity(Context context){
-        context.startActivity(new Intent(context, Sample15_6_Activity.class));
+        context.startActivity(new Intent(context, Sample15_7_Activity.class));
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +26,7 @@ public class Sample15_6_Activity extends AppCompatActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
         //初始化GLSurfaceView
-        mGLSurfaceView = new MySurfaceView_6(this);
+        mGLSurfaceView = new MySurfaceView_7(this);
         setContentView(mGLSurfaceView);
         mGLSurfaceView.requestFocus();//获取焦点
         mGLSurfaceView.setFocusableInTouchMode(true);//设置为可触控

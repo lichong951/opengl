@@ -1,4 +1,4 @@
-package top.lc951.sample15._6;
+package top.lc951.sample15._7;
 
 import android.content.res.Resources;
 import android.util.Log;
@@ -10,11 +10,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 
-import static top.lc951.sample15._6.Constant.MAX_S_GHXP;
-import static top.lc951.sample15._6.Constant.MAX_T_GHXP;
 
 /**
- * Created by lichong on 2017/7/18.
+ * Created by lichong on 2017/7/19.
  *
  * @ Email lichongmac@163.com
  */
@@ -40,11 +38,10 @@ class LoadUtil {
     }
 
     //从obj文件中加载携带顶点信息的物体，并自动计算每个顶点的平均法向量
-    public static LoadedObjectVertexNormalTexture loadFromFile
-    (String fname, Resources r, MySurfaceView_6 mv)
+    public static LoadedObjectVertexNormalAverage loadFromFileVertexOnlyAverage(String fname, Resources r, MySurfaceView_7 mv)
     {
         //加载后物体的引用
-        LoadedObjectVertexNormalTexture lo=null;
+        LoadedObjectVertexNormalAverage lo=null;
         //原始顶点坐标列表--直接从obj文件中加载
         ArrayList<Float> alv=new ArrayList<Float>();
         //顶点组装面索引列表--根据面的信息从文件中加载
@@ -54,10 +51,6 @@ class LoadUtil {
         //平均前各个索引对应的点的法向量集合Map
         //此HashMap的key为点的索引， value为点所在的各个面的法向量的集合
         HashMap<Integer,HashSet<Normal>> hmn=new HashMap<Integer,HashSet<Normal>>();
-        //原始纹理坐标列表
-        ArrayList<Float> alt=new ArrayList<Float>();
-        //纹理坐标结果列表
-        ArrayList<Float> altResult=new ArrayList<Float>();
 
         try
         {
@@ -77,13 +70,6 @@ class LoadUtil {
                     alv.add(Float.parseFloat(tempsa[1]));
                     alv.add(Float.parseFloat(tempsa[2]));
                     alv.add(Float.parseFloat(tempsa[3]));
-                }
-                else if(tempsa[0].trim().equals("vt"))
-                {//此行为纹理坐标行
-                    //若为纹理坐标行则提取ST坐标并添加进原始纹理坐标列表中
-                    //采用国画小品纹理图时的代码
-                    alt.add(Float.parseFloat(tempsa[1])*MAX_S_GHXP);
-                    alt.add(Float.parseFloat(tempsa[2])*MAX_T_GHXP);
                 }
                 else if(tempsa[0].trim().equals("f"))
                 {//此行为三角形面
@@ -138,10 +124,10 @@ class LoadUtil {
                     float vyb=y2-y0;
                     float vzb=z2-z0;
                     //通过求两个向量的叉积计算法向量
-                    float[] vNormal=getCrossProduct
+                    float[] vNormal=vectorNormal(getCrossProduct
                             (
                                     vxa,vya,vza,vxb,vyb,vzb
-                            );
+                            ));
 
                     for(int tempInxex:index)
                     {//记录每个索引点的法向量到平均前各个索引对应的点的法向量集合组成的Map中
@@ -158,20 +144,6 @@ class LoadUtil {
                         //将集合放进HsahMap中
                         hmn.put(tempInxex, hsn);
                     }
-
-                    //将纹理坐标组织到结果纹理坐标列表中
-                    //第0个顶点的纹理坐标
-                    int indexTex=Integer.parseInt(tempsa[1].split("/")[1])-1;
-                    altResult.add(alt.get(indexTex*2));
-                    altResult.add(alt.get(indexTex*2+1));
-                    //第1个顶点的纹理坐标
-                    indexTex=Integer.parseInt(tempsa[2].split("/")[1])-1;
-                    altResult.add(alt.get(indexTex*2));
-                    altResult.add(alt.get(indexTex*2+1));
-                    //第2个顶点的纹理坐标
-                    indexTex=Integer.parseInt(tempsa[3].split("/")[1])-1;
-                    altResult.add(alt.get(indexTex*2));
-                    altResult.add(alt.get(indexTex*2+1));
                 }
             }
 
@@ -197,30 +169,8 @@ class LoadUtil {
                 nXYZ[c++]=tn[1];
                 nXYZ[c++]=tn[2];
             }
-
-            //生成切向量数组
-            float[] tnXYZ=new float[nXYZ.length];
-            int kc=nXYZ.length/3;
-            for(int i=0;i<kc;i++)
-            {
-                float[] normal=new float[]{nXYZ[i*3],nXYZ[i*3+1],nXYZ[i*3+2]};
-                float[] position=new float[]{vXYZ[i*3],vXYZ[i*3+1],vXYZ[i*3+2]};
-                float[] tangent=fromNormalToTangent(normal,position);
-                tnXYZ[i*3]=tangent[0];
-                tnXYZ[i*3+1]=tangent[1];
-                tnXYZ[i*3+2]=tangent[2];
-            }
-
-            //生成纹理数组
-            size=altResult.size();
-            float[] tST=new float[size];
-            for(int i=0;i<size;i++)
-            {
-                tST[i]=altResult.get(i);
-            }
-
             //创建3D物体对象
-            lo=new LoadedObjectVertexNormalTexture(mv,vXYZ,nXYZ,tST,tnXYZ);
+            lo=new LoadedObjectVertexNormalAverage(mv,vXYZ,nXYZ);
         }
         catch(Exception e)
         {
@@ -229,26 +179,127 @@ class LoadUtil {
         }
         return lo;
     }
+    //从obj文件中加载仅携带顶点信息的物体
+    //首先加载顶点信息，再根据顶点组成三角形面的情况自动计算出每个面的法向量
+    //然后将这个面的法向量分配给这个面上的顶点
+    public static LoadedObjectVertexNormalFace loadFromFileVertexOnlyFace(String fname, Resources r, MySurfaceView_7 mv)
+    {
+        //加载后3D对象的引用
+        LoadedObjectVertexNormalFace lo=null;
+        //原始顶点坐标列表--按顺序从obj文件中加载的
+        ArrayList<Float> alv=new ArrayList<Float>();
+        //结果顶点坐标列表 --根据组成面的情况组织好的
+        ArrayList<Float> alvResult=new ArrayList<Float>();
+        //结果法向量列表--根据组成面的情况组织好的
+        ArrayList<Float> alnResult=new ArrayList<Float>();
 
-    //右法向量值和对应顶点折算切向量
-    public static float[] fromNormalToTangent(float[] normal,float[] position){
-        //取出求切面点法式平面方程需要的参数
-        float A=normal[0];float B=normal[1];float C=normal[2];
-        float x0=position[0];float y0=position[1];float z0=position[2];
-        float[] resultY=null;//声明用于存放第一个切向量的数组
-        //求出切平面上离position位置X、Z分量各差1个单位的点的坐标
-        float x1=x0+1; float z1=z0+1; float y1=(C*(z0-z1)+A*(x0-x1))/B+y0;
-        resultY=new float[]{x1-x0,y1-y0,z1-z0};//求出第一个切向量
-        float[] resultZ=null;//声明用于存放第二个切向量的数组
-        //求出切平面上离position位置X、Y分量各差1个单位的点的坐标
-        x1=x0+1;y1=y0+1; z1=(A*(x0-x1)+B*(y0-y1))/C+z0;
-        resultZ=new float[]{x1-x0,y1-y0,z1-z0};//求出第二个切向量
-        float[] resultX=null;//声明用于存放第三个切向量的数组
-        //求出切平面上离position位置Y、Z分量各差1个单位的点的坐标
-        y1=y0+1; z1=z0+1; x1=(B*(y0-y1)+C*(z0-z1))/A+x0;
-        resultX=new float[]{x1-x0,y1-y0,z1-z0}; //求出第三个切向量
-        if(resultX[0]<50){return resultX;}//若第一个可能的切向量在指定范围内则取第一个
-        else if(resultY[1]<50){return resultY;}//若第二个可能的切向量在指定范围内则取第二个
-        else{return resultZ;}//否则取第三个
+        try
+        {
+            InputStream in=r.getAssets().open(fname);
+            InputStreamReader isr=new InputStreamReader(in);
+            BufferedReader br=new BufferedReader(isr);
+            String temps=null;
+
+            //循环不断从文件中读取行，根据行类型的不同执行
+            //不同的处理逻辑
+            while((temps=br.readLine())!=null)
+            {
+                String[] tempsa=temps.split("[ ]+");
+                if(tempsa[0].trim().equals("v"))
+                {//此行为顶点坐标
+                    //若为顶点坐标行则提取出此顶点的XYZ坐标添加到原始顶点坐标列表中
+                    alv.add(Float.parseFloat(tempsa[1]));
+                    alv.add(Float.parseFloat(tempsa[2]));
+                    alv.add(Float.parseFloat(tempsa[3]));
+                }
+                else if(tempsa[0].trim().equals("f"))
+                {//此行为三角形面
+		      		/*
+		      		 *若为三角形面行则根据 组成面的顶点的索引从原始顶点坐标列表中
+		      		 *提取相应的顶点坐标值添加到结果顶点坐标列表中，同时根据三个
+		      		 *顶点的坐标计算出法向量并添加到结果法向量列表中
+		      		*/
+
+                    //提取三角形第一个顶点的坐标
+                    int index=Integer.parseInt(tempsa[1].split("/")[0])-1;
+                    float x0=alv.get(3*index);
+                    float y0=alv.get(3*index+1);
+                    float z0=alv.get(3*index+2);
+                    alvResult.add(x0);
+                    alvResult.add(y0);
+                    alvResult.add(z0);
+
+                    //提取三角形第二个顶点的坐标
+                    index=Integer.parseInt(tempsa[2].split("/")[0])-1;
+                    float x1=alv.get(3*index);
+                    float y1=alv.get(3*index+1);
+                    float z1=alv.get(3*index+2);
+                    alvResult.add(x1);
+                    alvResult.add(y1);
+                    alvResult.add(z1);
+
+                    //提取三角形第三个顶点的坐标
+                    index=Integer.parseInt(tempsa[3].split("/")[0])-1;
+                    float x2=alv.get(3*index);
+                    float y2=alv.get(3*index+1);
+                    float z2=alv.get(3*index+2);
+                    alvResult.add(x2);
+                    alvResult.add(y2);
+                    alvResult.add(z2);
+
+                    //通过三角形面两个边向量0-1，0-2求叉积得到此面的法向量
+                    //求0号点到1号点的向量
+                    float vxa=x1-x0;
+                    float vya=y1-y0;
+                    float vza=z1-z0;
+                    //求0号点到2号点的向量
+                    float vxb=x2-x0;
+                    float vyb=y2-y0;
+                    float vzb=z2-z0;
+
+                    //通过球两个向量的叉积计算法向量
+                    float[] vNormal=vectorNormal
+                            (
+                                    getCrossProduct
+                                            (
+                                                    vxa,vya,vza,vxb,vyb,vzb
+                                            )
+                            );
+                    //将计算出的法向量添加到结果法向量列表中
+                    for(int i=0;i<3;i++)
+                    {
+                        alnResult.add(vNormal[0]);
+                        alnResult.add(vNormal[1]);
+                        alnResult.add(vNormal[2]);
+                    }
+                }
+            }
+
+            //obj文件读取结束后生成顶点数组及生成法向量数组
+            //生成顶点数组
+            int size=alvResult.size();
+            float[] vXYZ=new float[size];
+            for(int i=0;i<size;i++)
+            {
+                vXYZ[i]=alvResult.get(i);
+            }
+
+            //生成法向量数组
+            size=alnResult.size();
+            float[] nXYZ=new float[size];
+            for(int i=0;i<size;i++)
+            {
+                nXYZ[i]=alnResult.get(i);
+            }
+
+            //创建3D对象
+            lo=new LoadedObjectVertexNormalFace(mv,vXYZ,nXYZ);
+        }
+        catch(Exception e)
+        {
+            Log.d("load error", "load error");
+            e.printStackTrace();
+        }
+        return lo;
     }
 }
