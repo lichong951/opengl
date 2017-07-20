@@ -34,6 +34,12 @@
             android:text="Sample16_3:穿透效应"
             android:onClick="sample16_3"
             />
+          <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sample16_4：粒子系统-CPU"
+            android:onClick="sample16_4"
+            />
 
         </LinearLayout>
 
