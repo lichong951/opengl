@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Sample16</string>
     <string name="title_activity_sample16_1_">Sample16_1:AABB包围盒</string>
+    <string name="title_activity_sample16_2_">Sample16_2：AABB包围盒-旋转</string>
 </resources>
