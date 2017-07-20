@@ -1,4 +1,4 @@
-package top.lc951.sample16._2;
+package top.lc951.sample16._3;
 
 import android.content.res.Resources;
 import android.util.Log;
@@ -9,6 +9,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+
 
 /**
  * Created by lichong on 2017/7/20.
@@ -37,7 +38,7 @@ class LoadUtil {
     }
 
     //从obj文件中加载携带顶点信息的物体，并自动计算每个顶点的平均法向量
-    public static LoadedObjectVertexNormal loadFromFile(String fname, Resources r, MySurfaceView_2 mv)
+    public static LoadedObjectVertexNormal loadFromFile(String fname, Resources r, MySurfaceView_3 mv)
     {
         //加载后物体的引用
         LoadedObjectVertexNormal lo=null;

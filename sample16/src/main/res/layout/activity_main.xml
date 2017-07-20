@@ -28,6 +28,12 @@
             android:text="Sample16_2:AABB包围盒-旋转"
             android:onClick="sample16_2"
             />
+          <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sample16_3:穿透效应"
+            android:onClick="sample16_3"
+            />
 
         </LinearLayout>
 

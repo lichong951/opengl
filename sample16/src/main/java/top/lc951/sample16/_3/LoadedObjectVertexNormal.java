@@ -1,4 +1,4 @@
-package top.lc951.sample16._2;
+package top.lc951.sample16._3;
 
 import android.opengl.GLES20;
 
@@ -13,7 +13,7 @@ import top.lc951.sample16.utils.ShaderUtil;
  *
  * @ Email lichongmac@163.com
  */
-
+//加载后的物体——携带顶点信息，自动计算面平均法向量
 class LoadedObjectVertexNormal {
     int mProgram;//自定义渲染管线着色器程序id
     int muMVPMatrixHandle;//总变换矩阵引用
@@ -30,7 +30,7 @@ class LoadedObjectVertexNormal {
     int vCount=0;
     float vertices[];
 
-    public LoadedObjectVertexNormal(MySurfaceView_2 mv, float[] vertices, float[] normals)
+    public LoadedObjectVertexNormal(MySurfaceView_3 mv, float[] vertices, float[] normals)
     {
         //初始化顶点坐标与着色数据
         initVertexData(vertices,normals);
@@ -67,7 +67,7 @@ class LoadedObjectVertexNormal {
     }
 
     //初始化shader
-    public void initShader(MySurfaceView_2 mv)
+    public void initShader(MySurfaceView_3 mv)
     {
         //加载顶点着色器的脚本内容
         mVertexShader= ShaderUtil.loadFromAssetsFile("vertex.sh", mv.getResources());

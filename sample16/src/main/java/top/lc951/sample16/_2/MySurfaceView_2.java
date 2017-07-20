@@ -15,11 +15,11 @@ import javax.microedition.khronos.opengles.GL10;
  * @ Email lichongmac@163.com
  */
 
-public class MySurfaceView extends GLSurfaceView {
+public class MySurfaceView_2 extends GLSurfaceView {
     private SceneRenderer mRenderer;//场景渲染器
     LovoGoThread lgt;
     ArrayList<RigidBody> aList=new ArrayList<RigidBody>();
-    public MySurfaceView(Context context) {
+    public MySurfaceView_2(Context context) {
         super(context);
         this.setEGLContextClientVersion(2); //设置使用OPENGL ES2.0
         mRenderer = new SceneRenderer();	//创建场景渲染器
@@ -76,8 +76,8 @@ public class MySurfaceView extends GLSurfaceView {
             //初始化光源位置
             MatrixState.setLightLocation(0, 10, -15);
             //加载要绘制的物体
-            ch=LoadUtil.loadFromFile("gxq.obj", MySurfaceView.this.getResources(),MySurfaceView.this);
-            pm=LoadUtil.loadFromFile("pm.obj", MySurfaceView.this.getResources(),MySurfaceView.this);
+            ch=LoadUtil.loadFromFile("gxq.obj", MySurfaceView_2.this.getResources(), MySurfaceView_2.this);
+            pm=LoadUtil.loadFromFile("pm.obj", MySurfaceView_2.this.getResources(), MySurfaceView_2.this);
             //旋转两侧的光线枪
 //            aList.add(new RigidBody(ch,true,new Vector3f(-18f,0f,0),new Vector3f(0,0,0),new Orientation(45,0,1,0)));
 //            aList.add(new RigidBody(ch,true,new Vector3f(20f,0f,0),new Vector3f(0,0,0),new Orientation(45,0,1,0)));
