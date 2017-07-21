@@ -40,6 +40,12 @@
             android:text="Sample16_4：粒子系统-CPU"
             android:onClick="sample16_4"
             />
+          <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sample16_5：粒子系统-GPU"
+            android:onClick="sample16_5"
+            />
 
         </LinearLayout>
 

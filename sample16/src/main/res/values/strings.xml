@@ -4,4 +4,5 @@
     <string name="title_activity_sample16_2_">Sample16_2：AABB包围盒-旋转</string>
     <string name="title_activity_sample16_3_">Sample16_3：穿透效应</string>
     <string name="title_activity_sample16_4_">Sample16_4：粒子系统-CPU</string>
+    <string name="title_activity_sample16_5_">Sample16_5：粒子系统-GPU</string>
 </resources>
