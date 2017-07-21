@@ -8,10 +8,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Window;
 import android.view.WindowManager;
 
-import top.lc951.sample16._5.MySurfaceView_6;
+import top.lc951.sample16._5.MySurfaceView_5;
 
 public class Sample16_5_Activity extends AppCompatActivity {
-    private MySurfaceView_6 mGLSurfaceView;
+    private MySurfaceView_5 mGLSurfaceView;
     public static void actionActivity(Context context){
         context.startActivity(new Intent(context, Sample16_5_Activity.class));
     }
@@ -27,7 +27,7 @@ public class Sample16_5_Activity extends AppCompatActivity {
         //切换到主界面
 
         //初始化GLSurfaceView
-        mGLSurfaceView = new MySurfaceView_6(this);
+        mGLSurfaceView = new MySurfaceView_5(this);
         setContentView(mGLSurfaceView);
         mGLSurfaceView.requestFocus();//获取焦点
         mGLSurfaceView.setFocusableInTouchMode(true);//设置为可触控

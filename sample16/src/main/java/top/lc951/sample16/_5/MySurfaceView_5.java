@@ -14,10 +14,10 @@ import javax.microedition.khronos.opengles.GL10;
  * @ Email lichongmac@163.com
  */
 
-public class MySurfaceView_6 extends GLSurfaceView {
+public class MySurfaceView_5 extends GLSurfaceView {
     private SceneRenderer mRenderer;//场景渲染器
 
-    public MySurfaceView_6(Context context) {
+    public MySurfaceView_5(Context context) {
         super(context);
         this.setEGLContextClientVersion(2); //设置使用OPENGL ES2.0
         mRenderer = new SceneRenderer();	//创建场景渲染器
@@ -66,7 +66,7 @@ public class MySurfaceView_6 extends GLSurfaceView {
             //设置屏幕背景色RGBA
             GLES20.glClearColor(0.0f,0.0f,0.0f,1.0f);
             //创建焰火粒子系统
-            grainForDraw=new GrainForDraw(MySurfaceView_6.this,
+            grainForDraw=new GrainForDraw(MySurfaceView_5.this,
                     2,		//点的大小
                     8000	//点的个数
             );

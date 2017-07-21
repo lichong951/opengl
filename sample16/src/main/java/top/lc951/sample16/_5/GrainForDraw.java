@@ -32,7 +32,7 @@ class GrainForDraw {
     float timeLive=0;
     long timeStamp=0;
 
-    public GrainForDraw(MySurfaceView_6 mv, float scale, int vCount)
+    public GrainForDraw(MySurfaceView_5 mv, float scale, int vCount)
     {
         this.scale=scale;
         this.vCount=vCount;
@@ -64,7 +64,7 @@ class GrainForDraw {
     }
 
     //初始化着色器的initShader方法
-    public void initShader(MySurfaceView_6 mv)
+    public void initShader(MySurfaceView_5 mv)
     {
         //加载顶点着色器的脚本内容
         mVertexShader= ShaderUtil.loadFromAssetsFile("vertex_yh.sh", mv.getResources());
