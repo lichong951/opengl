@@ -11,8 +11,8 @@ class Cylinder {
     Circle topCircle;//顶圆
     CylinderSide cylinderSide;//侧面
     float h;
-    MySurfaceView mv;
-    public Cylinder(float r, float h, int n,int mProgram,MySurfaceView mv)
+    MySurfaceView_2 mv;
+    public Cylinder(float r, float h, int n, int mProgram, MySurfaceView_2 mv)
     {
         topCircle=new Circle(r,n,new float[]{0,1,0},mProgram);
         bottomCircle=new Circle(r,n,new float[]{0,-1,0},mProgram);

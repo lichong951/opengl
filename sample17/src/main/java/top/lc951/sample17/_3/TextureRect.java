@@ -1,4 +1,4 @@
-package top.lc951.sample17._2;
+package top.lc951.sample17._3;
 
 import android.opengl.GLES20;
 
@@ -77,7 +77,7 @@ class TextureRect {
     }
 
     //初始化shader
-    public void intShader(MySurfaceView_2 mv, int mProgram)
+    public void intShader(MySurfaceView_3 mv, int mProgram)
     {
         this.mProgram=mProgram;
         //获取程序中顶点位置属性引用id

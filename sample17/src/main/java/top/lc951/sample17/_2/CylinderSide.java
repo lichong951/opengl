@@ -133,7 +133,7 @@ class CylinderSide {
     }
 
     //初始化shader
-    public void intShader(MySurfaceView mv)
+    public void intShader(MySurfaceView_2 mv)
     {
         //获取程序中顶点位置属性引用id
         maPositionHandle = GLES20.glGetAttribLocation(mProgram, "aPosition");

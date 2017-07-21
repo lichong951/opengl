@@ -89,7 +89,7 @@ class Circle {
         textureBuffer.position(0);//设置缓冲区起始位置
     }
     //初始化shader
-    public void intShader(MySurfaceView mv)
+    public void intShader(MySurfaceView_2 mv)
     {
         //获取程序中顶点位置属性引用id
         maPositionHandle = GLES20.glGetAttribLocation(mProgram, "aPosition");

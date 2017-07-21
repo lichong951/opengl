@@ -9,12 +9,12 @@ import android.view.KeyEvent;
 import android.view.Window;
 import android.view.WindowManager;
 
-import top.lc951.sample17._2.MySurfaceView_2;
+import top.lc951.sample17._3.MySurfaceView_3;
 
-public class Sample17_2_Activity extends AppCompatActivity {
-    private MySurfaceView_2 mGLSurfaceView;
+public class Sample17_3_Activity extends AppCompatActivity {
+    private MySurfaceView_3 mGLSurfaceView;
     public static void actionActivity(Context context){
-        context.startActivity(new Intent(context, Sample17_2_Activity.class));
+        context.startActivity(new Intent(context, Sample17_3_Activity.class));
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +24,7 @@ public class Sample17_2_Activity extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);//去掉标头
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);//强制横屏
 
-        mGLSurfaceView = new MySurfaceView_2(this);
+        mGLSurfaceView = new MySurfaceView_3(this);
         mGLSurfaceView.requestFocus();//获取焦点
         mGLSurfaceView.setFocusableInTouchMode(true);//设置为可触控
 

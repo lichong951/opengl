@@ -1,4 +1,4 @@
-package top.lc951.sample17._2;
+package top.lc951.sample17.utils;
 
 import javax.vecmath.Quat4f;
 
@@ -8,7 +8,7 @@ import javax.vecmath.Quat4f;
  * @ Email lichongmac@163.com
  */
 
-public class SYSUtil {
+class SYSUtil {
     //将四元数转换为角度及转轴向量
     public static float[] fromSYStoAXYZ(Quat4f q4)
     {

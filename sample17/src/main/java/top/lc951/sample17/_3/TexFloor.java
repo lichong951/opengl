@@ -1,10 +1,19 @@
-package top.lc951.sample17._2;
+package top.lc951.sample17._3;
 
 import android.opengl.GLES20;
+
+import com.bulletphysics.collision.shapes.CollisionShape;
+import com.bulletphysics.dynamics.DiscreteDynamicsWorld;
+import com.bulletphysics.dynamics.RigidBody;
+import com.bulletphysics.dynamics.RigidBodyConstructionInfo;
+import com.bulletphysics.linearmath.DefaultMotionState;
+import com.bulletphysics.linearmath.Transform;
 
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.FloatBuffer;
+
+import javax.vecmath.Vector3f;
 
 /**
  * Created by lichong on 2017/7/21.
@@ -12,27 +21,47 @@ import java.nio.FloatBuffer;
  * @ Email lichongmac@163.com
  */
 
-class TextureRect {
+class TexFloor {
     int mProgram;//自定义渲染管线程序id
     int muMVPMatrixHandle;//总变换矩阵引用id
     int muMMatrixHandle;//位置、旋转变换矩阵
+    int maTexCoorHandle; //顶点纹理坐标属性引用id
     int uTexHandle;//外观纹理属性引用id
-
     int maCameraHandle; //摄像机位置属性引用id
     int maPositionHandle; //顶点位置属性引用id
-    int maTexCoorHandle; //顶点纹理坐标属性引用id
 
     String mVertexShader;//顶点着色器
     String mFragmentShader;//片元着色器
 
     private FloatBuffer mVertexBuffer;//顶点坐标数据缓冲
     private FloatBuffer   mTextureBuffer;//顶点着色数据缓冲
-    int vCount;
 
-    public TextureRect(final float UNIT_SIZE)
+    int vCount;
+    float yOffset;
+
+    public TexFloor(int mProgram, final float UNIT_SIZE, float yOffset, CollisionShape groundShape, DiscreteDynamicsWorld dynamicsWorld)
     {
-        //初始化顶点坐标与着色数据
+        this.mProgram=mProgram;
+        this.yOffset=yOffset;
+        //创建刚体的初始变换对象
+        Transform groundTransform = new Transform();
+        groundTransform.setIdentity();
+        groundTransform.origin.set(new Vector3f(0.f, yOffset, 0.f));
+        Vector3f localInertia = new Vector3f(0, 0, 0);//惯性
+        //创建刚体的运动状态对象
+        DefaultMotionState myMotionState = new DefaultMotionState(groundTransform);
+        //创建刚体信息对象
+        RigidBodyConstructionInfo rbInfo = new RigidBodyConstructionInfo(0, myMotionState, groundShape, localInertia);
+        //创建刚体
+        RigidBody body = new RigidBody(rbInfo);
+        //设置反弹系数
+        body.setRestitution(0.4f);
+        //设置摩擦系数
+        body.setFriction(0.8f);
+        //将刚体添加进物理世界
+        dynamicsWorld.addRigidBody(body);
         initVertexData(UNIT_SIZE);
+        intShader(mProgram);
     }
 
     public void initVertexData(final float UNIT_SIZE){
@@ -40,13 +69,13 @@ class TextureRect {
         vCount=6;
         float vertices[]=new float[]
                 {
-                        -1*UNIT_SIZE,1*UNIT_SIZE,0,
-                        -1*UNIT_SIZE,-1*UNIT_SIZE,0,
-                        1*UNIT_SIZE,1*UNIT_SIZE,0,
+                        1*UNIT_SIZE,yOffset,1*UNIT_SIZE,
+                        -1*UNIT_SIZE,yOffset,-1*UNIT_SIZE,
+                        -1*UNIT_SIZE,yOffset,1*UNIT_SIZE,
 
-                        -1*UNIT_SIZE,-1*UNIT_SIZE,0,
-                        1*UNIT_SIZE,-1*UNIT_SIZE,0,
-                        1*UNIT_SIZE,1*UNIT_SIZE,0
+                        1*UNIT_SIZE,yOffset,1*UNIT_SIZE,
+                        1*UNIT_SIZE,yOffset,-1*UNIT_SIZE,
+                        -1*UNIT_SIZE,yOffset,-1*UNIT_SIZE,
                 };
 
         //创建顶点坐标数据缓冲
@@ -62,9 +91,10 @@ class TextureRect {
         //顶点纹理数据的初始化================begin============================
         float textures[]=new float[]
                 {
-                        0,1, 0,0, 1,1,
-                        0,0, 1,0, 1,1
+                        UNIT_SIZE/2,UNIT_SIZE/2,  0,0,  0,UNIT_SIZE/2,
+                        UNIT_SIZE/2,UNIT_SIZE/2,  UNIT_SIZE/2,0,  0,0
                 };
+
         //创建顶点纹理数据缓冲
         ByteBuffer tbb = ByteBuffer.allocateDirect(textures.length*4);
         tbb.order(ByteOrder.nativeOrder());//设置字节顺序
@@ -75,11 +105,9 @@ class TextureRect {
         //转换，关键是要通过ByteOrder设置nativeOrder()，否则有可能会出问题
         //顶点纹理数据的初始化================end============================
     }
-
     //初始化shader
-    public void intShader(MySurfaceView_2 mv, int mProgram)
+    public void intShader(int mProgram)
     {
-        this.mProgram=mProgram;
         //获取程序中顶点位置属性引用id
         maPositionHandle = GLES20.glGetAttribLocation(mProgram, "aPosition");
         //获取程序中顶点经纬度属性引用id

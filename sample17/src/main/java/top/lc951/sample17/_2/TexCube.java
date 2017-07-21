@@ -13,7 +13,7 @@ class TexCube {
     float halfSize;//立方体的半边长
     RigidBody body;//对应的刚体对象
     int mProgram;
-    MySurfaceView mv;
+    MySurfaceView_2 mv;
     public TexCube(float halfSize,int mProgram)
     {
         tr=new TextureRect(halfSize);//创建纹理矩形

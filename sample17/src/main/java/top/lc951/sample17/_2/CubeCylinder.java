@@ -22,9 +22,9 @@ class CubeCylinder {
     TexCube tc;//用于组合的立方体
     float halfSize;
     RigidBody body;//对应的刚体对象
-    MySurfaceView mv;//MySurfaceView的引用
+    MySurfaceView_2 mv;//MySurfaceView的引用
 
-    public CubeCylinder(MySurfaceView mv, float halfSize, CollisionShape[] csa,
+    public CubeCylinder(MySurfaceView_2 mv, float halfSize, CollisionShape[] csa,
                         DiscreteDynamicsWorld dynamicsWorld, float mass, float cx, float cy, float cz, int[] mProgram)
     {
         CompoundShape comShape=new CompoundShape(); //创建组合形状
