@@ -21,8 +21,8 @@ class TexCube {
     float halfSize;//立方体的半边长
     RigidBody body;//对应的刚体对象
     int mProgram;
-    MySurfaceView mv;
-    public TexCube(MySurfaceView mv, float halfSize, CollisionShape colShape,
+    MySurfaceView_1 mv;
+    public TexCube(MySurfaceView_1 mv, float halfSize, CollisionShape colShape,
                    DiscreteDynamicsWorld dynamicsWorld, float mass, float cx, float cy, float cz, int mProgram)
     {
         boolean isDynamic = (mass != 0f);//物体是否可以运动

@@ -6,7 +6,7 @@ package top.lc951.sample17._1;
  * @ Email lichongmac@163.com
  */
 
-public class Constant {
+class Constant {
     final static float UNIT_SIZE=0.5f;//基本尺寸单元
     final static float TIME_STEP=1.0f/60;//模拟的周期
     final static int MAX_SUB_STEPS=5;//最大的子步数

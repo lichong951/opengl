@@ -1,4 +1,4 @@
-package top.lc951.sample17._1;
+package top.lc951.sample17._2;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -14,10 +14,13 @@ import com.bulletphysics.collision.dispatch.CollisionDispatcher;
 import com.bulletphysics.collision.dispatch.DefaultCollisionConfiguration;
 import com.bulletphysics.collision.shapes.BoxShape;
 import com.bulletphysics.collision.shapes.CollisionShape;
+import com.bulletphysics.collision.shapes.CylinderShapeX;
+import com.bulletphysics.collision.shapes.CylinderShapeZ;
 import com.bulletphysics.collision.shapes.StaticPlaneShape;
 import com.bulletphysics.dynamics.DiscreteDynamicsWorld;
 import com.bulletphysics.dynamics.RigidBody;
 import com.bulletphysics.dynamics.constraintsolver.SequentialImpulseConstraintSolver;
+import com.bulletphysics.util.ObjectArrayList;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -28,16 +31,7 @@ import javax.microedition.khronos.opengles.GL10;
 import javax.vecmath.Vector3f;
 
 import top.lc951.sample17.R;
-import top.lc951.sample17.Sample17_1_Activity;
-
-import static top.lc951.sample17._1.Constant.EYE_X;
-import static top.lc951.sample17._1.Constant.EYE_Y;
-import static top.lc951.sample17._1.Constant.EYE_Z;
-import static top.lc951.sample17._1.Constant.MAX_SUB_STEPS;
-import static top.lc951.sample17._1.Constant.TARGET_X;
-import static top.lc951.sample17._1.Constant.TARGET_Y;
-import static top.lc951.sample17._1.Constant.TARGET_Z;
-import static top.lc951.sample17._1.Constant.TIME_STEP;
+import top.lc951.sample17.Sample17_2_Activity;
 
 /**
  * Created by lichong on 2017/7/21.
@@ -48,17 +42,20 @@ import static top.lc951.sample17._1.Constant.TIME_STEP;
 public class MySurfaceView extends GLSurfaceView {
     private SceneRenderer mRenderer;//场景渲染器
     DiscreteDynamicsWorld dynamicsWorld;//世界对象
-    ArrayList<TexCube> tca=new ArrayList<TexCube>();
-    ArrayList<TexCube> tcaForAdd=new ArrayList<TexCube>();
+    ObjectArrayList<CollisionShape> collisionShapes = new ObjectArrayList<CollisionShape>();
+    ArrayList<CubeCylinder > tca=new ArrayList<CubeCylinder >();
+    ArrayList<CubeCylinder > tcaForAdd=new ArrayList<CubeCylinder>();
     CollisionShape boxShape;//共用的立方体
+    CollisionShape cyShapeX;//共用的X圆柱
+    CollisionShape cyShapeZ;//共用的Z圆柱
     CollisionShape planeShape;//共用的平面形状
-    Sample17_1_Activity activity;
-
+    CollisionShape[] csa=new CollisionShape[3];//圆柱、立方体组合
+    Sample17_2_Activity activity;
     public MySurfaceView(Context context)
     {
         super(context);
-        this.activity=(Sample17_1_Activity) context;
-        this.setEGLContextClientVersion(2);
+        activity=(Sample17_2_Activity) context;
+        this.setEGLContextClientVersion(2);//设置GLES版本为2.0
         //初始化物理世界
         initWorld();
         mRenderer = new SceneRenderer();	//创建场景渲染器
@@ -89,31 +86,42 @@ public class MySurfaceView extends GLSurfaceView {
         boxShape=new BoxShape(new Vector3f(Constant.UNIT_SIZE,Constant.UNIT_SIZE,Constant.UNIT_SIZE));
         //创建共用的平面形状
         planeShape=new StaticPlaneShape(new Vector3f(0, 1, 0), 0);
+        //创建共用的X圆柱
+        cyShapeX=new CylinderShapeX(new Vector3f(Constant.UNIT_SIZE*1.8f,Constant.UNIT_SIZE/2,Constant.UNIT_SIZE/2));
+        //创建共用的Z圆柱
+        cyShapeZ=new CylinderShapeZ(new Vector3f(Constant.UNIT_SIZE/2,Constant.UNIT_SIZE/2,Constant.UNIT_SIZE*1.8f));
+
+        //创建共用的形状数组
+        csa[0]=boxShape;
+        csa[1]=cyShapeX;
+        csa[2]=cyShapeZ;
     }
 
     private class SceneRenderer implements GLSurfaceView.Renderer
     {
         int[] cubeTextureId=new int[2];//箱子面纹理
+        int[] cyTextureId=new int[2];//圆柱纹理
         int floorTextureId;//地面纹理
         TexFloor floor;//纹理矩形1
 
         public void onDrawFrame(GL10 gl) {
+
             //清除颜色缓存于深度缓存
             GLES20.glClear(GL10.GL_COLOR_BUFFER_BIT | GL10.GL_DEPTH_BUFFER_BIT);
             //绘制箱子
             synchronized(tca)
             {
-                for(TexCube tc:tca)
+                for(CubeCylinder tc:tca)
                 {
                     MatrixState.pushMatrix();
-                    tc.drawSelf(cubeTextureId);
+                    tc.drawSelf(cubeTextureId,cyTextureId);
                     MatrixState.popMatrix();
                 }
             }
 
             //绘制地板
             MatrixState.pushMatrix();
-            floor.drawSelf( floorTextureId);
+            floor.drawSelf(floorTextureId);
             MatrixState.popMatrix();
         }
 
@@ -125,6 +133,16 @@ public class MySurfaceView extends GLSurfaceView {
             //调用此方法计算产生透视投影矩阵
             MatrixState.setProjectFrustum(-ratio, ratio, -1, 1, 2, 100);
 
+            MatrixState.setCamera(
+                    -1f,   //人眼位置的X
+                    2f, 	//人眼位置的Y
+                    6.0f,   //人眼位置的Z
+                    0, 	//人眼球看的点X
+                    2f,   //人眼球看的点Y
+                    0,   //人眼球看的点Z
+                    0,
+                    1,
+                    0);
         }
 
         @Override
@@ -135,51 +153,40 @@ public class MySurfaceView extends GLSurfaceView {
             GLES20.glEnable(GL10.GL_DEPTH_TEST);
             //设置为打开背面剪裁
             GLES20.glEnable(GL10.GL_CULL_FACE);
-            //初始化变换矩阵
             MatrixState.setInitStack();
-            MatrixState.setCamera(
-                    EYE_X,   //人眼位置的X
-                    EYE_Y, 	//人眼位置的Y
-                    EYE_Z,   //人眼位置的Z
-                    TARGET_X, 	//人眼球看的点X
-                    TARGET_Y,   //人眼球看的点Y
-                    TARGET_Z,   //人眼球看的点Z
-                    0,
-                    1,
-                    0);
-            //初始化所用到的shader程序
             ShaderManager.loadCodeFromFile(activity.getResources());
             ShaderManager.compileShader();
             //初始化纹理
             cubeTextureId[0]=initTexture(R.drawable.wood_bin2);
             cubeTextureId[1]=initTexture(R.drawable.wood_bin1);
             floorTextureId=initTextureRepeat(R.drawable.f6);
+            cyTextureId[0]=initTexture(R.drawable.cyh);
+            cyTextureId[1]=initTexture(R.drawable.cy);
 
             //创建地面矩形
             floor=new TexFloor(ShaderManager.getTextureShaderProgram(),80*Constant.UNIT_SIZE,-Constant.UNIT_SIZE,planeShape,dynamicsWorld);
-
             //创建立方体
-            int size=2;   //立方体尺寸
-            float xStart=(-size/2.0f+0.5f)*(2+0.4f)*Constant.UNIT_SIZE;//x坐标起始值
-            float yStart=0.02f;//y坐标起始值
-            float zStart=(-size/2.0f+0.5f)*(2+0.4f)*Constant.UNIT_SIZE-4f;//z坐标起始值
+            int size=2;
+            float xStart=(-size/2.0f+0.5f)*(3.8f)*Constant.UNIT_SIZE;
+            float yStart=0.84f*Constant.UNIT_SIZE;
+            float zStart=(-size/2.0f+0.5f)*(2+0.4f)*Constant.UNIT_SIZE-4f;
             for(int i=0;i<size;i++)
             {
                 for(int j=0;j<size;j++)
                 {
                     for(int k=0;k<size;k++)
                     {
-                        TexCube tcTemp=new TexCube       //创建纹理立方体
+                        CubeCylinder tcTemp=new CubeCylinder
                                 (
-                                        MySurfaceView.this,		//MySurfaceView的引用
-                                        Constant.UNIT_SIZE,		//尺寸
-                                        boxShape,				//碰撞形状
-                                        dynamicsWorld,			//物理世界
-                                        1,						//刚体质量
-                                        xStart+i*(2+0.4f)*Constant.UNIT_SIZE,//起始x坐标
-                                        yStart+j*(2.02f)*Constant.UNIT_SIZE, //起始y坐标
-                                        zStart+k*(2+0.4f)*Constant.UNIT_SIZE,//起始z坐标
-                                        ShaderManager.getTextureShaderProgram()//着色器程序引用
+                                        MySurfaceView.this,
+                                        Constant.UNIT_SIZE,
+                                        csa ,
+                                        dynamicsWorld,
+                                        1,
+                                        xStart+i*(3.8f)*Constant.UNIT_SIZE,
+                                        yStart+j*(3.64f)*Constant.UNIT_SIZE,
+                                        zStart+k*(2+0.4f)*Constant.UNIT_SIZE,
+                                        ShaderManager.getPrograms()
                                 );
                         tca.add(tcTemp);
                         //使得立方体一开始是不激活的
@@ -196,27 +203,27 @@ public class MySurfaceView extends GLSurfaceView {
                     {
                         try
                         {
-                            synchronized(tcaForAdd)//锁定新箱子所在集合
+                            synchronized(tcaForAdd)
                             {
-                                synchronized(tca)//锁定当前箱子的集合
+                                synchronized(tca)
                                 {
-                                    for(TexCube tc:tcaForAdd)
+                                    for(CubeCylinder tc:tcaForAdd)
                                     {
-                                        tca.add(tc);  //向箱子集合中添加箱子
+                                        tca.add(tc);
                                     }
                                 }
-                                tcaForAdd.clear();		//将新箱子的集合清空
+                                tcaForAdd.clear();
                             }
-                            //开始模拟
-                            dynamicsWorld.stepSimulation(TIME_STEP, MAX_SUB_STEPS);
-                            Thread.sleep(20);	//当前线程睡眠20毫秒
+                            //模拟
+                            dynamicsWorld.stepSimulation(1f/60.f, 5);
+                            Thread.sleep(20);
                         } catch (Exception e)
                         {
                             e.printStackTrace();
                         }
                     }
                 }
-            }.start();					//启动线程
+            }.start();
         }
     }
 
@@ -225,31 +232,32 @@ public class MySurfaceView extends GLSurfaceView {
     {
         switch (e.getAction())
         {
-            case MotionEvent.ACTION_DOWN:			//处理屏幕被按下的事件
-                TexCube tcTemp=new TexCube				//创建一个纹理立方体
+            case MotionEvent.ACTION_DOWN:
+                CubeCylinder  tcTemp=new CubeCylinder
                         (
-                                this,							//MySurfaceView的引用
-                                Constant.UNIT_SIZE,				//尺寸
-                                boxShape,						//碰撞形状
-                                dynamicsWorld,					//物理世界
-                                1,								//刚体质量
-                                0,								//起始x坐标
-                                2,         						//起始y坐标
-                                4,								//起始z坐标
-                                ShaderManager.getTextureShaderProgram()//着色器程序引用
+                                MySurfaceView.this,
+                                Constant.UNIT_SIZE,
+                                csa,
+                                dynamicsWorld,
+                                1,
+                                0,
+                                2,
+                                4,
+                                ShaderManager.getPrograms()
                         );
                 //设置箱子的初始速度
-                tcTemp.body.setLinearVelocity(new Vector3f(0,2,-12));//箱子直线运动的速度--Vx,Vy,Vz三个分量
-                tcTemp.body.setAngularVelocity(new Vector3f(0,0,0)); //箱子自身旋转的速度--绕箱子自身的x,y,x三轴旋转的速度
+                tcTemp.body.setLinearVelocity(new Vector3f(0,2,-12));
+                tcTemp.body.setAngularVelocity(new Vector3f(0,0,2));
                 //将新立方体加入到列表中
-                synchronized(tcaForAdd)//锁定集合
+                synchronized(tcaForAdd)
                 {
-                    tcaForAdd.add(tcTemp);//添加箱子
+                    tcaForAdd.add(tcTemp);
                 }
                 break;
         }
         return true;
     }
+
     public int initTexture(int drawableId)//textureId
     {
         //生成纹理ID
@@ -348,4 +356,5 @@ public class MySurfaceView extends GLSurfaceView {
 
         return textureId;
     }
+
 }
