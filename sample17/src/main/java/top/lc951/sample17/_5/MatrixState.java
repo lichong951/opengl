@@ -1,4 +1,4 @@
-package top.lc951.sample17._4;
+package top.lc951.sample17._5;
 
 import android.opengl.Matrix;
 
@@ -11,13 +11,13 @@ import java.util.Stack;
  * @author lichong_951@163.com
  * @version V1.0
  * @Description: TODO
- * @date 2017/7/22  11:03
+ * @date 2017/7/22  11:59
  * @powered by lichong
  */
 
  class MatrixState {
     private static float[] mProjMatrix = new float[16];//4x4矩阵 投影用
-    static float[] mVMatrix = new float[16];//摄像机位置朝向9参数矩阵
+    private static float[] mVMatrix = new float[16];//摄像机位置朝向9参数矩阵
     static float[] mMVPMatrix;//最后起作用的总变换矩阵
     public static float[] lightLocationRed=new float[]{0,0,0};//红色定位光光源位置
     public static float[] lightLocationGreenBlue=new float[]{0,0,0};//天蓝色定位光光源位置
@@ -58,7 +58,7 @@ import java.util.Stack;
         cameraLocation[0]=cx;
         cameraLocation[1]=cy;
         cameraLocation[2]=cz;
-        //摄像机位置矩阵
+
         ByteBuffer llbb = ByteBuffer.allocateDirect(3*4);
         llbb.order(ByteOrder.nativeOrder());//设置字节顺序
         cameraFB=llbb.asFloatBuffer();
@@ -158,19 +158,11 @@ import java.util.Stack;
         Matrix.rotateM(currMatrix,0,angle,x,y,z);
     }
 
-    public static void scale(float x,float y,float z){
-        Matrix.scaleM(currMatrix, 0, x, y, z);
-    }
-
     //插入自带矩阵
     public static void matrix(float[] self)
     {
         float[] result=new float[16];
         Matrix.multiplyMM(result,0,currMatrix,0,self,0);
         currMatrix=result;
-    }
-
-    public static float[] getMMatrix() {
-        return currMatrix;
     }
 }

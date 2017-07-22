@@ -18,7 +18,7 @@ import java.nio.FloatBuffer;
  * @powered by lichong
  */
 
-public class LoadedObjectVertexNormal {
+ class LoadedObjectVertexNormal {
     int mProgram;//自定义渲染管线程序id
     int muMVPMatrixHandle;//总变换矩阵引用id
     int muMMatrixHandle;//位置、旋转变换矩阵

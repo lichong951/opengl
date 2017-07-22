@@ -10,7 +10,7 @@ import java.util.Set;
  * @powered by lichong
  */
 
-public class Normal {
+ class Normal {
     public static final float DIFF=0.0000001f;//判断两个法向量是否相同的阈值
     //法向量在XYZ轴上的分量
     float nx;

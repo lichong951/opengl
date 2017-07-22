@@ -19,18 +19,22 @@
         <activity
             android:name=".Sample17_1_Activity"
             android:label="@string/title_activity_sample17_1_"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Sample17_2_Activity"
             android:label="@string/title_activity_sample17_2_"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Sample17_3_Activity"
             android:label="@string/title_activity_sample17_3_"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Sample17_4_Activity"
             android:label="@string/title_activity_sample17_4_"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Sample17_5_Activity"
+            android:label="@string/title_activity_sample17_5_"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

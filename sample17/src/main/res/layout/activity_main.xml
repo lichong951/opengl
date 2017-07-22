@@ -40,6 +40,12 @@
         android:text="Sample17_4:任意物体碰撞"
         android:onClick="sample17_4"
         />
+   <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sample17_5:j铰链关节"
+        android:onClick="sample17_5"
+        />
 
     </LinearLayout>
 

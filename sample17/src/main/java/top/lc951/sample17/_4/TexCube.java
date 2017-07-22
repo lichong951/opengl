@@ -20,14 +20,14 @@ import top.lc951.sample17._2.SYSUtil;
  * @powered by lichong
  */
 
-public class TexCube extends BNThing{
+ class TexCube extends BNThing{
     TextureRect tr;//用于绘制各个面的纹理矩形
     float halfSize;//立方体的半边长
     RigidBody body;//对应的刚体对象
     int mProgram;
-    MySurfaceView mv;
+    MySurfaceView_4 mv;
     int[] texIda;
-    public TexCube(MySurfaceView mv, float halfSize, CollisionShape colShape,
+    public TexCube(MySurfaceView_4 mv, float halfSize, CollisionShape colShape,
                    DiscreteDynamicsWorld dynamicsWorld, float mass, float cx, float cy, float cz, int[] texIda, int mProgram)
     {
         this.texIda=texIda;

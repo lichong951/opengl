@@ -46,7 +46,7 @@ import static top.lc951.sample17._4.Constant.TARGET_Z;
  * @powered by lichong
  */
 
-public class MySurfaceView extends GLSurfaceView
+public class MySurfaceView_4 extends GLSurfaceView
 {
     private SceneRenderer mRenderer;//场景渲染器
     DiscreteDynamicsWorld dynamicsWorld;//世界对象
@@ -60,7 +60,7 @@ public class MySurfaceView extends GLSurfaceView
     int[] cubeTextureId=new int[2];//箱子面纹理
     Sample17_4_Activity activity;
 
-    public MySurfaceView(Context context)
+    public MySurfaceView_4(Context context)
     {
         super(context);
         activity = (Sample17_4_Activity) context;
@@ -155,9 +155,9 @@ public class MySurfaceView extends GLSurfaceView
             ShaderManager.loadCodeFromFile(activity.getResources());
             ShaderManager.compileShader();
 
-            lovoa[0]=LoadUtil.loadFromFile("table.obj", MySurfaceView.this.getResources(), MySurfaceView.this);
-            lovoa[1]=LoadUtil.loadFromFile("yh.obj", MySurfaceView.this.getResources(), MySurfaceView.this);
-            lovoa[2]=LoadUtil.loadFromFile("ch.obj", MySurfaceView.this.getResources(), MySurfaceView.this);
+            lovoa[0]=LoadUtil.loadFromFile("table.obj", MySurfaceView_4.this.getResources(), MySurfaceView_4.this);
+            lovoa[1]=LoadUtil.loadFromFile("yh.obj", MySurfaceView_4.this.getResources(), MySurfaceView_4.this);
+            lovoa[2]=LoadUtil.loadFromFile("ch.obj", MySurfaceView_4.this.getResources(), MySurfaceView_4.this);
 
             //初始化纹理
             cubeTextureId[0]=initTexture(R.drawable.wood_bin2);
@@ -211,7 +211,7 @@ public class MySurfaceView extends GLSurfaceView
                 {
                     TexCube tcTemp=new TexCube
                             (
-                                    MySurfaceView.this,
+                                    MySurfaceView_4.this,
                                     Constant.UNIT_SIZE,
                                     boxShape,
                                     dynamicsWorld,

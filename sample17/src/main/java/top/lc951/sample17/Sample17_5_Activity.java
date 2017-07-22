@@ -5,16 +5,15 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.KeyEvent;
 import android.view.Window;
 import android.view.WindowManager;
 
-import top.lc951.sample17._4.MySurfaceView_4;
+import top.lc951.sample17._5.MySurfaceView;
 
-public class Sample17_4_Activity extends AppCompatActivity {
-    private MySurfaceView_4 mGLSurfaceView;
+public class Sample17_5_Activity extends AppCompatActivity {
+    MySurfaceView surfaceView;
     public static void actionActivity(Context context){
-            context.startActivity(new Intent(context, Sample17_4_Activity.class));
+            context.startActivity(new Intent(context, Sample17_5_Activity.class));
         }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,31 +23,21 @@ public class Sample17_4_Activity extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);//去掉标头
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);//强制横屏
 
-        mGLSurfaceView = new MySurfaceView_4(this);
-        mGLSurfaceView.requestFocus();//获取焦点
-        mGLSurfaceView.setFocusableInTouchMode(true);//设置为可触控
+        surfaceView = new MySurfaceView(this);
+        setContentView(surfaceView);
 
-        setContentView(mGLSurfaceView);
     }
-    @Override
-    protected void onResume() {
-        super.onResume();
-        mGLSurfaceView.onResume();
-    }
-
     @Override
     protected void onPause() {
         super.onPause();
-        mGLSurfaceView.onPause();
+        surfaceView.onPause();
+        surfaceView.flag=false;
     }
 
     @Override
-    public boolean onKeyDown(int keyCode, KeyEvent e)
-    {
-        if(keyCode==4)
-        {
-            System.exit(0);
-        }
-        return false;
+    protected void onResume() {
+        super.onResume();
+        surfaceView.onResume();
+        surfaceView.flag=true;
     }
 }
