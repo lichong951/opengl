@@ -34,6 +34,12 @@
         android:text="Sample17_3:凹凸地形碰撞"
         android:onClick="sample17_3"
         />
+     <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sample17_4:任意物体碰撞"
+        android:onClick="sample17_4"
+        />
 
     </LinearLayout>
 
