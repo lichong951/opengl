@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Sample17</string>
+    <string name="title_activity_sample17_1_">Sample17_1:箱子碰撞</string>
+    <string name="title_activity_sample17_2_">Sample17_2：复合碰撞</string>
+    <string name="title_activity_sample17_3_">Sample17_3：凹凸地形碰撞</string>
+</resources>
