@@ -20,6 +20,19 @@
         android:text="@string/title_activity_sample18_1_"
         android:onClick="sample18_1"
         />
+            <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/title_activity_sample18_2_"
+        android:onClick="sample18_2"
+        />
+      <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/title_activity_sample18_3_"
+        android:onClick="sample18_3"
+        />
+
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
