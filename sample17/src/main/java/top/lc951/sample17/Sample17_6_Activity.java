@@ -5,15 +5,17 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.KeyEvent;
 import android.view.Window;
 import android.view.WindowManager;
 
-import top.lc951.sample17._5.MySurfaceView_5;
+import top.lc951.sample17._6.MySurfaceView_6;
 
-public class Sample17_5_Activity extends AppCompatActivity {
-    MySurfaceView_5 surfaceView;
+public class Sample17_6_Activity extends AppCompatActivity {
+    MySurfaceView_6 surfaceView;
     public static void actionActivity(Context context){
-            context.startActivity(new Intent(context, Sample17_5_Activity.class));
+            Intent intent =new Intent(context,Sample17_6_Activity.class);
+            context.startActivity(intent);
         }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,9 +25,8 @@ public class Sample17_5_Activity extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);//去掉标头
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);//强制横屏
 
-        surfaceView = new MySurfaceView_5(this);
+        surfaceView = new MySurfaceView_6(this);
         setContentView(surfaceView);
-
     }
     @Override
     protected void onPause() {
@@ -39,5 +40,15 @@ public class Sample17_5_Activity extends AppCompatActivity {
         super.onResume();
         surfaceView.onResume();
         surfaceView.flag=true;
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent e)
+    {
+        if(keyCode==4)
+        {
+            System.exit(0);
+        }
+        return false;
     }
 }

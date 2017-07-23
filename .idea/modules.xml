@@ -5,22 +5,39 @@
       <module fileurl="file://$PROJECT_DIR$/OpenGL.iml" filepath="$PROJECT_DIR$/OpenGL.iml" />
       <module fileurl="file://$PROJECT_DIR$/OpenGL_Test.iml" filepath="$PROJECT_DIR$/OpenGL_Test.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/opengl.iml" filepath="$PROJECT_DIR$/.idea/opengl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/opengl.iml" filepath="$PROJECT_DIR$/opengl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sample10/sample10.iml" filepath="$PROJECT_DIR$/sample10/sample10.iml" />
       <module fileurl="file://$PROJECT_DIR$/sample10/sample10.iml" filepath="$PROJECT_DIR$/sample10/sample10.iml" />
       <module fileurl="file://$PROJECT_DIR$/sample11/sample11.iml" filepath="$PROJECT_DIR$/sample11/sample11.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sample11/sample11.iml" filepath="$PROJECT_DIR$/sample11/sample11.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sample12/sample12.iml" filepath="$PROJECT_DIR$/sample12/sample12.iml" />
       <module fileurl="file://$PROJECT_DIR$/sample12/sample12.iml" filepath="$PROJECT_DIR$/sample12/sample12.iml" />
       <module fileurl="file://$PROJECT_DIR$/sample13/sample13.iml" filepath="$PROJECT_DIR$/sample13/sample13.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sample13/sample13.iml" filepath="$PROJECT_DIR$/sample13/sample13.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sample14/sample14.iml" filepath="$PROJECT_DIR$/sample14/sample14.iml" />
       <module fileurl="file://$PROJECT_DIR$/sample14/sample14.iml" filepath="$PROJECT_DIR$/sample14/sample14.iml" />
       <module fileurl="file://$PROJECT_DIR$/sample15/sample15.iml" filepath="$PROJECT_DIR$/sample15/sample15.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sample15/sample15.iml" filepath="$PROJECT_DIR$/sample15/sample15.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sample16/sample16.iml" filepath="$PROJECT_DIR$/sample16/sample16.iml" />
       <module fileurl="file://$PROJECT_DIR$/sample16/sample16.iml" filepath="$PROJECT_DIR$/sample16/sample16.iml" />
       <module fileurl="file://$PROJECT_DIR$/sample17/sample17.iml" filepath="$PROJECT_DIR$/sample17/sample17.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sample17/sample17.iml" filepath="$PROJECT_DIR$/sample17/sample17.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sample2/sample2.iml" filepath="$PROJECT_DIR$/sample2/sample2.iml" />
       <module fileurl="file://$PROJECT_DIR$/sample2/sample2.iml" filepath="$PROJECT_DIR$/sample2/sample2.iml" />
       <module fileurl="file://$PROJECT_DIR$/sample2_4from_9server/sample2_4from_9server.iml" filepath="$PROJECT_DIR$/sample2_4from_9server/sample2_4from_9server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sample2_4from_9server/sample2_4from_9server.iml" filepath="$PROJECT_DIR$/sample2_4from_9server/sample2_4from_9server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sample3/sample3.iml" filepath="$PROJECT_DIR$/sample3/sample3.iml" />
       <module fileurl="file://$PROJECT_DIR$/sample3/sample3.iml" filepath="$PROJECT_DIR$/sample3/sample3.iml" />
       <module fileurl="file://$PROJECT_DIR$/sample5/sample5.iml" filepath="$PROJECT_DIR$/sample5/sample5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sample5/sample5.iml" filepath="$PROJECT_DIR$/sample5/sample5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sample6/sample6.iml" filepath="$PROJECT_DIR$/sample6/sample6.iml" />
       <module fileurl="file://$PROJECT_DIR$/sample6/sample6.iml" filepath="$PROJECT_DIR$/sample6/sample6.iml" />
       <module fileurl="file://$PROJECT_DIR$/sample7/sample7.iml" filepath="$PROJECT_DIR$/sample7/sample7.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sample7/sample7.iml" filepath="$PROJECT_DIR$/sample7/sample7.iml" />
       <module fileurl="file://$PROJECT_DIR$/sample8/sample8.iml" filepath="$PROJECT_DIR$/sample8/sample8.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sample8/sample8.iml" filepath="$PROJECT_DIR$/sample8/sample8.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sample9/sample9.iml" filepath="$PROJECT_DIR$/sample9/sample9.iml" />
       <module fileurl="file://$PROJECT_DIR$/sample9/sample9.iml" filepath="$PROJECT_DIR$/sample9/sample9.iml" />
     </modules>
   </component>

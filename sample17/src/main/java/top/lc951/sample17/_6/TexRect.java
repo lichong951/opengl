@@ -1,4 +1,4 @@
-package top.lc951.sample17._5;
+package top.lc951.sample17._6;
 
 import android.opengl.GLES20;
 
@@ -9,14 +9,10 @@ import java.nio.FloatBuffer;
 import top.lc951.sample17.utils.ShaderUtil;
 
 /**
- * @author lichong_951@163.com
- * @version V1.0
- * @Description: TODO
- * @date 2017/7/22  12:03
- * @powered by lichong
+ * Created by lichong@7moor.com on 2017/7/23.
  */
 
- class TexRect {
+class TexRect {
     int mProgram;//自定义渲染管线程序id
     int muMVPMatrixHandle;//总变换矩阵引用id
     int muMMatrixHandle;//位置、旋转变换矩阵
@@ -33,7 +29,7 @@ import top.lc951.sample17.utils.ShaderUtil;
     FloatBuffer   mTextureBuffer;//顶点纹理坐标数据缓冲
     int vCount=0;
 
-    public TexRect(MySurfaceView_5 mv, float size, float width, float height)
+    public TexRect(MySurfaceView_6 mv, float size, float width, float height)
     {
         //初始化顶点坐标与着色数据
         initVertexData(size,width,height);
@@ -88,7 +84,7 @@ import top.lc951.sample17.utils.ShaderUtil;
     }
 
     //初始化shader
-    public void intShader(MySurfaceView_5 mv)
+    public void intShader(MySurfaceView_6 mv)
     {
         //加载顶点着色器的脚本内容
         mVertexShader= ShaderUtil.loadFromAssetsFile("vertex.sh", mv.getResources());

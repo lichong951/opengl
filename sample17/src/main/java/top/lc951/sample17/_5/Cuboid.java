@@ -35,7 +35,7 @@ import top.lc951.sample17._2.SYSUtil;
                     DiscreteDynamicsWorld dynamicsWorld, CollisionShape boxShape,
                     float mass,
                     float cx, float cy, float cz,
-                    MySurfaceView mv,
+                    MySurfaceView_5 mv,
                     float halfX,    //x
                     float halfY,    //y
                     float halfZ    //z

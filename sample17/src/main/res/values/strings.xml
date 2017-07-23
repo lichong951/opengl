@@ -5,4 +5,5 @@
     <string name="title_activity_sample17_3_">Sample17_3：凹凸地形碰撞</string>
     <string name="title_activity_sample17_4_">Sample17_4：任意物体碰撞</string>
     <string name="title_activity_sample17_5_">Sample17_5：铰链关节</string>
+    <string name="title_activity_sample17_6_">Sample17_6：滑动关节</string>
 </resources>

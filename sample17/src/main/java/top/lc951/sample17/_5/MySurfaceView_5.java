@@ -48,7 +48,7 @@ import static top.lc951.sample17._5.Constant.yAngle;
  * @powered by lichong
  */
 
-public class MySurfaceView extends GLSurfaceView {
+public class MySurfaceView_5 extends GLSurfaceView {
     DiscreteDynamicsWorld dynamicsWorld;//物理世界
     CollisionShape boxShape;//盒子碰撞形状
     HingeConstraint constraint;//铰链关节
@@ -61,7 +61,7 @@ public class MySurfaceView extends GLSurfaceView {
     public boolean flag=true;//循环控制标志
     MyRenderer renderer; //渲染器
 
-    public MySurfaceView(Context context) {
+    public MySurfaceView_5(Context context) {
         super(context);
         this.setEGLContextClientVersion(2);
         renderer = new MyRenderer();//创建渲染器
@@ -161,8 +161,8 @@ public class MySurfaceView extends GLSurfaceView {
             GLES20.glEnable(GLES20.GL_DEPTH_TEST);
             MatrixState.setInitStack();
             activeTexId = initTexture(R.drawable.wood_bin1);
-            door1 = new Cuboid(dynamicsWorld, boxShape, 0, 0, 0, 4, MySurfaceView.this,halfX,halfY,halfZ);
-            door2 = new Cuboid(dynamicsWorld, boxShape, 1, 0, 0, -4, MySurfaceView.this,halfX,halfY,halfZ);
+            door1 = new Cuboid(dynamicsWorld, boxShape, 0, 0, 0, 4, MySurfaceView_5.this,halfX,halfY,halfZ);
+            door2 = new Cuboid(dynamicsWorld, boxShape, 1, 0, 0, -4, MySurfaceView_5.this,halfX,halfY,halfZ);
             addHingeConstraint(door1.body,door2.body);
             new Thread()
             {
