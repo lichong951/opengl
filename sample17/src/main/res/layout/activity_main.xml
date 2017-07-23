@@ -52,6 +52,12 @@
         android:text="Sample17_6:滑动关节"
         android:onClick="sample17_6"
         />
+  <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sample17_7:六自由度关节"
+        android:onClick="sample17_7"
+        />
 
     </LinearLayout>
 

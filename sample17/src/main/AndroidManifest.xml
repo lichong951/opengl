@@ -39,6 +39,10 @@
         <activity
             android:name=".Sample17_6_Activity"
             android:label="@string/title_activity_sample17_6_"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Sample17_7_Activity"
+            android:label="@string/title_activity_sample17_7_"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

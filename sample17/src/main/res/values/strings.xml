@@ -6,4 +6,5 @@
     <string name="title_activity_sample17_4_">Sample17_4：任意物体碰撞</string>
     <string name="title_activity_sample17_5_">Sample17_5：铰链关节</string>
     <string name="title_activity_sample17_6_">Sample17_6：滑动关节</string>
+    <string name="title_activity_sample17_7_">Sample17_7：六自由度关节</string>
 </resources>
