@@ -3,4 +3,5 @@
     <string name="title_activity_sample18_1_">Sample18_1:加速度传感器</string>
     <string name="title_activity_sample18_2_">Sample18_2:磁场感应器</string>
     <string name="title_activity_sample18_3_">Sample18_3:光线传感器</string>
+    <string name="title_activity_sample18_4_">Sample18_4:温度传感器</string>
 </resources>

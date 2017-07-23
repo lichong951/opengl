@@ -32,6 +32,12 @@
         android:text="@string/title_activity_sample18_3_"
         android:onClick="sample18_3"
         />
+     <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/title_activity_sample18_4_"
+        android:onClick="sample18_4"
+        />
 
     </LinearLayout>
 
