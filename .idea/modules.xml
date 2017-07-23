@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/OpenGL.iml" filepath="$PROJECT_DIR$/OpenGL.iml" />
       <module fileurl="file://$PROJECT_DIR$/OpenGL_Test.iml" filepath="$PROJECT_DIR$/OpenGL_Test.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/opengl.iml" filepath="$PROJECT_DIR$/.idea/opengl.iml" />
       <module fileurl="file://$PROJECT_DIR$/sample10/sample10.iml" filepath="$PROJECT_DIR$/sample10/sample10.iml" />
       <module fileurl="file://$PROJECT_DIR$/sample11/sample11.iml" filepath="$PROJECT_DIR$/sample11/sample11.iml" />
       <module fileurl="file://$PROJECT_DIR$/sample12/sample12.iml" filepath="$PROJECT_DIR$/sample12/sample12.iml" />
