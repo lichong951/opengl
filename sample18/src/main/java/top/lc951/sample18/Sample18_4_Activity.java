@@ -1,4 +1,4 @@
-package top.lc951.myapplication;
+package top.lc951.sample18;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,45 +11,41 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.widget.TextView;
 
-public class Sample18_1_Activity extends AppCompatActivity {
+public class Sample18_4_Activity extends AppCompatActivity {
     SensorManager mySensorManager;	//SensorManager对象引用
-    Sensor myAccelerometer; 	//传感器类型
-    TextView tvX;	//TextView对象引用
-    TextView tvY;	//TextView对象引用
-    TextView tvZ;	//TextView对象引用
+    Sensor myTemperature; 	//传感器类型
+    TextView temperature;	//TextView对象引用
     TextView info;
-    public static void actionActivity(Context context){
-            Intent intent =new Intent(context,Sample18_1_Activity.class);
-            context.startActivity(intent);
-        }
+    public static void actionActivity(Context context) {
+        Intent intent = new Intent(context, Sample18_4_Activity.class);
+        context.startActivity(intent);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sample18_1);
-        tvX = (TextView)findViewById(R.id.tvX);	//用于显示x轴方向加速度
-        tvY = (TextView)findViewById(R.id.tvY);	//用于显示y轴方向加速度
-        tvZ = (TextView)findViewById(R.id.tvZ); //用于显示z轴方向加速度
-        info= (TextView)findViewById(R.id.info);//用于显示手机中加速度传感器的相关信息
+        setContentView(R.layout.activity_sample18_4);
+        temperature = (TextView)findViewById(R.id.temperature);	//用于显示温度值
+        info= (TextView)findViewById(R.id.info);//用于显示手机中温度传感器的相关信息
         //获得SensorManager对象
         mySensorManager = (SensorManager)getSystemService(SENSOR_SERVICE);
-        //传感器的类型
-        myAccelerometer=mySensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+        //传感器的类型为温度传感器 有些设备是没有温度传感器的
+        myTemperature=mySensorManager.getDefaultSensor(Sensor.TYPE_TEMPERATURE);
 
         //创建一个StringBuffer
         StringBuffer strb=new StringBuffer();
         strb.append("\n名称: ");
-        strb.append(myAccelerometer.getName());
+        strb.append(myTemperature.getName());
         strb.append("\n耗电量(mA): ");
-        strb.append(myAccelerometer.getPower());
+        strb.append(myTemperature.getPower());
         strb.append("\n类型编号 : ");
-        strb.append(myAccelerometer.getType());
+        strb.append(myTemperature.getType());
         strb.append("\n制造商: ");
-        strb.append(myAccelerometer.getVendor());
+        strb.append(myTemperature.getVendor());
         strb.append("\n版本: ");
-        strb.append(myAccelerometer.getVersion());
+        strb.append(myTemperature.getVersion());
         strb.append("\n最大测量范围: ");
-        strb.append(myAccelerometer.getMaximumRange());
-
+        strb.append(myTemperature.getMaximumRange());
         info.setText(strb.toString());	//将信息字符串赋予名为info的TextView
     }
     @Override
@@ -57,7 +53,7 @@ public class Sample18_1_Activity extends AppCompatActivity {
         super.onResume();
         mySensorManager.registerListener(
                 mySensorListener, 		//添加监听
-                myAccelerometer, 		//传感器类型
+                myTemperature, 		//传感器类型
                 SensorManager.SENSOR_DELAY_NORMAL	//传感器事件传递的频度
         );
     }
@@ -72,10 +68,8 @@ public class Sample18_1_Activity extends AppCompatActivity {
                 public void onAccuracyChanged(Sensor sensor, int accuracy){}
                 @Override
                 public void onSensorChanged(SensorEvent event){
-                    float []values=event.values;//获取三个轴方向上的加速度值
-                    tvX.setText("x轴方向上的加速度为："+values[0]);
-                    tvY.setText("y轴方向上的加速度为："+values[1]);
-                    tvZ.setText("z轴方向上的加速度为："+values[2]);
+                    float []values=event.values;
+                    temperature.setText("温度为："+values[0]);
                 }
             };
 
@@ -90,5 +84,4 @@ public class Sample18_1_Activity extends AppCompatActivity {
         }
         return true;
     }
-
 }

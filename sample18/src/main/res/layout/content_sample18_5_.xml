@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="top.lc951.myapplication.Sample18_5_Activity"
+    tools:context="top.lc951.sample18.Sample18_5_Activity"
     tools:showIn="@layout/activity_sample18_5">
     <LinearLayout 
         android:orientation="vertical"

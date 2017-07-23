@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" tools:context="top.lc951.myapplication.MainActivity">
+    android:layout_height="match_parent" tools:context="top.lc951.sample18.MainActivity">
 
     <LinearLayout
         android:orientation="vertical"
@@ -43,6 +43,12 @@
         android:layout_height="wrap_content"
         android:text="@string/title_activity_sample18_5_"
         android:onClick="sample18_5"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/title_activity_sample18_6_"
+        android:onClick="sample18_6"
         />
 
     </LinearLayout>

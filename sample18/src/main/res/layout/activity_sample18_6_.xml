@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="top.lc951.sample18.Sample18_5_Activity">
+    tools:context="top.lc951.sample18.Sample18_6_Activity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -20,7 +20,7 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_sample18_5_" />
+    <include layout="@layout/content_sample18_6_" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"

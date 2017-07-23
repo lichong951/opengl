@@ -1,4 +1,4 @@
-package top.lc951.myapplication;
+package top.lc951.sample18;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -28,6 +28,9 @@ public class MainActivity extends AppCompatActivity {
     }
     public void sample18_5(View view) {
         Sample18_5_Activity.actionActivity(this);
+    }
+    public void sample18_6(View view) {
+        Sample18_6_Activity.actionActivity(this);
     }
 
 

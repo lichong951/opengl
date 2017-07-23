@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="top.lc951.myapplication">
+    package="top.lc951.sample18">
 
     <application
         android:allowBackup="true"
@@ -35,6 +35,10 @@
         <activity
             android:name=".Sample18_5_Activity"
             android:label="@string/title_activity_sample18_5_"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Sample18_6_Activity"
+            android:label="@string/title_activity_sample18_6_"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

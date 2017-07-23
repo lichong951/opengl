@@ -5,4 +5,5 @@
     <string name="title_activity_sample18_3_">Sample18_3:光线传感器</string>
     <string name="title_activity_sample18_4_">Sample18_4:温度传感器</string>
     <string name="title_activity_sample18_5_">Sample18_5:接近传感器</string>
+    <string name="title_activity_sample18_6_">Sample18_6:姿态传感器</string>
 </resources>
