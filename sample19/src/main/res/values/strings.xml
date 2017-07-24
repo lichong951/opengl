@@ -2,4 +2,5 @@
     <string name="app_name">Sample19</string>
     <string name="title_activity_sample19_1_">Sample19_1:3D拾取技术</string>
     <string name="title_activity_sample19_2_">Sample19_2:多点触控</string>
+    <string name="title_activity_sample19_3_">Sample19_3:多键监听技术</string>
 </resources>
