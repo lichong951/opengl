@@ -160,7 +160,7 @@ public class MySurfaceView_8_v1 extends GLSurfaceView {
                             shadowId,
                             0
                     );
-
+//指定一个二维的纹理图片
             GLES20.glTexImage2D
                     (
                             GLES20.GL_TEXTURE_2D,
